@@ -16,8 +16,8 @@ void ordena(int *x, int n){
   // o menor entre os restantes ">i"
   for(i=0; i<n-1; i++){
     for(j=i+1; j<n; j++){
-      if(*x[i] > x[j]){
-        troca(&x[i], &x[j]);
+      if(x[i] > x[j]){
+        troca(&x[i], x+j);
       }
     }
   }
