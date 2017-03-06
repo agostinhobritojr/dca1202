@@ -42,7 +42,7 @@ int* realoca(int *x, int antigo, int novo){
   }
   free(x);
   // devolve o endereco do novo array alocado
-  return (x);
+  return (y);
 }
 
 
