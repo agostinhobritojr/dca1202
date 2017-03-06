@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h> // malloc()/free()
 
-void realoca(int *x, int antigo, int novo){
+int* realoca(int *x, int antigo, int novo){
   int *y;
   int i;
   // caso os tamanhos sejam iguais
