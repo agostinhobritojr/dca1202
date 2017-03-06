@@ -41,9 +41,8 @@ void realoca(int *x, int antigo, int novo){
     }
   }
   free(x);
-  x = y;
   // devolve o endereco do novo array alocado
-  return;
+  return (x);
 }
 
 
@@ -62,7 +61,7 @@ int main(void){
     x[i] = i+1;
   }
 
-  realoca(x, 5, 10);
+  x = realoca(x, 5, 10);
 
   for(i=0; i<10; i++){
     printf("%d, ", x[i]);
