@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h> // malloc()/free()
 
-int *realoca(int *x, int antigo, int novo){
+void realoca(int *x, int antigo, int novo){
   int *y;
   int i;
   // caso os tamanhos sejam iguais
   // nada ha para se fazer, alem de
   // retornar o proprio endereco
   if(antigo == novo){
-    return (x);
+    return;
   }
   // aloca o novo array
   y = (int*)malloc(novo*sizeof(int));
@@ -18,9 +18,13 @@ int *realoca(int *x, int antigo, int novo){
   // array novo eh maior que o antigo
   if(antigo < novo){
     // copia os elementos do array antigo
+    memcpy(y, x, antigo*sizeof(int));
+
+    /*
     for(i=0; i<antigo; i++){
       y[i] = x[i];
     }
+    */
     // completa com zeros
     for(i=antigo; i<novo; i++){
       y[i] = 0;
@@ -30,13 +34,16 @@ int *realoca(int *x, int antigo, int novo){
   else{
     // copia os elementos do array antigo
     // limitando-se ao tamanho do novo array
+    memcpy(y, x, antigo*sizeof(int));
+
     for(i=0; i<novo; i++){
       y[i] = x[i];
     }
   }
   free(x);
+  x = y;
   // devolve o endereco do novo array alocado
-  return(y);
+  return;
 }
 
 
@@ -55,7 +62,7 @@ int main(void){
     x[i] = i+1;
   }
 
-  x = realoca(x, 5, 10);
+  realoca(x, 5, 10);
 
   for(i=0; i<10; i++){
     printf("%d, ", x[i]);
