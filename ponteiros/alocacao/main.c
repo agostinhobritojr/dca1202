@@ -1,9 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h> // malloc()/free()
 
+int *realoca(int *x, int antigo, int novo){
+  int *y;
+  y = (int*)malloc(novo*sizeof(int));
+  if( y == NULL){
+    exit(0);
+  }
+  if(antigo == novo){
+    return (x);
+  }
+}
+
+
 int main(void){
-  int *x, *y;
-//  int y[10];
+  int *x;
   int n, i;
   n = 5;
   x = (int*)malloc(n*sizeof(int));
@@ -18,14 +29,7 @@ int main(void){
     x[i] = i+1;
   }
 
-  y = (int*)malloc(2*n*sizeof(int));
-  if( y == NULL){
-    exit(0);
-  }
-
-  for(i=0; i<2*n; i++){
-    y[i] = 0;
-  }
+  x = realoca(x, 5, 10);
 
   for(i=0; i<n; i++){
     y[i] = x[i];
@@ -46,7 +50,6 @@ int main(void){
     printf("%d, ", y[i]);
   }
   printf("\n");
-
 
   return 0;
 }
