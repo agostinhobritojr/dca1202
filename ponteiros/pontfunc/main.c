@@ -44,7 +44,7 @@ int main(void){
       scanf("%f %f", &x, &y);
       break;
     case 2:
-      func = soma;
+      func = &soma;
       break;
     case 3:
       func = subt;
@@ -59,7 +59,7 @@ int main(void){
       exit(0);
     }
     if(opcao > 1 && opcao < 6){
-      z = func(x,y);
+      z = soma(x,y);
       printf("endereco = %p\n", func);
       printf("resultado = %f\n", z);
     }
