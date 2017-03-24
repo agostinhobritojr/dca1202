@@ -17,6 +17,8 @@ Vetor::Vetor(float mx, float my){
 }
 
 Vetor::Vetor(Vetor &copia){
+  x = copia.x;
+  y = copia.y;
   cout << "construtor de copia\n";
 }
 
@@ -39,6 +41,8 @@ Vetor::~Vetor(){
 
 Vetor Vetor::soma(Vetor v2){
   Vetor v3;
+  cout << "x = " << v2.x << endl;
+
   v3.x = x + v2.x;
   v3.y = y + v2.y;
   return(v3);
@@ -65,6 +69,15 @@ float Vetor::produtoEscalar(Vetor v2){
 
 void Vetor::print(){
   cout << "(" << x << "," << y << ")";
+}
+
+Vetor Vetor::operator+(Vetor v2){
+  Vetor v3;
+  cout << "x = " << v2.x << endl;
+  v3.x = x + v2.x;
+  v3.y = y + v2.y;
+  cout << "v2x = " << v2.x << endl;
+  return(v3);
 }
 
 float modulo(Vetor v1){

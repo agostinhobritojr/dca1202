@@ -19,6 +19,10 @@ public:
   Vetor subt(Vetor v2);
   float produtoEscalar(Vetor v2);
   void print();
+
+  Vetor operator+ (Vetor v2);
+
+
 }; // <- nao esqueca do ";"
 
 float modulo(Vetor v1);
