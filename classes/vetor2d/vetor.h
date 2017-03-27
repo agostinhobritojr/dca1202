@@ -21,10 +21,16 @@ public:
   void print();
 
   Vetor operator+ (Vetor v2);
+  Vetor operator- (Vetor v2);
+  float operator* (Vetor v2);
+  Vetor operator* (float a);
 
+  // as duas funcoes seguintes
+  // NAO SAO METODOS DA CLASSE VETOR
+  friend float modulo(Vetor v1);
+  friend Vetor operator*(float a, Vetor v2);
 
 }; // <- nao esqueca do ";"
 
-float modulo(Vetor v1);
 
 #endif // VETOR_H

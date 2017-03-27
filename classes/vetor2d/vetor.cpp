@@ -13,13 +13,13 @@ Vetor::Vetor(){
 Vetor::Vetor(float mx, float my){
   x = mx;
   y = my;
-  cout << "construtor com argumentos\n";
+//  cout << "construtor com argumentos\n";
 }
 
 Vetor::Vetor(Vetor &copia){
   x = copia.x;
   y = copia.y;
-  cout << "construtor de copia\n";
+//  cout << "construtor de copia\n";
 }
 
 void Vetor::setX(float mx){
@@ -36,13 +36,11 @@ float Vetor::getY(void){
 }
 
 Vetor::~Vetor(){
-  cout << "destrutor" << endl;
+//  cout << "destrutor" << endl;
 }
 
 Vetor Vetor::soma(Vetor v2){
   Vetor v3;
-  cout << "x = " << v2.x << endl;
-
   v3.x = x + v2.x;
   v3.y = y + v2.y;
   return(v3);
@@ -73,15 +71,41 @@ void Vetor::print(){
 
 Vetor Vetor::operator+(Vetor v2){
   Vetor v3;
-  cout << "x = " << v2.x << endl;
+//  cout << "x = " << v2.x << endl;
   v3.x = x + v2.x;
   v3.y = y + v2.y;
-  cout << "v2x = " << v2.x << endl;
+//  cout << "v2x = " << v2.x << endl;
+  return(v3);
+}
+
+Vetor Vetor::operator- (Vetor v2){
+  Vetor v3;
+  v3.x = x - v2.x;
+  v3.y = y - v2.y;
+  return(v3);
+}
+
+float Vetor::operator* (Vetor v2){
+  return(x*v2.x + y*v2.y);
+}
+
+Vetor Vetor::operator* (float a){
+  Vetor v3;
+  v3.x = a*x;
+  v3.y = a*y;
+  return(v3);
+}
+
+Vetor operator*(float a, Vetor v2){
+  Vetor v3;
+  v3.x = a*v2.x;
+//  v3.setX(a*v2.getX());
+  v3.y = a*v2.y;
   return(v3);
 }
 
 float modulo(Vetor v1){
   float mod;
-  mod = sqrt(v1.getX()*v1.getX()+v1.getY()*v1.getY());
+  mod = sqrt(v1.x*v1.x+v1.y*v1.y);
   return(mod);
 }
