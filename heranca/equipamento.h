@@ -7,6 +7,9 @@ protected:
   char fabricante[100];
   float preco;
 public:
+  Equipamento();
+  Equipamento(int _x);
+  ~Equipamento();
   void setNome(const char *_nome);
   void setFabricante(const char *_fabricante);
   void setPreco(float _preco);

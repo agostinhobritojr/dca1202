@@ -1,7 +1,20 @@
 #include "equipamento.h"
 #include <cstring>
+#include <iostream>
 
 using namespace std;
+
+Equipamento::Equipamento(){
+  cout << "construtor de equipamento\n";
+}
+
+Equipamento::Equipamento(int _x){
+  cout << "construtor de inteiro\n";
+}
+
+Equipamento::~Equipamento(){
+  cout << "destrutor de equipamento\n";
+}
 
 void Equipamento::setNome(const char *_nome){
   strcpy(nome,_nome);
