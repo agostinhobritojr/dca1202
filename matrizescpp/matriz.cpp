@@ -1,8 +1,10 @@
 #include <iostream>
+#include <cstdlib>
+
 #include "matriz.h"
 using namespace std;
 
-#define NULL 0
+//#define NULL 0
 
 Matriz::Matriz(int nlin, int ncol){
   // armazena linhas e colunas
@@ -19,7 +21,7 @@ Matriz::Matriz(int nlin, int ncol){
   if( x == NULL){
     exit(0);
   }
-  cout << "x = " << x;
+  // cout << "x = " << x;
   x[0] = new float [nlin*ncol];
   if( x[0] == NULL){
     exit(0);
@@ -45,7 +47,7 @@ Matriz::Matriz(Matriz &m){
     x = NULL;
     return;
   }
-  x = new float[nlin];
+  x = new float*[nlin];
   if(x == NULL){
     exit(0);
   }
@@ -71,7 +73,23 @@ float& Matriz::operator()(int i, int j){
   exit(0);
 }
 
-void Matriz::print(){
+Matriz Matriz::operator+(Matriz &m){
+  Matriz retorno(nlin, ncol);
+  for(int i=0; i<nlin*ncol; i++){
+    retorno.x[0][i] = x[0][i] + m.x[0][i];
+  }
+  return(retorno);
+}
+
+void Matriz::rand(void){
+  for(int i=0; i<nlin; i++){
+    for(int j=0; j<ncol; j++){
+      x[i][j] = ((float)std::rand())/RAND_MAX;
+    }
+  }
+}
+
+void Matriz::print(void){
   for(int i=0; i<nlin; i++){
     for(int j=0; j<ncol; j++){
       cout << x[i][j] << " ";

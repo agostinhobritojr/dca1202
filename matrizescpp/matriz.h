@@ -10,7 +10,9 @@ public:
   ~Matriz();
   Matriz(Matriz &m);
   float& operator() (int i, int j);
-  void print();
+  Matriz operator+ (Matriz &m);
+  void rand(void);
+  void print(void);
 };
 
 #endif // MATRIZ_H
