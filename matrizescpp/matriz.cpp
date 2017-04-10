@@ -31,6 +31,39 @@ Matriz::Matriz(int nlin, int ncol){
 
 }
 
+Matriz::~Matriz(){
+  if (x != NULL){
+    delete [] x[0];
+    delete [] x;
+  }
+}
+
+Matriz::Matriz(Matriz &m){
+  nlin = m.nlin;
+  ncol = m.ncol;
+  if(nlin == 0 || ncol == 0){
+    x = NULL;
+    return;
+  }
+  x = new float[nlin];
+  if(x == NULL){
+    exit(0);
+  }
+  x[0] = new float[nlin*ncol];
+  if(x[0] == NULL){
+    exit(0);
+  }
+  for(int i=1; i<nlin; i++){
+    x[i] = x[i-1] + ncol;
+  }
+  // copia a matriz
+  for(int i=0; i<nlin*ncol; i++){
+    x[0][i] = m.x[0][i];
+  }
+}
+
+
+
 float& Matriz::operator()(int i, int j){
   if(i>=0 && i<nlin && j>=0 && j<ncol){
     return(x[i][j]);
