@@ -5,17 +5,19 @@
 using namespace std;
 
 int main(){
-  Matriz A(3,3), B(3,3), C;
+  Matriz A(3,3), B(3,3), C, D;
   A.rand();
   B.rand();
-  C = A+B;
-
-  A.print();
+  D = C=A+B;
+  A.print(); cout << endl;
+  B.print(); cout << endl;
+  C.print(); cout << endl;
+  D.print(); cout << endl;
 //  A(1,1) = 4;
 //  cout << endl;
-  B.print();
+//  B.print();
 
-  C.print();
+//  C.print();
   return 0;
 }
 

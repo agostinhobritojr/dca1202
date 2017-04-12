@@ -73,12 +73,52 @@ float& Matriz::operator()(int i, int j){
   exit(0);
 }
 
-Matriz Matriz::operator+(Matriz &m){
+Matriz Matriz::operator+(const Matriz &m){
   Matriz retorno(nlin, ncol);
   for(int i=0; i<nlin*ncol; i++){
     retorno.x[0][i] = x[0][i] + m.x[0][i];
   }
   return(retorno);
+}
+
+Matriz Matriz::operator=(const Matriz &m){
+  // teste se o objeto repassado eh o mesmo
+  // que executa o metodo
+  if( this == &m){
+    return(*this);
+    // return(m);
+  }
+  // apenas copia os valores se as matrizes
+  // tem o mesmo tamanho
+  if(nlin == m.nlin && ncol == m.ncol){
+    for(int i=0; i<nlin*ncol; i++){
+      x[0][i] = m.x[0][i];
+    }
+    return(*this);
+  }
+
+  if(x != NULL){
+    delete [] x[0];
+    delete [] x;
+  }
+  nlin = m.nlin;
+  ncol = m.ncol;
+  x = new float*[nlin];
+  if(x == NULL){
+    exit(0);
+  }
+  x[0] = new float[nlin*ncol];
+  if(x[0] == NULL){
+    exit(0);
+  }
+  for(int i=1; i<nlin; i++){
+    x[i] = x[i-1] + ncol;
+  }
+  // copia a matriz
+  for(int i=0; i<nlin*ncol; i++){
+    x[0][i] = m.x[0][i];
+  }
+  return(*this);
 }
 
 void Matriz::rand(void){
