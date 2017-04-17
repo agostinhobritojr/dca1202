@@ -138,6 +138,22 @@ void Matriz::print(void){
   }
 }
 
+Matriz Matriz::operator*(float a){
+  Matriz ret(nlin, ncol);
+  for(int i=0; i<nlin*ncol; i++){
+    ret.x[0][i] = a*x[0][i];
+  }
+  return(ret);
+}
+
+Matriz operator*(float a, const Matriz &m){
+  Matriz ret(m.nlin, m.ncol);
+  for(int i=0; i<m.nlin*m.ncol; i++){
+    ret.x[0][i] = a*m.x[0][i];
+  }
+  return(ret);
+}
+
 
 
 

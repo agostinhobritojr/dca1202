@@ -14,6 +14,8 @@ public:
   Matriz operator= (const Matriz &m);
   void rand(void);
   void print(void);
+  friend Matriz operator*(float a, const Matriz &m);
+  Matriz operator*(float a);
 };
 
 #endif // MATRIZ_H
