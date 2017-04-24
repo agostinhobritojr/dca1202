@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-  Vetor<Matriz> v1, v4;
+  Vetor<int> v1, v4;
   Vetor<float> v2;
   Vetor<double> v3;
 

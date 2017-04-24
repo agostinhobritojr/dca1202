@@ -14,7 +14,8 @@ int main(){
   B.print(); cout << endl;
   C.print(); cout << endl;
 
-  //  A(1,1) = 4;
+  A(1,1) = 4;
+  cin >> A;
   //  cout << endl;
   //  B.print();
 
