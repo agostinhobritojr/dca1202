@@ -14,26 +14,31 @@ The \hyperlink{class_matriz}{Matriz} class serve para realizar operacoes matrici
 \item 
 \hyperlink{class_matriz_a8f78d455cb7f0fc51b7f216cd08c67de}{Matriz} (int nlin=0, int ncol=0)
 \begin{DoxyCompactList}\small\item\em \hyperlink{class_matriz}{Matriz} eh o construtor da classe. \end{DoxyCompactList}\item 
-\hyperlink{class_matriz_a2092b7a289ecec369e1da407d5839f5a}{$\sim$\+Matriz} ()
-\item 
-\hyperlink{class_matriz_a8f3e37e196821d75d8043339fec10792}{Matriz} (\hyperlink{class_matriz}{Matriz} \&m)
+{\bfseries Matriz} (\hyperlink{class_matriz}{Matriz} \&m)\hypertarget{class_matriz_a8f3e37e196821d75d8043339fec10792}{}\label{class_matriz_a8f3e37e196821d75d8043339fec10792}
+
 \item 
 float \& \hyperlink{class_matriz_a7a84e7fb199e8f55681ac1b594be7ee4}{operator()} (int i, int j)
+\begin{DoxyCompactList}\small\item\em operator () serve para recuperar e atribuir o elemento \end{DoxyCompactList}\item 
+\hyperlink{class_matriz}{Matriz} {\bfseries operator+} (const \hyperlink{class_matriz}{Matriz} \&m)\hypertarget{class_matriz_a64b453c6c27e6189ef8661ab3d242b16}{}\label{class_matriz_a64b453c6c27e6189ef8661ab3d242b16}
+
 \item 
-\hyperlink{class_matriz}{Matriz} \hyperlink{class_matriz_a64b453c6c27e6189ef8661ab3d242b16}{operator+} (const \hyperlink{class_matriz}{Matriz} \&m)
+\hyperlink{class_matriz}{Matriz} {\bfseries operator=} (const \hyperlink{class_matriz}{Matriz} \&m)\hypertarget{class_matriz_ae31f04bcc48d4d514c025368b392a7b8}{}\label{class_matriz_ae31f04bcc48d4d514c025368b392a7b8}
+
 \item 
-\hyperlink{class_matriz}{Matriz} \hyperlink{class_matriz_ae31f04bcc48d4d514c025368b392a7b8}{operator=} (const \hyperlink{class_matriz}{Matriz} \&m)
+void {\bfseries rand} (void)\hypertarget{class_matriz_a25edbf11a63be864d4beb610c621e410}{}\label{class_matriz_a25edbf11a63be864d4beb610c621e410}
+
 \item 
-void \hyperlink{class_matriz_a25edbf11a63be864d4beb610c621e410}{rand} (void)
+void {\bfseries print} (void)\hypertarget{class_matriz_a9928f485abd0f424546a0c80caf18372}{}\label{class_matriz_a9928f485abd0f424546a0c80caf18372}
+
 \item 
-void \hyperlink{class_matriz_a9928f485abd0f424546a0c80caf18372}{print} (void)
-\item 
-\hyperlink{class_matriz}{Matriz} \hyperlink{class_matriz_a062fee2a1bbf0478dcc7d2d16a33f813}{operator$\ast$} (float a)
+\hyperlink{class_matriz}{Matriz} {\bfseries operator$\ast$} (float a)\hypertarget{class_matriz_a062fee2a1bbf0478dcc7d2d16a33f813}{}\label{class_matriz_a062fee2a1bbf0478dcc7d2d16a33f813}
+
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_matriz}{Matriz} \hyperlink{class_matriz_a909d6a39e8b3be2ae33e3b9209c1b7bf}{operator$\ast$} (float a, const \hyperlink{class_matriz}{Matriz} \&m)
+\hyperlink{class_matriz}{Matriz} {\bfseries operator$\ast$} (float a, const \hyperlink{class_matriz}{Matriz} \&m)\hypertarget{class_matriz_a909d6a39e8b3be2ae33e3b9209c1b7bf}{}\label{class_matriz_a909d6a39e8b3be2ae33e3b9209c1b7bf}
+
 \end{DoxyCompactItemize}
 
 
@@ -66,21 +71,7 @@ O construtor da classe cria uma matriz com nlin x ncol elementos
 \begin{DoxyEnumerate}
 \item alo  
 \item maria  
-\end{DoxyEnumerate}\index{Matriz@{Matriz}!````~Matriz@{$\sim$\+Matriz}}
-\index{````~Matriz@{$\sim$\+Matriz}!Matriz@{Matriz}}
-\subsubsection[{\texorpdfstring{$\sim$\+Matriz()}{~Matriz()}}]{\setlength{\rightskip}{0pt plus 5cm}Matriz\+::$\sim$\+Matriz (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{class_matriz_a2092b7a289ecec369e1da407d5839f5a}{}\label{class_matriz_a2092b7a289ecec369e1da407d5839f5a}
-\index{Matriz@{Matriz}!Matriz@{Matriz}}
-\index{Matriz@{Matriz}!Matriz@{Matriz}}
-\subsubsection[{\texorpdfstring{Matriz(\+Matriz \&m)}{Matriz(Matriz &m)}}]{\setlength{\rightskip}{0pt plus 5cm}Matriz\+::\+Matriz (
-\begin{DoxyParamCaption}
-\item[{{\bf Matriz} \&}]{m}
-\end{DoxyParamCaption}
-)}\hypertarget{class_matriz_a8f3e37e196821d75d8043339fec10792}{}\label{class_matriz_a8f3e37e196821d75d8043339fec10792}
-
+\end{DoxyEnumerate}
 
 \subsection{Member Function Documentation}
 \index{Matriz@{Matriz}!operator()@{operator()}}
@@ -91,55 +82,23 @@ O construtor da classe cria uma matriz com nlin x ncol elementos
 \item[{int}]{j}
 \end{DoxyParamCaption}
 )}\hypertarget{class_matriz_a7a84e7fb199e8f55681ac1b594be7ee4}{}\label{class_matriz_a7a84e7fb199e8f55681ac1b594be7ee4}
-\index{Matriz@{Matriz}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!Matriz@{Matriz}}
-\subsubsection[{\texorpdfstring{operator$\ast$(float a)}{operator*(float a)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matriz} Matriz\+::operator$\ast$ (
-\begin{DoxyParamCaption}
-\item[{float}]{a}
-\end{DoxyParamCaption}
-)}\hypertarget{class_matriz_a062fee2a1bbf0478dcc7d2d16a33f813}{}\label{class_matriz_a062fee2a1bbf0478dcc7d2d16a33f813}
-\index{Matriz@{Matriz}!operator+@{operator+}}
-\index{operator+@{operator+}!Matriz@{Matriz}}
-\subsubsection[{\texorpdfstring{operator+(const Matriz \&m)}{operator+(const Matriz &m)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matriz} Matriz\+::operator+ (
-\begin{DoxyParamCaption}
-\item[{const {\bf Matriz} \&}]{m}
-\end{DoxyParamCaption}
-)}\hypertarget{class_matriz_a64b453c6c27e6189ef8661ab3d242b16}{}\label{class_matriz_a64b453c6c27e6189ef8661ab3d242b16}
-\index{Matriz@{Matriz}!operator=@{operator=}}
-\index{operator=@{operator=}!Matriz@{Matriz}}
-\subsubsection[{\texorpdfstring{operator=(const Matriz \&m)}{operator=(const Matriz &m)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matriz} Matriz\+::operator= (
-\begin{DoxyParamCaption}
-\item[{const {\bf Matriz} \&}]{m}
-\end{DoxyParamCaption}
-)}\hypertarget{class_matriz_ae31f04bcc48d4d514c025368b392a7b8}{}\label{class_matriz_ae31f04bcc48d4d514c025368b392a7b8}
-\index{Matriz@{Matriz}!print@{print}}
-\index{print@{print}!Matriz@{Matriz}}
-\subsubsection[{\texorpdfstring{print(void)}{print(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Matriz\+::print (
-\begin{DoxyParamCaption}
-\item[{void}]{}
-\end{DoxyParamCaption}
-)}\hypertarget{class_matriz_a9928f485abd0f424546a0c80caf18372}{}\label{class_matriz_a9928f485abd0f424546a0c80caf18372}
-\index{Matriz@{Matriz}!rand@{rand}}
-\index{rand@{rand}!Matriz@{Matriz}}
-\subsubsection[{\texorpdfstring{rand(void)}{rand(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Matriz\+::rand (
-\begin{DoxyParamCaption}
-\item[{void}]{}
-\end{DoxyParamCaption}
-)}\hypertarget{class_matriz_a25edbf11a63be864d4beb610c621e410}{}\label{class_matriz_a25edbf11a63be864d4beb610c621e410}
 
 
-\subsection{Friends And Related Function Documentation}
-\index{Matriz@{Matriz}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!Matriz@{Matriz}}
-\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matriz} operator$\ast$ (
-\begin{DoxyParamCaption}
-\item[{float}]{a, }
-\item[{const {\bf Matriz} \&}]{m}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{class_matriz_a909d6a39e8b3be2ae33e3b9209c1b7bf}{}\label{class_matriz_a909d6a39e8b3be2ae33e3b9209c1b7bf}
+operator () serve para recuperar e atribuir o elemento 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & indice da linha \\
+\hline
+{\em j} & indice da coluna \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+referencia para o elemento da matriz 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{matriz_8h}{matriz.\+h}\item 
-\hyperlink{matriz_8cpp}{matriz.\+cpp}\end{DoxyCompactItemize}
+matriz.\+h\item 
+matriz.\+cpp\end{DoxyCompactItemize}
