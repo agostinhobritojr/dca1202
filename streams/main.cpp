@@ -47,6 +47,7 @@ int main(){
   str2 = str;
   str3 = str2+str;
   cout << str3 << endl;
+  str3[0] = 'a';
   cout << str.c_str() << endl;
 
   cout << "str tem "<<str.size() << " caracteres\n";
