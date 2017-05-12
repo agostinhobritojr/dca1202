@@ -4,7 +4,22 @@
 
 using namespace std;
 
+class Vetor{
+  int x, y;
+public:
+  Vetor(int mx, int my){
+    x = mx; y = my;
+  }
+  friend ostream& operator<<(ostream& os, Vetor v);
+};
+
+ostream& operator<<(ostream& os, Vetor v){
+  os << "(" << v.x << "," << v.y << ")";
+}
+
 int main(){
+  Vetor v(3,4);
+  cout << "vetor = " << v << endl;
   ofstream saida; // arquivo de SAIDA
   ifstream entrada; // arquivo de ENTRADA
   string str, str2, str3, str4;
