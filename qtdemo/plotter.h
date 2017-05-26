@@ -16,6 +16,7 @@ public:
 signals:
 
 public slots:
+  void setAmplitude(int _amp);
 };
 
 #endif // PLOTTER_H

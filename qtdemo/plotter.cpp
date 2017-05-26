@@ -19,6 +19,17 @@ void Plotter::timerEvent(QTimerEvent *e){
   repaint();
 }
 
+void Plotter::setAmplitude(int _amp){
+  if(_amp > 99){
+    amp = 99;
+  }
+  if(amp < 0){
+    amp = 0;
+  }
+  amp = _amp/99.0;
+  repaint();
+}
+
 void Plotter::paintEvent(QPaintEvent *e){
   int x1, y1, x2, y2;
 

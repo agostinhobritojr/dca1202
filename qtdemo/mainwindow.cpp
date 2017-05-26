@@ -8,11 +8,11 @@ MainWindow::MainWindow(QWidget *parent) :
 {
   ui->setupUi(this);
 
-  connect(ui->pushButtonQuit,
+/*  connect(ui->pushButtonQuit,
           SIGNAL(clicked(bool)),
           this,
           SLOT(close()));
-
+*/
   connect(ui->actionQuit,
           SIGNAL(triggered(bool)),
           this,
@@ -22,6 +22,11 @@ MainWindow::MainWindow(QWidget *parent) :
           SIGNAL(clicked(bool)),
           this,
           SLOT(copiaTexto()));*/
+
+  connect(ui->horizontalSliderAmp,
+          SIGNAL(valueChanged(int)),
+          ui->widgetPlotter,
+          SLOT(setAmplitude(int)));
 }
 
 MainWindow::~MainWindow()
@@ -31,8 +36,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::copiaTexto(){
   QString texto;
-  texto = ui->lineEditTexto->text();
+/*  texto = ui->lineEditTexto->text();
   ui->textBrowserTexto->setPlainText(texto);
+  */
 }
 
 void MainWindow::mataTudo(){
