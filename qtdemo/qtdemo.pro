@@ -25,12 +25,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    plotter.cpp
+    plotter.cpp \
+    dialog.cpp
 
 HEADERS  += mainwindow.h \
-    plotter.h
+    plotter.h \
+    dialog.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    dialog.ui
 
 RESOURCES += \
     resources.qrc

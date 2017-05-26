@@ -136,6 +136,7 @@
     <property name="title">
      <string>&amp;Edit</string>
     </property>
+    <addaction name="actionPreferencias"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menu_Edit"/>
@@ -161,6 +162,11 @@
   <action name="actionAbrirArquivo">
    <property name="text">
     <string>AbrirArquivo</string>
+   </property>
+  </action>
+  <action name="actionPreferencias">
+   <property name="text">
+    <string>preferencias...</string>
    </property>
   </action>
  </widget>

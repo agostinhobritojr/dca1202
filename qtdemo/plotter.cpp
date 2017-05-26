@@ -12,10 +12,17 @@ Plotter::Plotter(QWidget *parent) :
   teta = 0.0;
   omega = 1;
   startTimer(10);
+  veloc = 0.0;
+  fundo.setRgb(255,255,0);
 }
 
 void Plotter::timerEvent(QTimerEvent *e){
-  teta = teta + 0.01;
+  teta = teta + veloc;
+  repaint();
+}
+
+void Plotter::setFundo(int r, int g, int b){
+  fundo.setRgb(r,g,b);
   repaint();
 }
 
@@ -27,6 +34,17 @@ void Plotter::setAmplitude(int _amp){
     amp = 0;
   }
   amp = _amp/99.0;
+  repaint();
+}
+
+void Plotter::setOmega(int _omega){
+  omega = _omega;
+  repaint();
+}
+
+void Plotter::setVelocidade(int _velocidade)
+{
+  veloc = _velocidade/100.0;
   repaint();
 }
 
@@ -53,7 +71,7 @@ void Plotter::paintEvent(QPaintEvent *e){
   p.setPen(pen);
 
   // define a cor do pincel
-  brush.setColor(QColor(255,255,0));
+  brush.setColor(fundo);
   brush.setStyle(Qt::SolidPattern);
 
   // informa oa painter qual o pincel a ser

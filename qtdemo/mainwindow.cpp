@@ -1,6 +1,11 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QString>
+#include <QDebug>
+#include <QMessageBox>
+#include <QColorDialog>
+
+#include "dialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
@@ -27,6 +32,22 @@ MainWindow::MainWindow(QWidget *parent) :
           SIGNAL(valueChanged(int)),
           ui->widgetPlotter,
           SLOT(setAmplitude(int)));
+
+  connect(ui->horizontalSliderOmega,
+          SIGNAL(valueChanged(int)),
+          ui->widgetPlotter,
+          SLOT(setOmega(int)));
+
+  connect(ui->horizontalSliderVeloc,
+          SIGNAL(valueChanged(int)),
+          ui->widgetPlotter,
+          SLOT(setVelocidade(int)));
+
+  // conecta a acao de preferencias
+  connect(ui->actionPreferencias,
+          SIGNAL(triggered(bool)),
+          this,
+          SLOT(definePreferencias()));
 }
 
 MainWindow::~MainWindow()
@@ -43,6 +64,33 @@ void MainWindow::copiaTexto(){
 
 void MainWindow::mataTudo(){
   close();
+}
+
+void MainWindow::definePreferencias(){
+  QMessageBox box;
+  QString str;
+  Dialog d;
+  d.exec();
+  int r, g, b;
+  r = d.getR();
+  g = d.getG();
+  b = d.getB();
+
+  str = "<b>R = </b>" + QString().setNum(r)+"<br>"+
+      "G = " + QString().setNum(g)+"<br>"+
+      "B = " + QString().setNum(b);
+/*  box.setText(str);
+  box.exec();
+*/
+  QColorDialog colordialog;
+  colordialog.exec();
+
+  r = colordialog.selectedColor().red();
+  g = colordialog.selectedColor().green();
+  b = colordialog.selectedColor().blue();
+  ui->widgetPlotter->setFundo(r,g,b);
+
+//  qDebug() << "alo!";
 }
 
 
