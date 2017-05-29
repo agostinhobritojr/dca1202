@@ -48,6 +48,11 @@ MainWindow::MainWindow(QWidget *parent) :
           SIGNAL(triggered(bool)),
           this,
           SLOT(definePreferencias()));
+
+  connect(ui->widgetPlotter,
+          SIGNAL(posicao(int,int)),
+          this,
+          SLOT(leposicao(int,int)));
 }
 
 MainWindow::~MainWindow()
@@ -90,7 +95,13 @@ void MainWindow::definePreferencias(){
   b = colordialog.selectedColor().blue();
   ui->widgetPlotter->setFundo(r,g,b);
 
-//  qDebug() << "alo!";
+  //  qDebug() << "alo!";
+}
+
+void MainWindow::leposicao(int x, int y)
+{
+  ui->lcdNumberX->display(x);
+  ui->lcdNumberY->display(y);
 }
 
 

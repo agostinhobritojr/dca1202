@@ -3,6 +3,8 @@
 #include <QPen>
 #include <QBrush>
 #include <cmath>
+#include <QDebug>
+#include <QMouseEvent>
 
 using namespace std;
 
@@ -14,11 +16,21 @@ Plotter::Plotter(QWidget *parent) :
   startTimer(10);
   veloc = 0.0;
   fundo.setRgb(255,255,0);
+  setMouseTracking(true);
 }
 
 void Plotter::timerEvent(QTimerEvent *e){
   teta = teta + veloc;
   repaint();
+}
+
+void Plotter::mouseMoveEvent(QMouseEvent *e){
+  int x, y;
+  x = e->x();
+  y = e->y();
+  // emite o sinal "posicao" com os valores
+  // de x e y
+  emit posicao(x,y);
 }
 
 void Plotter::setFundo(int r, int g, int b){

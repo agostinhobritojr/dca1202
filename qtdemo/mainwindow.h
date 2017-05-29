@@ -19,6 +19,7 @@ public slots:
   void copiaTexto();
   void mataTudo();
   void definePreferencias();
+  void leposicao(int x, int y);
 
 private:
   Ui::MainWindow *ui;

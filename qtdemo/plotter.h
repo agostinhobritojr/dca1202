@@ -15,9 +15,11 @@ public:
   explicit Plotter(QWidget *parent = 0);
   void paintEvent(QPaintEvent *e);
   void timerEvent(QTimerEvent *e);
+  void mouseMoveEvent(QMouseEvent *e);
   void setFundo(int r, int g, int b);
 
 signals:
+  void posicao(int, int);
 
 public slots:
   void setAmplitude(int _amp);
