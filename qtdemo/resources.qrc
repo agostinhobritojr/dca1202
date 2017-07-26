@@ -1,5 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file alias="skull">resources/skull.png</file>
-    </qresource>
-</RCC>
