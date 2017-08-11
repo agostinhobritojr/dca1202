@@ -3,6 +3,10 @@
 #include <time.h>
 #include <string.h>
 
+void func(int *a){
+  a[0] = 3;
+}
+
 int main(void){
   int *x, *z;
   int y[10];
@@ -15,6 +19,10 @@ int main(void){
   // e retorna um ponteiro para o inicio
   // do bloco de memoria alocado
   x = (int*) malloc(n * sizeof(int));
+
+  // passando um ponteiro para uma funcao
+  func(x);
+
   z = (int*) malloc(n * sizeof(int));
 
   printf("&y = %p\n", y);
