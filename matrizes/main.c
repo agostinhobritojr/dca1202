@@ -2,21 +2,21 @@
 
 int main(void){
   int **x, i;
-  int nl, nc; // numero de linhas e colunas
+  int nlin, ncol; // numero de linhas e colunas
 
-  nl = 3;
-  nc = 4;
+  nlin = 3;
+  ncol = 4;
 
   // aloca-se array auxiliar
-  x = (int**) malloc(nl * sizeof(int*));
+  x = (int**) malloc(nlin * sizeof(int*));
 
-  for(i=0; i<nl; i++){
+  for(i=0; i<nlin; i++){
     // aloca-se os arrays de cada linha
-    x[i] = (int*) malloc(nc * sizeof(int));
+    x[i] = (int*) malloc(ncol * sizeof(int));
   }
   x[2][2] = -3;
 
-  for(i=0; i<nl; i++){
+  for(i=0; i<nlin; i++){
     free(x[i]);
   }
   free(x);
