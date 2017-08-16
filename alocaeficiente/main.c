@@ -29,6 +29,8 @@ int main(void){
     x[0][i] = i+1;
   }
 
+  printf("dif = %d\n", (int)&x[0][1] - (int)&x[0][0]);
+
   // copia todo o bloco da matriz "x" para a
   // matriz "y"
   memcpy(y[0], x[0], nlin*ncol*sizeof(int));
