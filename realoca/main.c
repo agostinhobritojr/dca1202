@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <malloc.h>
 
 int* realoca(int *x, int atual, int novo){
   int *y, i;
@@ -7,6 +8,7 @@ int* realoca(int *x, int atual, int novo){
   }
   // aloca novo bloco
   y = (int*) malloc(novo * sizeof(int));
+  printf("tam = %d\n", malloc_usable_size(y));
   if(novo < atual){
     // copia o array
     for(i=0; i<novo; i++){
@@ -32,6 +34,7 @@ int main(void){
   int n=5, m=3;
 
   x = (int*) malloc(n * sizeof(int));
+
   for(i=0; i<n; i++){
     x[i] = i+1;
   }
