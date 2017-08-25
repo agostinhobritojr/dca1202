@@ -14,6 +14,10 @@ public:
   void setY(float _y);
   float getY(void);
   void print(void);
+  float norma();
+  float angulo();
+  Vetor soma(Vetor v2);
+  Vetor soma(float a);
 };
 
 #endif // VETOR_H
