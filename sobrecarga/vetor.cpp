@@ -40,6 +40,22 @@ Vetor Vetor::soma(Vetor v2){
   ret.y = y + v2.y;
   return ret;
 }
+
+Vetor Vetor::operator + (Vetor v2){
+  Vetor ret;
+  ret.x = x + v2.x;
+  ret.y = y + v2.y;
+  return ret;
+}
+
+Vetor Vetor::operator *(float a)
+{
+  Vetor ret;
+  ret.x = x * a;
+  ret.y = y * a;
+  return ret;
+}
+
 // sobrecarga de funcoes
 Vetor Vetor::soma(float a){
   Vetor ret;
@@ -61,3 +77,18 @@ Vetor Vetor::mult(float a){
   ret.y = y * a;
   return ret;
 }
+
+Vetor operator *(float a, Vetor v){
+  Vetor ret;
+  ret.x = v.x * a;
+  ret.y = v.y * a;
+  return ret;
+}
+
+
+
+
+
+
+
+

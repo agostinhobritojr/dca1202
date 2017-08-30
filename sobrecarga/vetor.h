@@ -17,10 +17,22 @@ public:
   float norma();
   float angulo();
   Vetor soma(Vetor v2);
+  Vetor operator + (Vetor v2);
+  Vetor operator * (float a);
   Vetor soma(float a);
   Vetor sub(Vetor v2);
   Vetor mult(float a);
+
+  // FUNCOES amigas da classe
+  //
+  // funcoes amigas podem acessar as variaveis
+  // e funcoes privadas sem passar por uma funcao
+  friend Vetor operator *(float a, Vetor v);
+
 };
 
+//Vetor operator *(float a, Vetor v);
+
 #endif // VETOR_H
+
 
