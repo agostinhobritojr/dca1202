@@ -2,9 +2,21 @@
 #include <iostream>
 #include <cstring>
 
-Equipamento::Equipamento()
-{
+using namespace std;
 
+Equipamento::Equipamento(){
+  cout << "chamando construtor equipamento\n";
+}
+
+Equipamento::Equipamento(int a){
+  cout << "chamando construtor equipamento"
+          " parametros\n";
+  cout << "a = " << a << endl;
+}
+
+Equipamento::~Equipamento()
+{
+  cout << "chamando destrutor equipamento\n";
 }
 
 void Equipamento::setNome(const char *_nome){
