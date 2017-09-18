@@ -17,8 +17,9 @@ public:
   int getNc();
   void print();
   float& operator() (int i, int j);
-  Matriz& operator= (Matriz &m);
- // Matriz operator+ (Matriz &m);
+  Matriz& operator= (const Matriz &m);
+  Matriz operator+ (Matriz &m);
+  void randomize();
 };
 
 #endif // MATRIZ_H

@@ -4,7 +4,7 @@
 using namespace std;
 
 int main(){
-  Matriz m(3,3), n(3,3), o, p(4,5), r;
+  Matriz m(3,3), n(3,3), o, p(4,5), r=m;
   cout << endl << endl;
   cout << p.getNc() << endl;
   cout << p.getNl() << endl;
@@ -16,6 +16,14 @@ int main(){
   m.print();
   o.print();
   r.print();
+  cout << endl << endl;
+  m.randomize();
+  n.randomize();
+  o = m+n;
+  m.print();
+  n.print();
+  o.print();
+
   cout << "Hello World!" << endl;
   return 0;
 }

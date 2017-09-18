@@ -103,7 +103,7 @@ float &Matriz::operator()(int i, int j){
   return x[i][j];
 }
 
-Matriz& Matriz::operator=(Matriz &m){
+Matriz& Matriz::operator=(const Matriz &m){
   // Matriz m;
   // m = m;
   if(&m == this){
@@ -146,12 +146,31 @@ Matriz& Matriz::operator=(Matriz &m){
   // neste ponto, as duas matrizes jah
   // terao exatamente o mesmo tamanho
 
-//  for(int i=0; i<nl*nc; i++){
-//    x[0][i] = m.x[0][i]
-//}
+  //  for(int i=0; i<nl*nc; i++){
+  //    x[0][i] = m.x[0][i]
+  //}
   memcpy(x[0], m.x[0], nl*nc*sizeof(float));
   return *this;
 }
+
+Matriz Matriz::operator+(Matriz &m){
+  Matriz ret(nl, nc);
+  // testes ficam por sua conta...
+  for(int i=0; i<nl*nc; i++){
+    ret.x[0][i] = x[0][i] + m.x[0][i];
+  }
+  return ret;
+}
+
+void Matriz::randomize(){
+  for(int i=0; i<nl*nc; i++){
+    x[0][i] = rand()%100;
+  }
+}
+
+
+
+
 
 
 
