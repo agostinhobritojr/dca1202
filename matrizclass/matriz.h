@@ -1,6 +1,9 @@
 #ifndef MATRIZ_H
 #define MATRIZ_H
 
+#include <iostream>
+using namespace std;
+
 class Matriz{
 private:
   // numero de linhas e colunas
@@ -20,6 +23,9 @@ public:
   Matriz& operator= (const Matriz &m);
   Matriz operator+ (Matriz &m);
   void randomize();
+  friend ostream& operator<< (ostream &os, Matriz &m);
+  friend istream& operator>> (istream &is, Matriz &m);
 };
+
 
 #endif // MATRIZ_H

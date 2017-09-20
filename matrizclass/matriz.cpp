@@ -168,7 +168,35 @@ void Matriz::randomize(){
   }
 }
 
+istream &operator>>(istream &is, Matriz &m){
+  is >> m.nl >> m.nc;
+  m.x = new float*[m.nl];
+  m.x[0] = new float[m.nl*m.nc];
+  for(int i=1; i<m.nl; i++){
+    m.x[i] = m.x[i-1] + m.nc;
+  }
+  for(int i=0; i<m.nl; i++){
+    for(int j=0; j<m.nc; j++){
+      is >> m.x[i][j];
+    }
+  }
+  return is;
+}
 
+ostream& operator<< (ostream &os, Matriz &m){
+  os << "[";
+  for(int i=0; i<m.nl; i++){
+    os << "[";
+    for(int j=0; j<m.nc; j++){
+      os << m.x[i][j] << " ";
+    }
+    os << "]";
+    if(i != m.nl-1)
+      os <<endl;
+  }
+  os << "]" << endl;
+  return(os);
+}
 
 
 
