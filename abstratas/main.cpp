@@ -10,6 +10,24 @@ using namespace std;
 
 int main(){
   vector <FiguraGeometrica*> figuras;
+  vector <FiguraGeometrica*>::iterator it;
+//  Circulo *c;
+//  c = new Circulo;
+//  figuras.push_back(c);
+  figuras.push_back(new Circulo);
+  figuras.push_back(new Circulo);
+  figuras.push_back(new Reta);
+  figuras.push_back(new Retangulo);
+  figuras.push_back(new Reta);
+
+  for(int i=0; i<figuras.size(); i++){
+    figuras[i]->draw();
+  }
+  cout << "--- usando iteradores--- \n";
+  for(it=figuras.begin(); it!=figuras.end(); it++){
+    (*it)->draw();
+  }
+
 
   FiguraGeometrica *pfig;
   Circulo circ, *pcirc;
