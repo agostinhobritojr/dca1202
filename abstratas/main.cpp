@@ -28,7 +28,6 @@ int main(){
     (*it)->draw();
   }
 
-
   FiguraGeometrica *pfig;
   Circulo circ, *pcirc;
   Retangulo ret;
