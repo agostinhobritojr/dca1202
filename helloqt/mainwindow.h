@@ -15,6 +15,10 @@ public:
   explicit MainWindow(QWidget *parent = 0);
   ~MainWindow();
 
+public slots:
+  void mataTudo(void);
+  void copiaTexto(void);
+
 private:
   Ui::MainWindow *ui;
 };
