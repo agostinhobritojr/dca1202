@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>374</width>
-    <height>453</height>
+    <width>416</width>
+    <height>485</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -95,19 +95,26 @@
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
+     <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="30,70">
       <item>
-       <widget class="QPlainTextEdit" name="plainTextEditEsq"/>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QPlainTextEdit" name="plainTextEditEsq"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButtonCopia">
+          <property name="text">
+           <string>&gt;&gt;&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="plainTextEditDir"/>
+        </item>
+       </layout>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButtonCopia">
-        <property name="text">
-         <string>&gt;&gt;&gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPlainTextEdit" name="plainTextEditDir"/>
+       <widget class="Plotter" name="widgetPlotter" native="true"/>
       </item>
      </layout>
     </item>
@@ -149,7 +156,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>374</width>
+     <width>416</width>
      <height>22</height>
     </rect>
    </property>
@@ -176,6 +183,14 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>Plotter</class>
+   <extends>QWidget</extends>
+   <header>plotter.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>
