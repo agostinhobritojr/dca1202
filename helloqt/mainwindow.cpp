@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <cstdlib>
+#include "meudialogo.h"
 
 using namespace std;
 
@@ -18,6 +19,10 @@ MainWindow::MainWindow(QWidget *parent) :
           SIGNAL(clicked(bool)),
           SLOT(copiaTexto()));
 
+  connect(ui->horizontalSliderVeloc,
+          SIGNAL(valueChanged(int)),
+          ui->widgetPlotter,
+          SLOT(mudaVelocidade(int)));
 }
 
 MainWindow::~MainWindow()
@@ -35,3 +40,14 @@ void MainWindow::copiaTexto()
   ui->plainTextEditDir->setPlainText(
         ui->plainTextEditEsq->toPlainText());
 }
+
+void MainWindow::abreDialogo()
+{
+  MeuDialogo d;
+  d.exec();
+}
+
+
+
+
+

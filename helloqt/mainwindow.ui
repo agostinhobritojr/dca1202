@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>416</width>
-    <height>485</height>
+    <width>735</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,6 +26,9 @@
       </item>
       <item row="0" column="1">
        <widget class="QSlider" name="horizontalSliderAmp">
+        <property name="value">
+         <number>99</number>
+        </property>
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
@@ -156,10 +159,17 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>416</width>
+     <width>735</width>
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionAbreDialogo"/>
+   </widget>
+   <addaction name="menuFile"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -180,7 +190,13 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionAbreDialogo"/>
   </widget>
+  <action name="actionAbreDialogo">
+   <property name="text">
+    <string>AbreDialogo</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
@@ -189,6 +205,10 @@
    <extends>QWidget</extends>
    <header>plotter.h</header>
    <container>1</container>
+   <slots>
+    <slot>mudaAmplitude(int)</slot>
+    <slot>mudaFrequencia(int)</slot>
+   </slots>
   </customwidget>
  </customwidgets>
  <resources/>
@@ -200,8 +220,8 @@
    <slot>mataTudo()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>342</x>
-     <y>336</y>
+     <x>117</x>
+     <y>460</y>
     </hint>
     <hint type="destinationlabel">
      <x>241</x>
@@ -217,11 +237,11 @@
    <hints>
     <hint type="sourcelabel">
      <x>237</x>
-     <y>59</y>
+     <y>74</y>
     </hint>
     <hint type="destinationlabel">
-     <x>301</x>
-     <y>50</y>
+     <x>675</x>
+     <y>71</y>
     </hint>
    </hints>
   </connection>
@@ -233,11 +253,11 @@
    <hints>
     <hint type="sourcelabel">
      <x>237</x>
-     <y>92</y>
+     <y>107</y>
     </hint>
     <hint type="destinationlabel">
-     <x>296</x>
-     <y>83</y>
+     <x>675</x>
+     <y>100</y>
     </hint>
    </hints>
   </connection>
@@ -249,16 +269,65 @@
    <hints>
     <hint type="sourcelabel">
      <x>207</x>
-     <y>121</y>
+     <y>136</y>
     </hint>
     <hint type="destinationlabel">
-     <x>298</x>
-     <y>116</y>
+     <x>675</x>
+     <y>129</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderAmp</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>widgetPlotter</receiver>
+   <slot>mudaAmplitude(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>293</x>
+     <y>75</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>441</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderFreq</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>widgetPlotter</receiver>
+   <slot>mudaFrequencia(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>389</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>175</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAbreDialogo</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>abreDialogo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>367</x>
+     <y>249</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
   <slot>mataTudo()</slot>
+  <slot>abreDialogo()</slot>
  </slots>
 </ui>
