@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>735</width>
+    <width>476</width>
     <height>500</height>
    </rect>
   </property>
@@ -107,7 +107,11 @@
         <item>
          <widget class="QPushButton" name="pushButtonCopia">
           <property name="text">
-           <string>&gt;&gt;&gt;</string>
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="resources.qrc">
+            <normaloff>:/resources/morre.png</normaloff>:/resources/morre.png</iconset>
           </property>
          </widget>
         </item>
@@ -159,7 +163,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>735</width>
+     <width>476</width>
      <height>22</height>
     </rect>
    </property>
@@ -168,6 +172,7 @@
      <string>File</string>
     </property>
     <addaction name="actionAbreDialogo"/>
+    <addaction name="actionQuit"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>
@@ -191,10 +196,20 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionAbreDialogo"/>
+   <addaction name="actionQuit"/>
   </widget>
   <action name="actionAbreDialogo">
    <property name="text">
     <string>AbreDialogo</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/resources/morre.png</normaloff>:/resources/morre.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quit</string>
    </property>
   </action>
  </widget>
@@ -211,7 +226,9 @@
    </slots>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>pushButtonDenovo</sender>
@@ -314,6 +331,22 @@
    <signal>triggered()</signal>
    <receiver>MainWindow</receiver>
    <slot>abreDialogo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>367</x>
+     <y>249</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionQuit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>

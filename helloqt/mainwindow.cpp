@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include <cstdlib>
 #include "meudialogo.h"
+#include <QMessageBox>
+#include <QString>
 
 using namespace std;
 
@@ -44,9 +46,28 @@ void MainWindow::copiaTexto()
 void MainWindow::abreDialogo()
 {
   MeuDialogo d;
-  int r;
+  QMessageBox box;
+  QString msg, s;
+  int r, g, b;
   //r =
-  d.exec();
+  if(d.exec() == QDialog::Accepted){
+    r = d.getR();
+    g = d.getG();
+    b = d.getB();
+    //    s = QString().setNum(r);
+    s = QString::number(r);
+    msg =
+        "<B>R =</b> "+QString::number(r)+"<br>"+
+        "<B>G =</b> "+QString::number(g)+"<br>"+
+        "<B>B =</b> "+QString::number(b)+"<br>";
+    box.setText(msg);
+    box.exec();
+  }
+  else{
+    msg = "Clicou cancel";
+    box.setText(msg);
+    box.exec();
+  }
 }
 
 

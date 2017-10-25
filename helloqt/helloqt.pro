@@ -36,3 +36,6 @@ HEADERS += \
 FORMS += \
         mainwindow.ui \
     meudialogo.ui
+
+RESOURCES += \
+    resources.qrc
