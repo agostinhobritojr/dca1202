@@ -14,6 +14,9 @@ class MeuDialogo : public QDialog
 public:
   explicit MeuDialogo(QWidget *parent = 0);
   ~MeuDialogo();
+  int getR();
+  int getG();
+  int getB();
 
 private:
   Ui::MeuDialogo *ui;

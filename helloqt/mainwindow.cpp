@@ -44,6 +44,8 @@ void MainWindow::copiaTexto()
 void MainWindow::abreDialogo()
 {
   MeuDialogo d;
+  int r;
+  //r =
   d.exec();
 }
 

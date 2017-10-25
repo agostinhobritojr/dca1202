@@ -12,3 +12,18 @@ MeuDialogo::~MeuDialogo()
 {
   delete ui;
 }
+
+int MeuDialogo::getR()
+{
+  return ui->spinBoxR->value();
+}
+
+int MeuDialogo::getG()
+{
+  return ui->spinBoxG->value();
+}
+
+int MeuDialogo::getB()
+{
+  return ui->spinBoxG->value();
+}
