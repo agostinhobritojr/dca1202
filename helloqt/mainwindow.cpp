@@ -25,6 +25,11 @@ MainWindow::MainWindow(QWidget *parent) :
           SIGNAL(valueChanged(int)),
           ui->widgetPlotter,
           SLOT(mudaVelocidade(int)));
+
+  connect(ui->widgetPlotter,
+          SIGNAL(mudouXY(int,int)),
+          this,
+          SLOT(trataXY(int,int)));
 }
 
 MainWindow::~MainWindow()
@@ -68,6 +73,12 @@ void MainWindow::abreDialogo()
     box.setText(msg);
     box.exec();
   }
+}
+
+void MainWindow::trataXY(int x, int y)
+{
+  ui->lcdNumberX->display(x);
+  ui->lcdNumberY->display(y);
 }
 
 

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>476</width>
+    <width>610</width>
     <height>500</height>
    </rect>
   </property>
@@ -135,6 +135,52 @@
        </widget>
       </item>
       <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>x</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="lcdNumberX"/>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>y</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="lcdNumberY"/>
+      </item>
+      <item>
        <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -163,7 +209,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>476</width>
+     <width>610</width>
      <height>22</height>
     </rect>
    </property>
@@ -221,6 +267,8 @@
    <header>plotter.h</header>
    <container>1</container>
    <slots>
+    <signal>mudouX(int)</signal>
+    <signal>mudouY(int)</signal>
     <slot>mudaAmplitude(int)</slot>
     <slot>mudaFrequencia(int)</slot>
    </slots>
@@ -253,12 +301,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>237</x>
-     <y>74</y>
+     <x>291</x>
+     <y>89</y>
     </hint>
     <hint type="destinationlabel">
-     <x>675</x>
-     <y>71</y>
+     <x>599</x>
+     <y>93</y>
     </hint>
    </hints>
   </connection>
@@ -273,8 +321,8 @@
      <y>107</y>
     </hint>
     <hint type="destinationlabel">
-     <x>675</x>
-     <y>100</y>
+     <x>599</x>
+     <y>122</y>
     </hint>
    </hints>
   </connection>
@@ -289,8 +337,8 @@
      <y>136</y>
     </hint>
     <hint type="destinationlabel">
-     <x>675</x>
-     <y>129</y>
+     <x>599</x>
+     <y>151</y>
     </hint>
    </hints>
   </connection>
@@ -355,6 +403,38 @@
     <hint type="destinationlabel">
      <x>367</x>
      <y>249</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>widgetPlotter</sender>
+   <signal>mudouX(int)</signal>
+   <receiver>lcdNumberX</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>280</x>
+     <y>371</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>237</x>
+     <y>454</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>widgetPlotter</sender>
+   <signal>mudouY(int)</signal>
+   <receiver>lcdNumberY</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>369</x>
+     <y>325</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>391</x>
+     <y>449</y>
     </hint>
    </hints>
   </connection>

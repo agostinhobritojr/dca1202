@@ -5,6 +5,7 @@
 #include <QColor>
 #include <cmath>
 #include <QDebug>
+#include <QMouseEvent>
 
 #define PI 3.1415
 
@@ -17,6 +18,7 @@ Plotter::Plotter(QWidget *parent) :
   freq = 1;
   angulo = 0;
   startTimer(10);
+  setMouseTracking(true);
 }
 
 void Plotter::paintEvent(QPaintEvent *e)
@@ -25,6 +27,8 @@ void Plotter::paintEvent(QPaintEvent *e)
   QBrush brush;
   QPen pen;
   int x1, x2, y1, y2;
+
+  painter.setRenderHint(QPainter::Antialiasing);
 
   brush.setColor(QColor(255,255,200));
   brush.setStyle(Qt::SolidPattern);
@@ -78,6 +82,20 @@ void Plotter::timerEvent(QTimerEvent *e)
     angulo = 0;
   }
   repaint();
+}
+
+void Plotter::mousePressEvent(QMouseEvent *event)
+{
+  qDebug() << event->x();
+  qDebug() << event->y();
+
+  emit mudouX(event->x());
+  emit mudouY(event->y());
+}
+
+void Plotter::mouseMoveEvent(QMouseEvent *event)
+{
+  emit mudouXY(event->x(), event->y());
 }
 
 void Plotter::mudaVelocidade(int vel)
