@@ -6,6 +6,7 @@ int main(){
   // x eh um ponteiro para ponteiro
   // para inteiro
   int **x;
+  int **y;
   int nl, nc, i, j;
   nl = 3; nc = 4;
   srand(time(0));
@@ -26,11 +27,25 @@ int main(){
     }
     printf("\n");
   }
+  y = (int**) malloc(nc*sizeof(int*));
+  for(i=0; i<nc; i++){
+    y[i] = (int*) malloc(nl*sizeof(int));
+  }
+  for(i=0; i<nc; i++){
+    for(j=0; j<nl; j++){
+      y[i][j] = x[j][i];
+    }
+  }
+
   for(i=0; i<nl; i++){
     free(x[i]);
   }
   free(x);
 
+  for(i=0; i<nc; i++){
+    free(y[i]);
+  }
+  free(y);
 
   return 0;
 }
