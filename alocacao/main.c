@@ -10,6 +10,9 @@ int main(){
   x = (int*) malloc(n*sizeof(int));
   y = (int*) malloc(n*sizeof(int));
 
+  printf("&x = %p\n", &x);
+  printf("x = %p\n", x);
+
   x[0]=5;  x[1]=3;  x[2]=-1;  x[3]=0;
 
   for(i=0; i<n; i++){
