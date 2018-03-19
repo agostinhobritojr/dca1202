@@ -4,6 +4,22 @@
 
 using namespace std;
 
+Vetor::Vetor(){
+  cout << "construtor padrao (default)\n";
+  x = y = 0;
+}
+
+Vetor::Vetor(float _x, float _y)
+{
+  cout << "contrutor com argumentos\n";
+  x = _x; y = _y;
+}
+
+Vetor::~Vetor()
+{
+  cout << "destrutor da classe\n";
+}
+
 void Vetor::setX(float _x){
   x = _x;
 }
@@ -48,6 +64,26 @@ void Vetor::negativo(int mode)
   }
 }
 
+Vetor Vetor::soma(Vetor v){
+  Vetor ret;
+  ret.x = x + v.x;
+  ret.y = y + v.y;
+  return (ret);
+}
+
+Vetor Vetor::subtracao(Vetor v){
+  Vetor ret;
+  ret.x = x - v.x;
+  ret.y = y - v.y;
+  return (ret);
+}
+
+Vetor Vetor::multiplicacao(float a){
+  Vetor ret;
+  ret.x = a*x;
+  ret.y = a*y;
+  return (ret);
+}
 
 
 

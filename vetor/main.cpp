@@ -4,10 +4,18 @@
 using namespace std;
 
 int main(){
-  Vetor v1;
+  Vetor v1(3,4), v2(-1,10), v3;
 
-  v1.setX(4);
-  v1.setY(3);
+  v1.print(); cout << endl;
+
+
+//  v2.setX(-1);
+//  v2.setY(10);
+
+  v3 = v1.soma(v2);
+  v3.print();
+  cout << endl;
+
   v1.print();
   v1.negativo();
   v1.print();

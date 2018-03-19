@@ -8,7 +8,15 @@ private:
   float x, y;
   // interfaces publicas
 public:
-  float z;
+  // construtor default
+  Vetor();
+
+  // construtor com argumentos
+  Vetor(float _x, float _y);
+
+  // destrutor
+  ~Vetor();
+
   void setX(float _x);
   float getX(void);
   void setY(float _y);
@@ -18,6 +26,11 @@ public:
   void print(void);
   void negativo(void);
   void negativo(int mode);
+  Vetor soma(Vetor v);
+  Vetor subtracao(Vetor v);
+  Vetor multiplicacao(float a);
+  float multiplicacao(Vetor v);
+//  Vetor3d produtoVetorial(Vetor v);
 
   /* erro!!! o codigo nao pode ser declarado fora de um
    * método
