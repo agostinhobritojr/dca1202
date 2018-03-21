@@ -9,10 +9,17 @@ private:
   // interfaces publicas
 public:
   // construtor default
-  Vetor();
+  //Vetor();
 
   // construtor com argumentos
-  Vetor(float _x, float _y);
+  //Vetor(float _x, float _y);
+
+  // construtor com argumentos e valores
+  // iniciais
+  Vetor(float _x=0, float _y=0);
+
+  // construtor de copia
+  Vetor(Vetor &v);
 
   // destrutor
   ~Vetor();

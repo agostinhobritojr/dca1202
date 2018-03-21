@@ -5,8 +5,12 @@ using namespace std;
 
 int main(){
   Vetor v1(3,4), v2(-1,10), v3;
+  Vetor v4=v1, v5(v4);
 
   v1.print(); cout << endl;
+  v4.print(); cout << endl;
+  v5.print(); cout << endl;
+
 
 
 //  v2.setX(-1);

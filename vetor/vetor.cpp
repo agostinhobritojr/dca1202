@@ -4,15 +4,21 @@
 
 using namespace std;
 
-Vetor::Vetor(){
+/*Vetor::Vetor(){
   cout << "construtor padrao (default)\n";
   x = y = 0;
 }
-
+*/
 Vetor::Vetor(float _x, float _y)
 {
   cout << "contrutor com argumentos\n";
   x = _x; y = _y;
+}
+
+Vetor::Vetor(Vetor &v){
+  cout << "construtor de copia\n";
+  x = v.x;
+  y = v.y;
 }
 
 Vetor::~Vetor()
