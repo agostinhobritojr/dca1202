@@ -11,19 +11,19 @@ using namespace std;
 */
 Vetor::Vetor(float _x, float _y)
 {
-  cout << "contrutor com argumentos\n";
+//  cout << "contrutor com argumentos\n";
   x = _x; y = _y;
 }
 
 Vetor::Vetor(Vetor &v){
-  cout << "construtor de copia\n";
+ // cout << "construtor de copia\n";
   x = v.x;
   y = v.y;
 }
 
 Vetor::~Vetor()
 {
-  cout << "destrutor da classe\n";
+ // cout << "destrutor da classe\n";
 }
 
 void Vetor::setX(float _x){
@@ -91,5 +91,52 @@ Vetor Vetor::multiplicacao(float a){
   return (ret);
 }
 
+Vetor Vetor::operator + (Vetor v){
+  Vetor ret;
+  ret.x = x+v.x;
+  ret.y = y+v.y;
+  return(ret);
+}
+
+Vetor Vetor::operator - (Vetor v){
+  Vetor ret;
+  ret.x = x-v.x;
+  ret.y = y-v.y;
+  return(ret);
+}
+
+Vetor Vetor::operator *(float a){
+  Vetor ret;
+  ret.x = a*x;
+  ret.y = a*y;
+  return (ret);
+}
+
+float Vetor::operator* (Vetor v){
+  return(x*v.x+y*v.y);
+}
+
+Vetor operator*(float a, Vetor v){
+  Vetor ret;
+  ret.x = a * v.x;
+  ret.y = a * v.y;
+//  ret.setX(a*v.getX());
+//  ret.setY(a*v.getY());
+  return(ret);
+}
+
+Vetor Vetor::operator++(){
+  Vetor ret;
+  x++; y++;
+  ret.x = x; ret.y = y;
+  return (ret);
+}
+
+Vetor Vetor::operator++(int a){
+  Vetor ret;
+  ret.x = x; ret.y = y;
+  x++; y++;
+  return (ret);
+}
 
 

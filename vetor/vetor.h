@@ -36,7 +36,19 @@ public:
   Vetor soma(Vetor v);
   Vetor subtracao(Vetor v);
   Vetor multiplicacao(float a);
-  float multiplicacao(Vetor v);
+  // sobrecarga do operador +
+  Vetor operator + (Vetor v);
+  Vetor operator - (Vetor v);
+  Vetor operator * (float a);
+  float operator * (Vetor v);
+
+  Vetor operator++();
+  Vetor operator++(int);
+
+  // declarando uma funcao amiga da
+  // classe Vetor
+  friend Vetor operator*(float a, Vetor v);
+
 //  Vetor3d produtoVetorial(Vetor v);
 
   /* erro!!! o codigo nao pode ser declarado fora de um
@@ -46,5 +58,11 @@ public:
   }
   */
 }; // <======= ATENCAO AO ";"
+
+Vetor operator*(float a, Vetor v);
+
+
+
+
 
 #endif // VETOR_H
