@@ -4,7 +4,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += main.cpp \
-    colors.cpp
+    veiculo.cpp
 
 HEADERS += \
-    colors.h
+    veiculo.h

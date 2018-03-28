@@ -42,7 +42,14 @@ public:
   Vetor operator * (float a);
   float operator * (Vetor v);
 
+  // operador de incremento PRE-FIXADO
+  // primeiro incrementa para depois
+  // atribuir
   Vetor operator++();
+
+  // operador de incremento POS-FIXADO
+  // guarda o ultimo valor para ser
+  // devolvido e soh entao incrementa
   Vetor operator++(int);
 
   // declarando uma funcao amiga da
