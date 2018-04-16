@@ -4,13 +4,20 @@
 #include <cmath>
 #include <iostream>
 
+template <class T>
+class Vetor;
+
 using namespace std;
+
+template<class T>
+Vetor<T> operator*(float a, Vetor<T> v);
 
 template <class T>
 class Vetor{
 private:
   T x, y;
 public:
+  Vetor();
   Vetor(T _x, T _y);
 /*  Vetor(Vetor &v);
   ~Vetor();
@@ -37,19 +44,21 @@ public:
 
   Vetor operator++();
   Vetor operator++(int);
-  friend Vetor operator*(float a, Vetor v);
   */
+  friend Vetor<T> operator*(float a, Vetor<T> v);
 };
-/*
-Vetor operator*(float a, Vetor v);
-*/
 
-
-/*Vetor::Vetor(){
-  cout << "construtor padrao (default)\n";
-  x = y = 0;
+template<class T>
+Vetor<T> operator*(float a, Vetor<T> v){
+  Vetor<T> ret;
+  ret.x = a * v.x;
+  ret.y = a * v.y;
+  return(ret);
 }
-*/
+
+template <class T>
+Vetor<T>::Vetor(){
+}
 
 template<class T>
 Vetor<T>::Vetor(T _x, T _y){
@@ -137,7 +146,7 @@ Vetor Vetor::multiplicacao(float a){
 */
 template <class T>
 Vetor<T> Vetor<T>::operator + (Vetor<T> v){
-  Vetor<T> ret(0,0);
+  Vetor<T> ret;
   ret.x = x+v.x;
   ret.y = y+v.y;
   return(ret);
@@ -159,15 +168,6 @@ Vetor Vetor::operator *(float a){
 
 float Vetor::operator* (Vetor v){
   return(x*v.x+y*v.y);
-}
-
-Vetor operator*(float a, Vetor v){
-  Vetor ret;
-  ret.x = a * v.x;
-  ret.y = a * v.y;
-//  ret.setX(a*v.getX());
-//  ret.setY(a*v.getY());
-  return(ret);
 }
 
 Vetor Vetor::operator++(){

@@ -12,5 +12,6 @@ int main(){
   cout << v2.getX() << endl;
   v4 = v2+v3;
   cout << v4.getX() << endl;
+  v4 = 4.0*v3;
   return 0;
 }
