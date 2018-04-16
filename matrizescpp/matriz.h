@@ -2,10 +2,12 @@
 #define MATRIZ_H
 
 
-class Matriz
-{
+class Matriz{
+  // no de linhas e colunas da matriz
+  int nl, nc;
+  float** x;
 public:
-  Matriz();
+  Matriz(int _nl, int _nc);
 };
 
 #endif // MATRIZ_H
