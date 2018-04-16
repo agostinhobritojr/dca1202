@@ -8,6 +8,10 @@ class Matriz{
   float** x;
 public:
   Matriz(int _nl, int _nc);
+  ~Matriz();
+  float& operator()(int i, int j);
+  void random();
+  void print();
 };
 
 #endif // MATRIZ_H
