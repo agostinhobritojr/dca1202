@@ -1,6 +1,7 @@
 #include "matriz.h"
 #include <iostream>
 #include <cstdlib>
+#include <cstring>
 
 using namespace std;
 
@@ -40,6 +41,66 @@ Matriz::~Matriz(){
   if(x != nullptr){
     delete [] x[0];
     delete [] x;
+  }
+}
+
+void Matriz::operator=(Matriz &m)
+{
+  // Matriz A(3,3), B(5,4), C;
+  // Matriz D(3,3), E;
+  //
+  // 1: testa se o objeto que executa
+  // o metodo eh o mesmo passado como
+  // parametro
+  // A = A
+  if(this == &m){
+    return;
+  }
+  // 2: matrizes de mesmo tamanho mas
+  // com possiveis valores diferentes
+  // D = A;
+  if(nl == m.nl && nc == m.nc){
+    if(nl != 0 & nc != 0){
+      memcpy(x[0], m.x[0], nl*nc*sizeof(float));
+    }
+    return;
+  }
+  // 3: matrizes tem tamanhos diferentes
+  // - liberar memoria antiga
+  // - alocar nova memoria
+  // - copiar valores
+  if(nl != m.nl || nc != m.nc){
+    // if(nl !=0 && nc != 0){
+    if( x != nullptr){
+      delete [] x[0];
+      delete [] x;
+    }
+    // copia os tamanhos
+    nl = m.nl; nc = m.nc;
+    // 4: matriz atribuida tem tamanho nulo
+    // A = C;
+    if(nl == 0 || nc == 0){
+      // grava o endereco nulo para lembrar
+      // que nao ha memoria associada com
+      // o x
+      x = nullptr;
+      return;
+    }
+    // aloca a memoria
+    // identico ao construtor
+    x = new float*[nl];
+    if(x == nullptr){ exit(0);}
+    x[0] = new float[nl*nc];
+    if(x[0] == nullptr){ exit(0);}
+    for(int i=1; i<nl; i++){
+      x[i] = x[i-1] + nc;
+    }
+    // copia a matriz
+    // 5: tambem contemplada (matriz nao possui
+    // valores alocados mas recebe matriz com
+    // tamanho diferente de zero
+    // C = A;
+    memcpy(x[0], m.x[0], nl*nc*sizeof(float));
   }
 }
 

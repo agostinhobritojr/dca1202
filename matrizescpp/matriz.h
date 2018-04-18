@@ -7,8 +7,10 @@ class Matriz{
   int nl, nc;
   float** x;
 public:
-  Matriz(int _nl, int _nc);
+  Matriz(int _nl=0, int _nc=0);
   ~Matriz();
+  void operator=(Matriz& m);
+
   float& operator()(int i, int j);
   void random();
   void print();
