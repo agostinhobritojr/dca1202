@@ -44,6 +44,24 @@ Matriz::~Matriz(){
   }
 }
 
+Matriz::Matriz(Matriz &m){
+  nl = m.nl; nc = m.nc;
+  x = nullptr;
+  if(nl == 0 || nc == 0){
+    return;
+  }
+  // aloca array auxiliar
+  x = new float*[nl];
+  if(x == nullptr){ exit(0); }
+
+  x[0] = new float[nl*nc];
+  if(x[0] == nullptr){ exit(0); }
+  for(int i=1; i<nl; i++){
+    x[i] = x[i-1] + nc;
+  }
+  memcpy(x[0], m.x[0], nl*nc*sizeof(float));
+}
+
 void Matriz::operator=(Matriz &m)
 {
   // Matriz A(3,3), B(5,4), C;
@@ -101,6 +119,21 @@ void Matriz::operator=(Matriz &m)
     // tamanho diferente de zero
     // C = A;
     memcpy(x[0], m.x[0], nl*nc*sizeof(float));
+  }
+}
+
+Matriz Matriz::operator+(Matriz &m)
+{
+  if(nl == m.nl && nc == m.nc){
+    Matriz ret(nl, nc);
+
+    for(int i=0; i<nl*nc; i++){
+      ret.x[0][i] = x[0][i]+m.x[0][i];
+    }
+    return ret;
+  }
+  else{
+    exit(0);
   }
 }
 
