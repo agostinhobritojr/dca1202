@@ -62,7 +62,7 @@ Matriz::Matriz(Matriz &m){
   memcpy(x[0], m.x[0], nl*nc*sizeof(float));
 }
 
-void Matriz::operator=(Matriz &m)
+Matriz Matriz::operator=(const Matriz &m)
 {
   // Matriz A(3,3), B(5,4), C;
   // Matriz D(3,3), E;
@@ -72,7 +72,11 @@ void Matriz::operator=(Matriz &m)
   // parametro
   // A = A
   if(this == &m){
-    return;
+    // o ponteiro this aponta para o
+    // proprio objeto e o conteudo do
+    // que estah nesse endereco eh
+    // o proprio objeto
+    return *this;
   }
   // 2: matrizes de mesmo tamanho mas
   // com possiveis valores diferentes
@@ -81,7 +85,7 @@ void Matriz::operator=(Matriz &m)
     if(nl != 0 & nc != 0){
       memcpy(x[0], m.x[0], nl*nc*sizeof(float));
     }
-    return;
+    return *this;
   }
   // 3: matrizes tem tamanhos diferentes
   // - liberar memoria antiga
@@ -102,7 +106,7 @@ void Matriz::operator=(Matriz &m)
       // que nao ha memoria associada com
       // o x
       x = nullptr;
-      return;
+      return *this;
     }
     // aloca a memoria
     // identico ao construtor
@@ -119,6 +123,7 @@ void Matriz::operator=(Matriz &m)
     // tamanho diferente de zero
     // C = A;
     memcpy(x[0], m.x[0], nl*nc*sizeof(float));
+    return *this;
   }
 }
 

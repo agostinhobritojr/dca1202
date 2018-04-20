@@ -8,8 +8,12 @@ int main()
   Matriz B(3,3), F(3,3), C(5,6), D;
   B.random();
   F.random();
-  D = B+F;
-  D.print();
+  B.print(); cout << endl;
+  F.print(); cout << endl;
+  C = D = B+F;
+  C.print();
+  cout << endl << endl;
+
   Matriz E=B;
   B(0,0) = -1;
   B = B; // 1

@@ -1,0 +1,124 @@
+\hypertarget{class_matriz}{}\section{Matriz Class Reference}
+\label{class_matriz}\index{Matriz@{Matriz}}
+
+
+The \hyperlink{class_matriz}{Matriz} class serve para realizar operacoes matematicas entre matrizes de dados do tipo float.  
+
+
+
+
+{\ttfamily \#include $<$matriz.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_matriz_a18222b86b1a474efd88b618aaa956ea3}{Matriz} (int \+\_\+nl=0, int \+\_\+nc=0)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_matriz}{Matriz} eh o construtor da classe. \end{DoxyCompactList}\item 
+\hyperlink{class_matriz_a2092b7a289ecec369e1da407d5839f5a}{$\sim$\+Matriz} ()
+\item 
+\hyperlink{class_matriz_a8f3e37e196821d75d8043339fec10792}{Matriz} (\hyperlink{class_matriz}{Matriz} \&m)
+\item 
+\hyperlink{class_matriz}{Matriz} \hyperlink{class_matriz_ae31f04bcc48d4d514c025368b392a7b8}{operator=} (const \hyperlink{class_matriz}{Matriz} \&m)
+\begin{DoxyCompactList}\small\item\em operator = copia o estado da matriz fornecida para o objeto atual \end{DoxyCompactList}\item 
+\hyperlink{class_matriz}{Matriz} \hyperlink{class_matriz_a101ba2a6272922ce7599bc05736186c8}{operator+} (\hyperlink{class_matriz}{Matriz} \&m)
+\item 
+float \& \hyperlink{class_matriz_a7a84e7fb199e8f55681ac1b594be7ee4}{operator()} (int i, int j)
+\item 
+void \hyperlink{class_matriz_ae4ae38c97dcbedf305850dbce7275506}{random} ()
+\item 
+void \hyperlink{class_matriz_af8987741da4cabe0aa054f2e8b077a97}{print} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_matriz}{Matriz} class serve para realizar operacoes matematicas entre matrizes de dados do tipo float. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_matriz_a18222b86b1a474efd88b618aaa956ea3}\label{class_matriz_a18222b86b1a474efd88b618aaa956ea3}} 
+\index{Matriz@{Matriz}!Matriz@{Matriz}}
+\index{Matriz@{Matriz}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{Matriz()}{Matriz()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Matriz\+::\+Matriz (\begin{DoxyParamCaption}\item[{int}]{\+\_\+nl = {\ttfamily 0},  }\item[{int}]{\+\_\+nc = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_matriz}{Matriz} eh o construtor da classe. 
+
+Ele realiza alocacao dinamica de um array bidimensional que armazena a matriz a ser processada 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+nl} & eh a quantidade de linhas que a matriz terá \\
+\hline
+{\em \+\_\+nc} & é a quantidade de colunas 
+\begin{DoxyEnumerate}
+\item Se \+\_\+nl ou \+\_\+nc iguais a zero a matriz terá todas as dimensoes definidas como zero 
+\item Se as dimensoes forem negativas, o programa será assassinado  
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_matriz_a2092b7a289ecec369e1da407d5839f5a}\label{class_matriz_a2092b7a289ecec369e1da407d5839f5a}} 
+\index{Matriz@{Matriz}!````~Matriz@{$\sim$\+Matriz}}
+\index{````~Matriz@{$\sim$\+Matriz}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{$\sim$\+Matriz()}{~Matriz()}}
+{\footnotesize\ttfamily Matriz\+::$\sim$\+Matriz (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_matriz_a8f3e37e196821d75d8043339fec10792}\label{class_matriz_a8f3e37e196821d75d8043339fec10792}} 
+\index{Matriz@{Matriz}!Matriz@{Matriz}}
+\index{Matriz@{Matriz}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{Matriz()}{Matriz()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Matriz\+::\+Matriz (\begin{DoxyParamCaption}\item[{\hyperlink{class_matriz}{Matriz} \&}]{m }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_matriz_a7a84e7fb199e8f55681ac1b594be7ee4}\label{class_matriz_a7a84e7fb199e8f55681ac1b594be7ee4}} 
+\index{Matriz@{Matriz}!operator()@{operator()}}
+\index{operator()@{operator()}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily float \& Matriz\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_matriz_a101ba2a6272922ce7599bc05736186c8}\label{class_matriz_a101ba2a6272922ce7599bc05736186c8}} 
+\index{Matriz@{Matriz}!operator+@{operator+}}
+\index{operator+@{operator+}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \hyperlink{class_matriz}{Matriz} Matriz\+::operator+ (\begin{DoxyParamCaption}\item[{\hyperlink{class_matriz}{Matriz} \&}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_matriz_ae31f04bcc48d4d514c025368b392a7b8}\label{class_matriz_ae31f04bcc48d4d514c025368b392a7b8}} 
+\index{Matriz@{Matriz}!operator=@{operator=}}
+\index{operator=@{operator=}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{class_matriz}{Matriz} Matriz\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_matriz}{Matriz} \&}]{m }\end{DoxyParamCaption})}
+
+
+
+operator = copia o estado da matriz fornecida para o objeto atual 
+
+processos de alocação dinâmica são usados para criar uma matriz com as mesmas dimensões da matriz fornecida e então essa matriz é copiada para o objeto atual.
+
+\[ \int_a^b f(x) dx \]
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & é a matriz cujo estado será copiado\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uma matriz que poderá ser usada em um processo de atribuiçao de valores encadeados 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_matriz_af8987741da4cabe0aa054f2e8b077a97}\label{class_matriz_af8987741da4cabe0aa054f2e8b077a97}} 
+\index{Matriz@{Matriz}!print@{print}}
+\index{print@{print}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Matriz\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_matriz_ae4ae38c97dcbedf305850dbce7275506}\label{class_matriz_ae4ae38c97dcbedf305850dbce7275506}} 
+\index{Matriz@{Matriz}!random@{random}}
+\index{random@{random}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{random()}{random()}}
+{\footnotesize\ttfamily void Matriz\+::random (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{matriz_8h}{matriz.\+h}\item 
+\hyperlink{matriz_8cpp}{matriz.\+cpp}\end{DoxyCompactItemize}

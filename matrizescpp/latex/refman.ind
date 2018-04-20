@@ -1,0 +1,42 @@
+\begin{theindex}
+
+  \item {$\sim$\+Matriz}
+    \subitem {Matriz}, \hyperpage{6}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.\+cpp}, \hyperpage{9}
+  \item {main.\+cpp}, \hyperpage{9}
+    \subitem {main}, \hyperpage{9}
+  \item {Matriz}, \hyperpage{5}
+    \subitem {$\sim$\+Matriz}, \hyperpage{6}
+    \subitem {Matriz}, \hyperpage{5, 6}
+    \subitem {operator()}, \hyperpage{6}
+    \subitem {operator+}, \hyperpage{6}
+    \subitem {operator=}, \hyperpage{6}
+    \subitem {print}, \hyperpage{7}
+    \subitem {random}, \hyperpage{7}
+  \item {matriz.\+cpp}, \hyperpage{9}
+  \item {matriz.\+h}, \hyperpage{9}
+
+  \indexspace
+
+  \item {operator()}
+    \subitem {Matriz}, \hyperpage{6}
+  \item {operator+}
+    \subitem {Matriz}, \hyperpage{6}
+  \item {operator=}
+    \subitem {Matriz}, \hyperpage{6}
+
+  \indexspace
+
+  \item {print}
+    \subitem {Matriz}, \hyperpage{7}
+
+  \indexspace
+
+  \item {random}
+    \subitem {Matriz}, \hyperpage{7}
+
+\end{theindex}
