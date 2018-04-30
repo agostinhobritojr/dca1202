@@ -24,7 +24,9 @@ int main(){
   // array
   vi = find(v.begin(), v.end(), 7);
   cout << "*vi = " << *vi << endl;
-  v.erase(vi);
+  if(vi != v.end()){
+    v.erase(vi);
+  }
   for(ri = v.rbegin(); ri != v.rend(); ri++){
     cout << *ri << ",";
   }
