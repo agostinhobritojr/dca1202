@@ -13,7 +13,7 @@ int main(){
     exit(0);
   }
   fin >> x;
-  cout << "x = " << x << endl;
+  cout << "x = " << x << endl;  
 
   fout.open("/home/ambj/nome.txt");
   if(!fout.is_open()){
