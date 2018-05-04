@@ -8,6 +8,7 @@ using namespace std;
 int main(){
   ifstream fin;
   ofstream fout;
+//  Screen tela;
   string s;
   fin.open("/home/ambj/workspace/dca1202/fluxoliterais/figura.txt");
 
@@ -23,6 +24,8 @@ int main(){
         sstream >> x >> y;
         cout << "nl = " << x << endl;
         cout << "nc = " << y << endl;
+//        tela.setSize(x, y);
+
       }
       cout << cmd << endl;
 //      cout << s << endl;
