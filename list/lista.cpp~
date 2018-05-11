@@ -1,0 +1,13 @@
+#include <iostream>
+
+int main(void){
+  list <int> lista;
+  list <int>::iterator li;
+  lista.push_back(3);
+  lista.push_back(4);
+  lista.push_back(-1);
+  for(li = lista.begin(); li!=lista.end(); li++){
+	cout << "item = " << *li << endl;
+  }
+  
+}
