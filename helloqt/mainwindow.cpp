@@ -11,6 +11,12 @@ MainWindow::MainWindow(QWidget *parent) :
           SIGNAL(clicked(bool)),
           this,
           SLOT(finaliza()));
+
+ /* connect(ui->actionSair,
+          SIGNAL(triggered(bool)),
+          this,
+          SLOT(finaliza()));
+          */
 }
 
 MainWindow::~MainWindow()
@@ -22,3 +28,17 @@ void MainWindow::finaliza()
 {
   exit(0);
 }
+
+void MainWindow::copiaTexto()
+{
+  ui->lineEditDst->setText(
+        ui->lineEditSrc->text());
+}
+
+
+
+
+
+
+
+
