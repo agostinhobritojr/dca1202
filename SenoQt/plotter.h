@@ -9,6 +9,7 @@ class Plotter : public QWidget
 public:
   explicit Plotter(QWidget *parent = nullptr);
   void paintEvent(QPaintEvent *event);
+//  void setCorDeFundo(int r, int g, int b);
 
 signals:
 
