@@ -117,7 +117,7 @@
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionSair">
    <property name="icon">
-    <iconset>
+    <iconset resource="icons.qrc">
      <normaloff>:/iconecaveira</normaloff>:/iconecaveira</iconset>
    </property>
    <property name="text">
@@ -126,10 +126,15 @@
    <property name="toolTip">
     <string>Finaliza o Programa</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>horizontalSlider</sender>
