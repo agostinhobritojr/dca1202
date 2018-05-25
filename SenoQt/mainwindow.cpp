@@ -6,7 +6,10 @@ MainWindow::MainWindow(QWidget *parent) :
   ui(new Ui::MainWindow)
 {
   ui->setupUi(this);
-
+  connect(ui->horizontalSliderAmplitude,
+          SIGNAL(valueChanged(int)),
+          ui->plotter,
+          SLOT(mudaAmplitude(int)));
 }
 
 MainWindow::~MainWindow()

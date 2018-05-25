@@ -32,7 +32,11 @@
        </widget>
       </item>
       <item row="0" column="2">
-       <widget class="QLCDNumber" name="lcdNumber"/>
+       <widget class="QLCDNumber" name="lcdNumber">
+        <property name="segmentStyle">
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+       </widget>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_2">
@@ -49,7 +53,11 @@
        </widget>
       </item>
       <item row="1" column="2">
-       <widget class="QLCDNumber" name="lcdNumber_2"/>
+       <widget class="QLCDNumber" name="lcdNumber_2">
+        <property name="segmentStyle">
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+       </widget>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_3">
@@ -66,7 +74,11 @@
        </widget>
       </item>
       <item row="2" column="2">
-       <widget class="QLCDNumber" name="lcdNumber_3"/>
+       <widget class="QLCDNumber" name="lcdNumber_3">
+        <property name="segmentStyle">
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -105,5 +117,54 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>horizontalSliderAmplitude</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>194</x>
+     <y>53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>259</x>
+     <y>61</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderFrequencia</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber_2</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>154</x>
+     <y>83</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>263</x>
+     <y>93</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderVelocidade</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber_3</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>259</x>
+     <y>125</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

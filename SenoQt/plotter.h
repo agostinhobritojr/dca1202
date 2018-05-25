@@ -6,6 +6,8 @@
 class Plotter : public QWidget
 {
   Q_OBJECT
+private:
+  int amplitude;
 public:
   explicit Plotter(QWidget *parent = nullptr);
   void paintEvent(QPaintEvent *event);
@@ -14,7 +16,11 @@ public:
 signals:
 
 public slots:
-
+  void mudaAmplitude(int _amplitude);
 };
 
 #endif // PLOTTER_H
+
+
+
+
