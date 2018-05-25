@@ -3,13 +3,46 @@
 #include <QBrush>
 #include <QPen>
 #include <QColor>
+#include <QMouseEvent>
 #include <cmath>
+#include <QDebug>
 
 #define PI 3.1415
 
 Plotter::Plotter(QWidget *parent) : QWidget(parent)
 {
   amplitude = 100;
+  frequencia = 1;
+  angulo = 0;
+  velocidade = 0;
+  startTimer(20);
+  setMouseTracking(true);
+}
+
+void Plotter::timerEvent(QTimerEvent *event)
+{
+  angulo += velocidade;
+  repaint();
+}
+
+void Plotter::mousePressEvent(QMouseEvent *event)
+{
+  int x, y;
+  x = event->x();
+  y = event->y();
+  emit mudaX(x);
+  emit mudaY(y);
+
+  //  qDebug() << "x = " << x << "; y = " << y;
+}
+
+void Plotter::mouseMoveEvent(QMouseEvent *event)
+{
+  int x, y;
+  x = event->x();
+  y = event->y();
+  emit mudaX(x);
+  emit mudaY(y);
 }
 
 void Plotter::paintEvent(QPaintEvent *event){
@@ -57,13 +90,16 @@ void Plotter::paintEvent(QPaintEvent *event){
   int x1, y1, x2, y2;
 
   x1 = 0;
-  y1 = height()/2 - height()/2*sin(x1)*
+  y1 = height()/2 -
+      height()/2*sin(2*PI*x1*frequencia
+                     + angulo)*
       amplitude/100.0;
 
   for(int i=1; i<width(); i++){
     x2 = i;
     y2 = height()/2 -
-        height()/2*sin(2*PI*x2/width())*
+        height()/2*sin(2*PI*frequencia*x2/width()
+                       + angulo)*
         amplitude/100.0;
     painter.drawLine(x1,y1,x2,y2);
     x1 = x2;
@@ -71,11 +107,21 @@ void Plotter::paintEvent(QPaintEvent *event){
   }
 }
 
+
 void Plotter::mudaAmplitude(int _amplitude){
   amplitude = _amplitude;
   repaint();
 }
 
+void Plotter::mudaFrequencia(int _frequencia){
+  frequencia = _frequencia;
+  repaint();
+}
+
+void Plotter::mudaVelocidade(int _velocidade)
+{
+  velocidade = _velocidade/100.0*0.5;
+}
 
 
 

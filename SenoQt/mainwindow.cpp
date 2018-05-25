@@ -10,6 +10,14 @@ MainWindow::MainWindow(QWidget *parent) :
           SIGNAL(valueChanged(int)),
           ui->plotter,
           SLOT(mudaAmplitude(int)));
+  connect(ui->horizontalSliderFrequencia,
+          SIGNAL(valueChanged(int)),
+          ui->plotter,
+          SLOT(mudaFrequencia(int)));
+  connect(ui->horizontalSliderVelocidade,
+          SIGNAL(valueChanged(int)),
+          ui->plotter,
+          SLOT(mudaVelocidade(int)));
 }
 
 MainWindow::~MainWindow()
