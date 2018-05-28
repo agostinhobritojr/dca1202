@@ -17,6 +17,11 @@ public:
   int getR();
   int getG();
   int getB();
+public slots:
+  void mudaR(int);
+  void mudaG(int);
+  void mudaB(int);
+
 
 private:
   Ui::DialogColor *ui;

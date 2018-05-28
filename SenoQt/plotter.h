@@ -9,6 +9,7 @@ class Plotter : public QWidget
 private:
   int amplitude, frequencia;
   float angulo, velocidade;
+  int r, g, b;
 public:
   explicit Plotter(QWidget *parent = nullptr);
   void paintEvent(QPaintEvent *event);
@@ -16,6 +17,7 @@ public:
   void timerEvent(QTimerEvent *event);
   void mousePressEvent(QMouseEvent *event);
   void mouseMoveEvent(QMouseEvent *event);
+  void setRGB(int _r, int _g, int _b);
 signals:
   int mudaX(int);
   int mudaY(int);

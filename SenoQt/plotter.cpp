@@ -17,6 +17,9 @@ Plotter::Plotter(QWidget *parent) : QWidget(parent)
   velocidade = 0;
   startTimer(20);
   setMouseTracking(true);
+  r=255;
+  g=255;
+  b=100;
 }
 
 void Plotter::timerEvent(QTimerEvent *event)
@@ -45,6 +48,12 @@ void Plotter::mouseMoveEvent(QMouseEvent *event)
   emit mudaY(y);
 }
 
+void Plotter::setRGB(int _r, int _g, int _b)
+{
+  r=_r; g=_g; b=_b;
+  repaint();
+}
+
 void Plotter::paintEvent(QPaintEvent *event){
   QPainter painter(this);
   QBrush brush;
@@ -56,7 +65,7 @@ void Plotter::paintEvent(QPaintEvent *event){
 
   // brush com a cor amarela com preenchimento
   // solido
-  brush.setColor(QColor(255,255,100));
+  brush.setColor(QColor(r,g,b));
   brush.setStyle(Qt::SolidPattern);
   // informa ao painter qual o pincel atual
   painter.setBrush(brush);

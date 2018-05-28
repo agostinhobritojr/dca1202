@@ -27,12 +27,14 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     plotter.cpp \
-    dialogcolor.cpp
+    dialogcolor.cpp \
+    color.cpp
 
 HEADERS += \
         mainwindow.h \
     plotter.h \
-    dialogcolor.h
+    dialogcolor.h \
+    color.h
 
 FORMS += \
         mainwindow.ui \

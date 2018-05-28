@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include "dialogcolor.h"
 #include <QDebug>
+#include <QColorDialog>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
@@ -34,10 +36,40 @@ MainWindow::~MainWindow()
 void MainWindow::selecionaCor()
 {
   DialogColor d;
-  d.exec();
-  qDebug() << d.getR();
-  qDebug() << d.getG();
-  qDebug() << d.getB();
+  QColor color;
+  QColorDialog cd;
+  QString str;
+  QMessageBox box;
+//  cd.exec();
+  color = cd.getColor();
+
+  str = QString::number(color.red())+
+      ","+
+      QString::number(color.green())+
+      ","+
+      QString::number(color.blue());
+
+  ui->plotter->setRGB(color.red(),
+                      color.green(),
+                      color.blue());
+
+  // qDebug() << str;
+  box.setText(str);
+  box.exec();
+  // abre dialogo modal
+  /*
+  if(d.exec() == QDialog::Accepted){
+    qDebug() << d.getR();
+    qDebug() << d.getG();
+    qDebug() << d.getB();
+    ui->plotter->setRGB(d.getR(),
+                        d.getG(),
+                        d.getB());
+  }
+  else{
+    qDebug() << "deu ruim!";
+  }
+  */
 }
 
 
