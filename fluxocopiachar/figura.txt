@@ -1,5 +1,0 @@
-dim 60 20
-brush @
-rectangle 0 0 60 20
-brush #
-rectangle 10 10 40 5
