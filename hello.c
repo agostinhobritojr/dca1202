@@ -3,6 +3,9 @@
 
 int j;
 
+
+
+
 int main(int argc, char* argv[]){
   /* alo */
   // jose
@@ -44,6 +47,9 @@ int main(int argc, char* argv[]){
   default:
 	printf("alo qualquer");
   }
+
+  
+  
   //  system("/usr/bin/xeyes");
   return 0;
 }
