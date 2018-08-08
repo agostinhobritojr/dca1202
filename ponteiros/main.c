@@ -11,7 +11,7 @@ int main()
   int *px;
   // armazena em px o endereco de x
   printf("x = %d\n", x);
-  px = x;
+  px = &x;
   printf("px = %ld\n", px);
 
   x = 1;
