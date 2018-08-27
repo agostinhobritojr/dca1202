@@ -9,6 +9,7 @@ void funcao(int * a, int n){
   }
 }
 
+
 int* myrealloc(int *old, int tamNovo,
                int tamAnt){
   int *novo;
@@ -21,12 +22,42 @@ int* myrealloc(int *old, int tamNovo,
   if(tamNovo > tamAnt){
     memcpy(novo, old, tamAnt*
            sizeof(int));
+    free(old);
     return novo;
   }
   else{
     memcpy(novo, old, tamNovo*
            sizeof(int));
+    free(old);
     return novo;
+  }
+}
+
+
+void myrealloc2(int **old, int tamNovo,
+               int tamAnt){
+  int *novo;
+  if(tamAnt == tamNovo){
+    return;
+  }
+  novo = (int*) malloc(tamNovo*
+                       sizeof(int));
+  // tamNovo > tamAnt
+  if(tamNovo > tamAnt){
+    memcpy(novo, *old, tamAnt*
+           sizeof(int));
+    // o endereco antigo e atualizado
+    // como o novo endereco alocado
+    *old = novo;
+    return;
+  }
+  else{
+    memcpy(novo, *old, tamNovo*
+           sizeof(int));
+    // o endereco antigo e atualizado
+    // como o novo endereco alocado
+    *old = novo;
+    return;
   }
 }
 
@@ -41,8 +72,9 @@ int main(){
     x[i] = i+1;
   }
 
-  x = myrealloc(x, 10, 5);
+//  x = myrealloc(x, 10, 5);
 
+  myrealloc2(&x, 10, 5);
   /*n = 10;
   x = realloc (x, n*sizeof(int));
   printf("end x = %p\n", x);
