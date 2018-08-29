@@ -38,8 +38,19 @@ public:
     ret.y = y / tamanho();
     return ret;
   }
+  void print(void){
+    cout << "(" << x << ","
+         << y << ")";
+  }
+  float escalar(Vetor v2){
+    return x*v2.x+y*v2.y;
+  }
 };
 
+float escalar(Vetor v1, Vetor v2){
+  return v1.getX()*v2.getX()+
+      v1.getY()*v2.getY();
+}
 
 int main(){
   Vetor v1, v2;
@@ -50,5 +61,21 @@ int main(){
   cout << "v1.y= " << v1.getY() << endl;
   cout << "tamanho = " << v1.tamanho() << endl;
   cout << "angulo = " << v1.angulo() << endl;
+  v2 = v1.unitario();
+  cout << "unitario = " << v2.getX() <<
+          ", " << v2.getY() << endl;
+  v2.print();
+  cout << endl;
+
+  cout << "v2 = ";
+  v1.print();
+  cout << " + ";
+  v2.print();
+  cout << endl;
+  v2.setX(5);
+  v2.setY(11);
+  cout << "escalar = " << escalar(v1,v2) << endl;
+  cout << "escalar = " << v1.escalar(v2) << endl;
+
   return 0;
 }
