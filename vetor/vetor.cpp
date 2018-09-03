@@ -12,6 +12,24 @@ Vetor::Vetor(){
   cout << "chamou o construtor\n";
 }
 
+Vetor::Vetor(float mx, float my){
+  x = mx; y = my;
+}
+
+Vetor::Vetor(float mxy)
+{
+  x = y = mxy;
+}
+
+Vetor::Vetor(Vetor &v){
+  cout << "construtor de copia\n";
+  x = v.x; y = v.y;
+}
+
+Vetor::~Vetor(){
+  cout << "chamando destrutor\n";
+}
+
 void Vetor::setX(float mx){
   x = mx;
 }
@@ -56,6 +74,14 @@ Vetor Vetor::soma(Vetor v2){
   Vetor ret;
   ret.x = x + v2.x;
   ret.y = y + v2.y;
+  return ret;
+}
+
+// sobrecarga do metodo soma
+Vetor Vetor::soma(float a){
+  Vetor ret;
+  ret.x = x + a;
+  ret.y = y + a;
   return ret;
 }
 
