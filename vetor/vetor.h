@@ -36,7 +36,7 @@ public:
   Vetor operator + (Vetor v2);
   Vetor operator* (float a);
   float operator* (Vetor v2);
-  Vetor operator- (Vetor v2);
+  friend Vetor& operator- (const Vetor &v1,const Vetor &v2);
 
   Vetor operator++(int);
   Vetor operator++(void);

@@ -21,7 +21,7 @@ int main(){
   v3.print();
   cout << endl;
 
-//  v3 = v4*4 - v6*5;
+  v3 = v4*4 - v6*5;
   v3 = v4++;
   cout << "v3 = ";
   v3.print();
