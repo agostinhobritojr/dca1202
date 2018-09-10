@@ -6,20 +6,22 @@ using namespace std;
 
 // implementacao do metodo setX
 // no ESCOPO (::) da classe Vetor
-Vetor::Vetor(){
+/*Vetor::Vetor(){
   x = 0;
   y = 0;
   cout << "chamou o construtor\n";
-}
+}*/
 
 Vetor::Vetor(float mx, float my){
   x = mx; y = my;
 }
 
-Vetor::Vetor(float mxy)
+/*
+ Vetor::Vetor(float mxy)
 {
   x = y = mxy;
 }
+*/
 
 Vetor::Vetor(Vetor &v){
   cout << "construtor de copia\n";
@@ -71,6 +73,13 @@ float Vetor::escalar(Vetor v2){
 }
 
 Vetor Vetor::soma(Vetor v2){
+  Vetor ret;
+  ret.x = x + v2.x;
+  ret.y = y + v2.y;
+  return ret;
+}
+
+Vetor Vetor::operator+(Vetor v2){
   Vetor ret;
   ret.x = x + v2.x;
   ret.y = y + v2.y;

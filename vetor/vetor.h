@@ -32,6 +32,9 @@ public:
   void print(void);
   float escalar(Vetor v2);
   Vetor soma(Vetor v2);
+
+  Vetor operator + (Vetor v2);
+
   Vetor soma(float a);
 };
 

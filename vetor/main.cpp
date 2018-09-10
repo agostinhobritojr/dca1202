@@ -10,6 +10,12 @@ int main(){
   // criacao com copia
   Vetor v5=v4, v6(v4);
 
+//  v3 = v4+v6;
+  v3=v4.operator+(v6);
+  cout << "v3 = ";
+  v3.print();
+  cout << endl;
+
   cout << "v1.x= " << v1.getX() << endl;
   cout << "v1.y= " << v1.getY() << endl;
 
