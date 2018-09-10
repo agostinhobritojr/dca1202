@@ -86,6 +86,39 @@ Vetor Vetor::operator+(Vetor v2){
   return ret;
 }
 
+Vetor Vetor::operator*(float a){
+  Vetor ret;
+  ret.x = a*x; ret.y = a*y;
+  return ret;
+}
+
+Vetor Vetor::operator-(Vetor v2){
+  Vetor ret;
+  ret.x = x-v2.x;
+  ret.y = y-v2.y;
+  return ret;
+}
+
+// pos-fixado.... v2++
+Vetor Vetor::operator++(int){
+  Vetor ret;
+  ret.x = x; ret.y = y;
+  x++; y++;
+  return ret;
+}
+// pre-fixado.... ++v2
+Vetor Vetor::operator++(void){
+  Vetor ret;
+  x++; y++;
+  ret.x = x; ret.y = y;
+  return ret;
+}
+
+
+float Vetor::operator *(Vetor v2){
+  return x*v2.x + y*v2.y;
+}
+
 // sobrecarga do metodo soma
 Vetor Vetor::soma(float a){
   Vetor ret;
@@ -94,6 +127,13 @@ Vetor Vetor::soma(float a){
   return ret;
 }
 
-
+Vetor operator*(float a, Vetor v2){
+  Vetor ret;
+  ret.x = a*v2.x;
+  ret.y = a*v2.y;
+  //ret.setX(a*v2.getX());
+  //ret.setY(a*v2.getY());
+  return ret;
+}
 
 

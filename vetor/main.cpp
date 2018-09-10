@@ -10,12 +10,34 @@ int main(){
   // criacao com copia
   Vetor v5=v4, v6(v4);
 
-//  v3 = v4+v6;
-  v3=v4.operator+(v6);
+  v3 = v4+v6;
+//  v3=v4.operator+(v6);
   cout << "v3 = ";
   v3.print();
   cout << endl;
 
+  v3 = v4-v6;
+  cout << "v3 = ";
+  v3.print();
+  cout << endl;
+
+//  v3 = v4*4 - v6*5;
+  v3 = v4++;
+  cout << "v3 = ";
+  v3.print();
+  cout << endl;
+
+  v3 = ++v4;
+  cout << "v3 = ";
+  v3.print();
+  cout << endl;
+
+  v3 = 4*v4;
+  cout << "v3 = ";
+  v3.print();
+  cout << endl;
+
+  /*
   cout << "v1.x= " << v1.getX() << endl;
   cout << "v1.y= " << v1.getY() << endl;
 
@@ -46,5 +68,6 @@ int main(){
   cout << v3.getX() << endl;
   cout << v3.getY() << endl;
   v1.soma(v2).print();
+  */
   return 0;
 }

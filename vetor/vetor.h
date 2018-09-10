@@ -34,9 +34,19 @@ public:
   Vetor soma(Vetor v2);
 
   Vetor operator + (Vetor v2);
+  Vetor operator* (float a);
+  float operator* (Vetor v2);
+  Vetor operator- (Vetor v2);
+
+  Vetor operator++(int);
+  Vetor operator++(void);
 
   Vetor soma(float a);
+  // funcao amiga
+  friend Vetor operator*(float a, Vetor v2);
 };
+
+//Vetor operator*(float a, Vetor v2);
 
 #endif // VETOR_H
 
