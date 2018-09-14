@@ -23,7 +23,7 @@ Vetor::Vetor(float mx, float my){
 }
 */
 
-Vetor::Vetor(Vetor &v){
+Vetor::Vetor(const Vetor &v){
   cout << "construtor de copia\n";
   x = v.x; y = v.y;
 }
@@ -92,7 +92,7 @@ Vetor Vetor::operator*(float a){
   return ret;
 }
 
-Vetor& operator-(const Vetor& v1,const Vetor& v2){
+Vetor operator-(const Vetor &v1, const Vetor &v2){
   Vetor ret;
   ret.x = v1.x-v2.x;
   ret.y = v1.y-v2.y;

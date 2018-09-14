@@ -18,7 +18,7 @@ public:
 
   // construtor de copia
   // &v referencia para v
-  Vetor(Vetor&v);
+  Vetor(const Vetor& v);
 
   ~Vetor();
 
@@ -36,7 +36,17 @@ public:
   Vetor operator + (Vetor v2);
   Vetor operator* (float a);
   float operator* (Vetor v2);
-  friend Vetor& operator- (const Vetor &v1,const Vetor &v2);
+
+  /*
+   *  C++ deliberately specifies that binding a temporary
+   * object to a reference to const on the stack lengthens
+   * the lifetime of the temporary to the lifetime of the
+   * reference itself, and thus avoids what would otherwise
+   * be a common dangling-reference error. In the example above,
+   * the temporary returned by foo() lives until the closing
+   * curly brace. (Sergey K. - Stackoverflow)
+   */
+  friend Vetor operator- (const Vetor &v1,const Vetor &v2);
 
   Vetor operator++(int);
   Vetor operator++(void);
