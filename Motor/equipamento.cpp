@@ -4,8 +4,13 @@
 
 using namespace std;
 
-Equipamento::Equipamento(){
+Equipamento::Equipamento() : preco(0){
   cout << "construtor default Equipamento\n";
+}
+
+Equipamento::Equipamento(float _preco){
+  cout << "construtor args Equipamento\n";
+  preco = _preco;
 }
 
 Equipamento::~Equipamento(){

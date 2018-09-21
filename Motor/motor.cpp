@@ -5,6 +5,15 @@ using namespace std;
 
 Motor::Motor(){
   cout << "construtor default Motor\n";
+  potencia = velocidade = 0;
+}
+
+Motor::Motor(float _preco) :
+  Equipamento(_preco), potencia(0),
+  velocidade (0)
+{
+  cout << "construtor args Motor\n";
+
 }
 
 Motor::~Motor(){
@@ -19,6 +28,12 @@ void Motor::setPotencia(float _potencia){
 void Motor::setVelocidade(float _velocidade){
   velocidade=_velocidade;
 }
+
+void Motor::setPreco(float _fator){
+  cout << "setpreco motor\n";
+  Equipamento::setPreco(potencia*_fator);
+}
+
 
 float Motor::getPotencia(void){
   return potencia;
