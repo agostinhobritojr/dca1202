@@ -20,6 +20,25 @@ public:
    * @param _nc é a quantidade de colunas
    */
   Matriz(int _nl=0, int _nc=0);
+
+  /** @brief ~Matriz é o destrutor da classe
+  */
+  ~Matriz();
+
+  /**
+   * @brief print mostra a matriz na saida
+   * padrão
+   */
+  void print();
+  void randomize();
+  float &operator()(int i, int j);
+  void operator*(float a);
 };
 
 #endif // MATRIZ_H
+
+
+
+
+
+
