@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -10,6 +11,9 @@ int main(){
   x.push_back(4);
   x.push_back(5);
   x.push_back(-2);
+
+  it = find(x.begin(), x.end(), 5);
+  x.erase(it);
   for(int i=0; i<x.size(); i++){
     cout << x[i] << ",";
   }
