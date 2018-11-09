@@ -27,6 +27,10 @@ MainWindow::MainWindow(QWidget *parent) :
     //      this,
 //          SLOT(copiaTexto()));
 
+  connect(ui->actionAloVoce,
+          SIGNAL(triggered(bool)),
+          this,
+          SLOT(mostraAloVoce()));
 }
 
 MainWindow::~MainWindow()
@@ -54,6 +58,12 @@ void MainWindow::copiaTexto(){
   box.setText(sbold);
   box.exec();
   ui->textBrowserDestino->setText(sbold);
+}
+
+void MainWindow::mostraAloVoce(){
+  QMessageBox box;
+  box.setText("Alo, Você!");
+  box.exec();
 }
 
 

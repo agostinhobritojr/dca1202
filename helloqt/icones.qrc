@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="Alo">recursos/icone.png</file>
+        <file>recursos/icone.jpg</file>
+    </qresource>
+</RCC>
