@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>328</width>
-    <height>474</height>
+    <width>470</width>
+    <height>473</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,7 +24,7 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
-             <widget class="QSlider" name="horizontalSliderX">
+             <widget class="QSlider" name="horizontalSliderAmp">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -38,7 +38,7 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_2">
             <item>
-             <widget class="QSlider" name="horizontalSliderY">
+             <widget class="QSlider" name="horizontalSliderFreq">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -52,7 +52,7 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
-             <widget class="QSlider" name="horizontalSliderZ">
+             <widget class="QSlider" name="horizontalSliderVel">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -85,7 +85,7 @@
        </layout>
       </item>
       <item>
-       <widget class="Plotter" name="widget" native="true"/>
+       <widget class="Plotter" name="widgetPlotter" native="true"/>
       </item>
      </layout>
     </item>
@@ -120,7 +120,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>328</width>
+     <width>470</width>
      <height>22</height>
     </rect>
    </property>
@@ -212,7 +212,7 @@
  </resources>
  <connections>
   <connection>
-   <sender>horizontalSliderX</sender>
+   <sender>horizontalSliderAmp</sender>
    <signal>valueChanged(int)</signal>
    <receiver>lcdNumberX</receiver>
    <slot>display(int)</slot>

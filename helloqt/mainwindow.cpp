@@ -31,6 +31,11 @@ MainWindow::MainWindow(QWidget *parent) :
           SIGNAL(triggered(bool)),
           this,
           SLOT(mostraAloVoce()));
+
+  connect(ui->horizontalSliderAmp,
+          SIGNAL(valueChanged(int)),
+          ui->widgetPlotter,
+          SLOT(mudaAmplitude(int)));
 }
 
 MainWindow::~MainWindow()

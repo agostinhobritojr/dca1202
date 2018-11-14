@@ -64,7 +64,7 @@ void Plotter::paintEvent(QPaintEvent *event)
   painter.setPen(pen);
   for(int i=0; i<width(); i++){
     x = (float)i*2*PI/width();
-    y = sin(x);
+    y = amplitude*sin(x);
     px = i;
     py = height()/2 - y*height()/2;
     painter.drawLine(pxold, pyold, px, py);
@@ -72,7 +72,12 @@ void Plotter::paintEvent(QPaintEvent *event)
     pyold = py;
   }
 
-  painter.drawLine(0,0, width()/7, height());
+//  painter.drawLine(0,0, width()/7, height());
 
+}
+
+void Plotter::mudaAmplitude(int amp){
+  amplitude = amp/100.0;
+  repaint();
 }
 
