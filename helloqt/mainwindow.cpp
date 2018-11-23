@@ -4,6 +4,8 @@
 #include <QString>
 #include <QDebug>
 #include <QMessageBox>
+#include "dialogcolor.h"
+#include <QColorDialog>
 
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
@@ -36,6 +38,47 @@ MainWindow::MainWindow(QWidget *parent) :
           SIGNAL(valueChanged(int)),
           ui->widgetPlotter,
           SLOT(mudaAmplitude(int)));
+
+  connect(ui->horizontalSliderFreq,
+          SIGNAL(valueChanged(int)),
+          ui->widgetPlotter,
+          SLOT(mudaFrequencia(int)));
+
+  connect(ui->horizontalSliderVel,
+          SIGNAL(valueChanged(int)),
+          ui->widgetPlotter,
+          SLOT(mudaVelocidade(int)));
+
+  connect(ui->pushButtonTemp,
+          SIGNAL(clicked(bool)),
+          ui->widgetPlotter,
+          SLOT(anima()));
+
+  connect(ui->widgetPlotter,
+          SIGNAL(clickX(int)),
+          ui->lcdNumberXclick,
+          SLOT(display(int)));
+
+  connect(ui->widgetPlotter,
+          SIGNAL(clickY(int)),
+          ui->lcdNumberYclick,
+          SLOT(display(int)));
+
+  connect(ui->widgetPlotter,
+          SIGNAL(moveX(int)),
+          ui->lcdNumberXmove,
+          SLOT(display(int)));
+
+  connect(ui->widgetPlotter,
+          SIGNAL(moveY(int)),
+          ui->lcdNumberYmove,
+          SLOT(display(int)));
+
+  connect(ui->actionCorFundo,
+          SIGNAL(triggered(bool)),
+          this,
+          SLOT(mudaCorDeFundo()));
+
 }
 
 MainWindow::~MainWindow()
@@ -69,6 +112,24 @@ void MainWindow::mostraAloVoce(){
   QMessageBox box;
   box.setText("Alo, Você!");
   box.exec();
+}
+
+void MainWindow::mudaCorDeFundo()
+{
+  /*
+  DialogColor d;
+
+  if(d.exec() == QDialog::Accepted){
+    ui->widgetPlotter->setCorFundo(d.getR(),
+                                   d.getG(),
+                                   d.getB());
+  }
+  */
+  QColorDialog d;
+  d.exec();
+  ui->widgetPlotter->setCorFundo(d.selectedColor().red(),
+                                 d.selectedColor().green(),
+                                 d.selectedColor().blue());
 }
 
 

@@ -19,6 +19,7 @@ public slots:
   void finaliza();
   void copiaTexto();
   void mostraAloVoce();
+  void mudaCorDeFundo();
 
 private:
   Ui::MainWindow *ui;

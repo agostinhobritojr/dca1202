@@ -14,11 +14,11 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QVBoxLayout" name="verticalLayout_3">
+   <layout class="QVBoxLayout" name="verticalLayout_6">
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="40,60">
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <layout class="QVBoxLayout" name="verticalLayout_5">
         <item>
          <layout class="QVBoxLayout" name="verticalLayout">
           <item>
@@ -39,6 +39,9 @@
            <layout class="QHBoxLayout" name="horizontalLayout_2">
             <item>
              <widget class="QSlider" name="horizontalSliderFreq">
+              <property name="minimum">
+               <number>1</number>
+              </property>
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -71,11 +74,85 @@
            <widget class="QPlainTextEdit" name="plainTextEditOrigem"/>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButtonCopiar">
-            <property name="text">
-             <string>copia</string>
-            </property>
-           </widget>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <widget class="QPushButton" name="pushButtonCopiar">
+              <property name="text">
+               <string>copia</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox">
+              <property name="title">
+               <string>click</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_2">
+               <item>
+                <widget class="QLCDNumber" name="lcdNumberXclick">
+                 <property name="frameShape">
+                  <enum>QFrame::Box</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLCDNumber" name="lcdNumberYclick">
+                 <property name="frameShape">
+                  <enum>QFrame::Box</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_2">
+              <property name="title">
+               <string>move</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_3">
+               <item>
+                <widget class="QLCDNumber" name="lcdNumberXmove">
+                 <property name="frameShape">
+                  <enum>QFrame::Box</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLCDNumber" name="lcdNumberYmove">
+                 <property name="frameShape">
+                  <enum>QFrame::Box</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
           </item>
           <item>
            <widget class="QTextBrowser" name="textBrowserDestino"/>
@@ -91,6 +168,13 @@
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QPushButton" name="pushButtonTemp">
+        <property name="text">
+         <string>tempo</string>
+        </property>
+       </widget>
+      </item>
       <item>
        <spacer name="horizontalSpacer_2">
         <property name="orientation">
@@ -130,7 +214,14 @@
     </property>
     <addaction name="actionAloVoce"/>
    </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionCorFundo"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <property name="palette">
@@ -197,6 +288,11 @@
     <string>Ctrl+A</string>
    </property>
   </action>
+  <action name="actionCorFundo">
+   <property name="text">
+    <string>CorFundo</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
@@ -218,12 +314,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>157</x>
-     <y>65</y>
+     <x>170</x>
+     <y>113</y>
     </hint>
     <hint type="destinationlabel">
-     <x>456</x>
-     <y>60</y>
+     <x>242</x>
+     <y>117</y>
     </hint>
    </hints>
   </connection>
@@ -234,12 +330,28 @@
    <slot>copiaTexto()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>245</x>
-     <y>264</y>
+     <x>167</x>
+     <y>309</y>
     </hint>
     <hint type="destinationlabel">
      <x>227</x>
      <y>301</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderFreq</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumberY</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>158</x>
+     <y>132</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>205</x>
+     <y>135</y>
     </hint>
    </hints>
   </connection>
