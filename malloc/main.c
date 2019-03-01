@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-extern inline int f(int x, int y){
+int f(int x, int y){
   return x+y;
 }
 
