@@ -41,10 +41,11 @@ int main(){
   for(i=0; i<nl; i++){
     free(x[i]);
   }
-  for(i=0; i<nl; i++){
-    free(x[i]);
+  for(i=0; i<nc; i++){
+    free(y[i]);
   }
   free(x);
+  free(y);
   return 0;
 }
 
