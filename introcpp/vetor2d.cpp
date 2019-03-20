@@ -4,6 +4,19 @@
 
 using namespace std;
 
+/*Vetor2d::Vetor2d(){
+  x=0; y=0;
+}*/
+
+Vetor2d::Vetor2d(float mx, float my){
+  x=mx; y=my;
+}
+
+Vetor2d::Vetor2d(Vetor2d &v)
+{
+  x=v.x; y=v.y;
+}
+
 void Vetor2d::setX(float mx){
   x = mx;
 }
