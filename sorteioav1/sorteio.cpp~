@@ -1,0 +1,18 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main(void){
+  string aluno;
+  ifstream arq;
+  vector<string> alunos;
+  
+  arq.open("alunos.txt");
+  while(arq.good()){
+	getline(arq, aluno);
+	cout << aluno << endl;
+  }
+}
