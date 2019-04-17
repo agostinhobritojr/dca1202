@@ -9,6 +9,7 @@ private:
 public:
   Matriz(int _nl=0, int _nc=0);
   ~Matriz();
+  int &operator () (int i, int j);
   void print();
 };
 
