@@ -1,13 +1,25 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "vetor.h"
 
 using namespace std;
 
 int main(){
+  Vetor v1(3,4), v2(5,6);
+
+  cout << "v1 = " << v1 <<
+          " e v2 = " << v2;
+  cin >> v1;
+  cout << "v1 = " << v1;
+
+
   ofstream fout;
   ifstream fin;
   char nome[20];
+
+
+  /*
   string alo, parte1, parte2;
   int idade;
   // "c:/usuarios/jose\ antonio/alo.txt"
@@ -74,7 +86,7 @@ int main(){
     }
     cout << endl;
   }
-           ;
+    */
   return 0;
 }
 

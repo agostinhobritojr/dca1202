@@ -3,8 +3,7 @@ CONFIG += console c++11
 CONFIG -= app_bundle
 CONFIG -= qt
 
-SOURCES += main.cpp \
-    vetor.cpp
+SOURCES += main.cpp
 
 HEADERS += \
-    vetor.h
+    vetor.hpp

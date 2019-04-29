@@ -1,0 +1,88 @@
+\begin{theindex}
+
+  \item {$\sim$\+Vetor}
+    \subitem {Vetor}, \hyperpage{6}
+
+  \indexspace
+
+  \item {getX}
+    \subitem {Vetor}, \hyperpage{6}
+  \item {getY}
+    \subitem {Vetor}, \hyperpage{7}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.\+cpp}, \hyperpage{11}
+  \item {main.\+cpp}, \hyperpage{11}
+    \subitem {main}, \hyperpage{11}
+  \item {multiplicacao}
+    \subitem {Vetor}, \hyperpage{7}
+
+  \indexspace
+
+  \item {negativo}
+    \subitem {Vetor}, \hyperpage{7}
+  \item {norma}
+    \subitem {Vetor}, \hyperpage{7}
+
+  \indexspace
+
+  \item {operator$\ast$}
+    \subitem {Vetor}, \hyperpage{7}, \hyperpage{9}
+    \subitem {vetor.\+cpp}, \hyperpage{12}
+    \subitem {vetor.\+h}, \hyperpage{13}
+  \item {operator+}
+    \subitem {Vetor}, \hyperpage{8}
+  \item {operator++}
+    \subitem {Vetor}, \hyperpage{8}
+  \item {operator-\/}
+    \subitem {Vetor}, \hyperpage{8}
+
+  \indexspace
+
+  \item {print}
+    \subitem {Vetor}, \hyperpage{8}
+
+  \indexspace
+
+  \item {setX}
+    \subitem {Vetor}, \hyperpage{8}
+  \item {setY}
+    \subitem {Vetor}, \hyperpage{8}
+  \item {soma}
+    \subitem {Vetor}, \hyperpage{9}
+  \item {subtracao}
+    \subitem {Vetor}, \hyperpage{9}
+
+  \indexspace
+
+  \item {teta}
+    \subitem {Vetor}, \hyperpage{9}
+
+  \indexspace
+
+  \item {Vetor}, \hyperpage{5}
+    \subitem {$\sim$\+Vetor}, \hyperpage{6}
+    \subitem {getX}, \hyperpage{6}
+    \subitem {getY}, \hyperpage{7}
+    \subitem {multiplicacao}, \hyperpage{7}
+    \subitem {negativo}, \hyperpage{7}
+    \subitem {norma}, \hyperpage{7}
+    \subitem {operator$\ast$}, \hyperpage{7}, \hyperpage{9}
+    \subitem {operator+}, \hyperpage{8}
+    \subitem {operator++}, \hyperpage{8}
+    \subitem {operator-\/}, \hyperpage{8}
+    \subitem {print}, \hyperpage{8}
+    \subitem {setX}, \hyperpage{8}
+    \subitem {setY}, \hyperpage{8}
+    \subitem {soma}, \hyperpage{9}
+    \subitem {subtracao}, \hyperpage{9}
+    \subitem {teta}, \hyperpage{9}
+    \subitem {Vetor}, \hyperpage{6}
+  \item {vetor.\+cpp}, \hyperpage{12}
+    \subitem {operator$\ast$}, \hyperpage{12}
+  \item {vetor.\+h}, \hyperpage{12}
+    \subitem {operator$\ast$}, \hyperpage{13}
+
+\end{theindex}
