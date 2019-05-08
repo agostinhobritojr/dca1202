@@ -6,9 +6,11 @@
 using namespace std;
 
 int main(){
-  A a; B b; C c;
-  a.print();
-  b.print();
-  c.print();
+  A a;  cout << endl;
+  B b(3,4);  cout << endl;
+  C c;
+  a.print();  b.print();  c.print();
+
+  b.A::print();
   return 0;
 }
