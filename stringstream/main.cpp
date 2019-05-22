@@ -28,7 +28,16 @@ int main(){
       cout << nx << "x" << ny << "x" <<
               nz << endl;
     }
+    else if(s.compare("putbox")==0){
+      int x0, x1, y0, y1, z0, z1;
+      float r, g, b, a;
+      ss >> x0 >> x1 >> y0 >> y1
+          >> z0 >> z1;
+      ss >> r >> g >> b >> a;
+    }
   }
+
+  // desenhar as figuras no sculptor criado
 
 
   return 0;
