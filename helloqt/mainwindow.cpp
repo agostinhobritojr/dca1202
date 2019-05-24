@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QString>
+
 
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
@@ -12,11 +14,31 @@ MainWindow::MainWindow(QWidget *parent) :
           this,
           SLOT(finaliza()));
 
+  connect(ui->pushButtonCopia,
+          SIGNAL(clicked(bool)),
+          this,
+          SLOT(copia()));
+
+ /* connect(ui->actionFinaliza,
+          SIGNAL(triggered(bool)),
+          this,
+          SLOT(finaliza()));
+*/
 }
 
 MainWindow::~MainWindow()
 {
   delete ui;
+}
+
+void MainWindow::copia()
+{
+  QString s;
+  // le o string presente no plaintextedit
+  s = ui->plainTextEdit->toPlainText();
+  // atribui ao textedit o string lido
+  s = "<u>" + s + "</u>";
+  ui->textEdit->setText(s);
 }
 
 void MainWindow::finaliza()
