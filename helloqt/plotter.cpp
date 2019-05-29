@@ -51,11 +51,17 @@ void Plotter::paintEvent(QPaintEvent *event)
   p1y=height()/2;
   for(int t=0; t<width(); t++){
     p2x = t;
-    p2y = height()/2 - height()/2*
+    p2y = height()/2 - ampl*height()/2*
         sin(2*3.1415*t/width());
     p.drawLine(p1x, p1y, p2x, p2y);
     p1x = p2x; p1y = p2y;
   }
+}
+
+void Plotter::mudaAmplitude(int a)
+{
+  ampl = a/99.0;
+  repaint();
 }
 
 

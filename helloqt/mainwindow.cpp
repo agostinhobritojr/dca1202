@@ -24,6 +24,10 @@ MainWindow::MainWindow(QWidget *parent) :
           this,
           SLOT(finaliza()));
 */
+  connect(ui->horizontalSliderAmp,
+          SIGNAL(valueChanged(int)),
+          ui->widgetPlotter,
+          SLOT(mudaAmplitude(int)));
 }
 
 MainWindow::~MainWindow()
