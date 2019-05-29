@@ -28,6 +28,12 @@ MainWindow::MainWindow(QWidget *parent) :
           SIGNAL(valueChanged(int)),
           ui->widgetPlotter,
           SLOT(mudaAmplitude(int)));
+
+ /* connect(ui->horizontalSliderFreq,
+          SIGNAL(valueChanged(int)),
+          ui->widgetPlotter,
+          SLOT(mudaFrequencia(int)));
+          */
 }
 
 MainWindow::~MainWindow()

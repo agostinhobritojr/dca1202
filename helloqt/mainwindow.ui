@@ -203,6 +203,9 @@
    <extends>QWidget</extends>
    <header>plotter.h</header>
    <container>1</container>
+   <slots>
+    <slot>mudaFrequencia(int)</slot>
+   </slots>
   </customwidget>
  </customwidgets>
  <resources>
@@ -216,12 +219,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>140</x>
-     <y>284</y>
+     <x>139</x>
+     <y>180</y>
     </hint>
     <hint type="destinationlabel">
-     <x>210</x>
-     <y>288</y>
+     <x>209</x>
+     <y>184</y>
     </hint>
    </hints>
   </connection>
@@ -252,8 +255,8 @@
      <y>90</y>
     </hint>
     <hint type="destinationlabel">
-     <x>209</x>
-     <y>96</y>
+     <x>180</x>
+     <y>84</y>
     </hint>
    </hints>
   </connection>
@@ -264,12 +267,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>155</x>
-     <y>134</y>
+     <x>140</x>
+     <y>110</y>
     </hint>
     <hint type="destinationlabel">
-     <x>197</x>
-     <y>135</y>
+     <x>168</x>
+     <y>111</y>
     </hint>
    </hints>
   </connection>
@@ -281,11 +284,27 @@
    <hints>
     <hint type="sourcelabel">
      <x>118</x>
-     <y>177</y>
+     <y>141</y>
     </hint>
     <hint type="destinationlabel">
-     <x>193</x>
-     <y>181</y>
+     <x>164</x>
+     <y>145</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderFreq</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>widgetPlotter</receiver>
+   <slot>mudaFrequencia(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>118</x>
+     <y>108</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>149</y>
     </hint>
    </hints>
   </connection>

@@ -7,7 +7,10 @@
 Plotter::Plotter(QWidget *parent) :
     QWidget(parent)
 {
-
+  ampl = 1.0;
+  freq = 1;
+  teta = 0;
+  timerId = startTimer(100);
 }
 
 void Plotter::paintEvent(QPaintEvent *event)
@@ -52,15 +55,28 @@ void Plotter::paintEvent(QPaintEvent *event)
   for(int t=0; t<width(); t++){
     p2x = t;
     p2y = height()/2 - ampl*height()/2*
-        sin(2*3.1415*t/width());
+        sin(2*3.1415*freq*t/width()+teta);
     p.drawLine(p1x, p1y, p2x, p2y);
     p1x = p2x; p1y = p2y;
   }
 }
 
+void Plotter::timerEvent(QTimerEvent *event)
+{
+  teta = teta + 0.1;
+  repaint();
+}
+
 void Plotter::mudaAmplitude(int a)
 {
   ampl = a/99.0;
+  // ativa paintevent
+  repaint();
+}
+
+void Plotter::mudaFrequencia(int f)
+{
+  freq = f;
   repaint();
 }
 
