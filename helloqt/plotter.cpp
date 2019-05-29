@@ -3,14 +3,17 @@
 #include <QPen>
 #include <QBrush>
 #include <cmath>
+#include <QTimerEvent>
 
 Plotter::Plotter(QWidget *parent) :
-    QWidget(parent)
+  QWidget(parent)
 {
   ampl = 1.0;
   freq = 1;
   teta = 0;
-  timerId = startTimer(100);
+  vel = 0;
+  cor = 255;
+  timerId = startTimer(50);
 }
 
 void Plotter::paintEvent(QPaintEvent *event)
@@ -30,7 +33,7 @@ void Plotter::paintEvent(QPaintEvent *event)
   p.setPen(pen);
 
   // preparando o pincel
-  brush.setColor(QColor(255,255,0));
+  brush.setColor(QColor(cor,cor,0));
   brush.setStyle(Qt::SolidPattern);
   // entregando o pincel ao pintor
   p.setBrush(brush);
@@ -63,7 +66,15 @@ void Plotter::paintEvent(QPaintEvent *event)
 
 void Plotter::timerEvent(QTimerEvent *event)
 {
-  teta = teta + 0.1;
+  teta = teta + vel;
+  if(teta > 2*3.1415)
+    teta = 0;
+  if(event->timerId() == timerId){
+    cor++;
+    if(cor > 255){
+      cor=0;
+    }
+  }
   repaint();
 }
 
@@ -78,6 +89,11 @@ void Plotter::mudaFrequencia(int f)
 {
   freq = f;
   repaint();
+}
+
+void Plotter::mudaVelocidade(int v)
+{
+  vel = v/99.0;
 }
 
 

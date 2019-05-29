@@ -34,6 +34,11 @@ MainWindow::MainWindow(QWidget *parent) :
           ui->widgetPlotter,
           SLOT(mudaFrequencia(int)));
           */
+
+  connect(ui->horizontalSliderVel,
+          SIGNAL(valueChanged(int)),
+          ui->widgetPlotter,
+          SLOT(mudaVelocidade(int)));
 }
 
 MainWindow::~MainWindow()
