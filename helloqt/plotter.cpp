@@ -4,6 +4,8 @@
 #include <QBrush>
 #include <cmath>
 #include <QTimerEvent>
+#include <QMouseEvent>
+#include <QDebug>
 
 Plotter::Plotter(QWidget *parent) :
   QWidget(parent)
@@ -14,6 +16,8 @@ Plotter::Plotter(QWidget *parent) :
   vel = 0;
   cor = 255;
   timerId = startTimer(50);
+  // habilita o rastreio da posicao do mouse
+  setMouseTracking(true);
 }
 
 void Plotter::paintEvent(QPaintEvent *event)
@@ -76,6 +80,12 @@ void Plotter::timerEvent(QTimerEvent *event)
     }
   }
   repaint();
+}
+
+void Plotter::mouseMoveEvent(QMouseEvent *event){
+  emit moveX(event->x());
+  emit moveY(event->y());
+ // qDebug() << event->x() << "x" << event->y();
 }
 
 void Plotter::mudaAmplitude(int a)
