@@ -1,7 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QString>
-
+#include "dialogrgb.h"
+#include <QMessageBox>
+#include <QString>
 
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
@@ -19,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
           this,
           SLOT(copia()));
 
- /* connect(ui->actionFinaliza,
+  /* connect(ui->actionFinaliza,
           SIGNAL(triggered(bool)),
           this,
           SLOT(finaliza()));
@@ -29,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent) :
           ui->widgetPlotter,
           SLOT(mudaAmplitude(int)));
 
- /* connect(ui->horizontalSliderFreq,
+  /* connect(ui->horizontalSliderFreq,
           SIGNAL(valueChanged(int)),
           ui->widgetPlotter,
           SLOT(mudaFrequencia(int)));
@@ -39,6 +41,22 @@ MainWindow::MainWindow(QWidget *parent) :
           SIGNAL(valueChanged(int)),
           ui->widgetPlotter,
           SLOT(mudaVelocidade(int)));
+
+  connect(ui->widgetPlotter,
+          SIGNAL(clickX(int)),
+          ui->lcdNumberClickX,
+          SLOT(display(int)));
+
+  connect(ui->widgetPlotter,
+          SIGNAL(clickY(int)),
+          ui->lcdNumberClickY,
+          SLOT(display(int)));
+
+  connect(ui->actionSeleciona_Cor,
+          SIGNAL(triggered(bool)),
+          this,
+          SLOT(selecionaCor()));
+
 }
 
 MainWindow::~MainWindow()
@@ -60,5 +78,28 @@ void MainWindow::finaliza()
 {
   close();
 }
+
+void MainWindow::selecionaCor()
+{
+  QMessageBox box;
+  QString msg;
+  DialogRgb dialog;
+
+  if(dialog.exec() == QDialog::Accepted){
+    msg = "r = <b>"+QString::number(dialog.getR())+
+        "</b> <br>"+
+        "g = <b>"+QString::number(dialog.getG())+
+        "</b> <br>"+
+        "b = <b>"+QString::number(dialog.getB())+
+        "</b>";
+    box.setText(msg);
+    box.exec();
+  }
+}
+
+
+
+
+
 
 

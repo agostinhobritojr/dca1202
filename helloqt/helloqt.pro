@@ -26,14 +26,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    plotter.cpp
+    plotter.cpp \
+    dialogrgb.cpp
 
 HEADERS += \
         mainwindow.h \
-    plotter.h
+    plotter.h \
+    dialogrgb.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    dialogrgb.ui
 
 RESOURCES += \
     resources.qrc

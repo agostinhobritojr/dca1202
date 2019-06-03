@@ -21,6 +21,7 @@ private:
 public slots:
   void copia();
   void finaliza();
+  void selecionaCor();
 
 };
 

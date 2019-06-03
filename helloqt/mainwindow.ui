@@ -249,6 +249,7 @@
      <string>File</string>
     </property>
     <addaction name="actionFinaliza"/>
+    <addaction name="actionSeleciona_Cor"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>
@@ -275,6 +276,11 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionSeleciona_Cor">
+   <property name="text">
+    <string>Seleciona Cor</string>
    </property>
   </action>
  </widget>
