@@ -4,7 +4,27 @@
 
 using namespace std;
 
-void Vetor::setX(float mx){
+Vetor::Vetor(float mx, float my){
+  cout << "construtor com argumentos\n";
+  x = mx; y = my;
+}
+
+// construtor default
+/*Vetor::Vetor(){
+  cout << "construtor padrao\n";
+}*/
+
+Vetor::~Vetor(){
+  cout << "destrutor\n";
+}
+
+Vetor::Vetor(const Vetor &v){
+  cout << "construtor de copia\n";
+  x = v.x;
+  y = v.y;
+}
+
+void Vetor::setX(float mx) {
   x = mx;
 }
 float Vetor::getX(){
