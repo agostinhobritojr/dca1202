@@ -4,8 +4,9 @@
 cria um array de 10 inteiros e retorna um ponteiro para este array
 */
 int* criar_array(void){
-  int x[10];
+  int *x;
   int i;
+  x = (int*) malloc(10*sizeof (int));
   for(i=0; i<10; i++)
     x[i] = i;
   return x;
@@ -13,6 +14,7 @@ int* criar_array(void){
 /* funçao principal */
 int main(void){
   int *y, i;
+
   y = criar_array();
   for(i=0; i<10; i++)
     y[i]=10-i;
