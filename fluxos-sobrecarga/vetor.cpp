@@ -11,7 +11,18 @@ void Vetor::print(){
   cout << "(" << x << "," << y << ")";
 }
 
-void operator<<(ostream &os, Vetor v1)
-{
+ostream& operator<<(ostream &os, Vetor v1){
   os << "(" << v1.x << "," << v1.y << ")";
+  return  os;
 }
+
+istream& operator>>(istream& is,
+                    Vetor &v1){
+  is >> v1.x >> v1.y;
+  return is;
+}
+
+
+
+
+
