@@ -1,6 +1,11 @@
 #ifndef VETOR_H
 #define VETOR_H
 
+/**
+ * @brief A classe vetor serve para lidar
+ * com vetores
+ */
+
 class Vetor{
 private:
   float x, y;
@@ -18,7 +23,10 @@ public:
   ~Vetor();
   // construtor de cohpia
   Vetor(const Vetor &v);
-
+  /**
+   * @brief setX atribui o valor para x
+   * @param mx recebe o valor atribuído
+   */
   void setX(float mx);
   float getX();
   void setY(float my);

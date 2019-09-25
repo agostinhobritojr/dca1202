@@ -24,6 +24,8 @@ int main(){
   v[0].func();
   delete v;
 
+  // na alocacao com new[], o construtor
+  // default eh OBRIGATORIO!!!!
   v = new Vetor[5];
   v[2].func();
   delete [] v;
