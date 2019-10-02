@@ -2,7 +2,11 @@
 #include <iostream>
 
 using namespace std;
-Motor::Motor(){
+Motor::Motor() {
+  cout << "Construtor Motor\n";
+}
+
+Motor::Motor(float _preco): Equipamento (_preco){
   cout << "Construtor Motor\n";
 }
 
@@ -27,3 +31,12 @@ float Motor::getPotencia(void){
 float Motor::getVelocidade(void){
   return velocidade;
 }
+
+void Motor::setPreco(float _preco){
+  preco = _preco*potencia;
+  Equipamento::setPreco(_preco*potencia);
+}
+
+
+
+

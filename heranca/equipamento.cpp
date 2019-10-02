@@ -6,6 +6,11 @@ Equipamento::Equipamento(){
   std::cout << "Construtor equipamento\n";
 }
 
+Equipamento::Equipamento(float _preco){
+  std::cout << "Construtor Equip. Args\n";
+  preco = _preco;
+}
+
 Equipamento::~Equipamento()
 {
   std::cout << "Destrutor equipamento\n";

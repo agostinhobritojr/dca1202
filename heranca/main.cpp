@@ -6,6 +6,8 @@ using namespace std;
 
 int main(void){
   Motor m;
+  m.Equipamento::setPreco(33);
+
   m.setFabricante("ACME");
   m.setPreco(23.45);
   m.setNome("Speedatron");

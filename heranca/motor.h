@@ -7,11 +7,13 @@ class Motor : public Equipamento{
   float velocidade;
 public:
   Motor();
+  Motor(float _preco);
   ~Motor();
   void setPotencia(float _potencia);
   void setVelocidade(float _velocidade);
   float getPotencia(void);
   float getVelocidade(void);
+  void setPreco(float _preco);
 };
 
 #endif // MOTOR_H
