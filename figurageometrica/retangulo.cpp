@@ -7,6 +7,11 @@ Retangulo::Retangulo(){
 
 }
 
+Retangulo::~Retangulo()
+{
+  cout << "destrutor retangulo\n";
+}
+
 void Retangulo::draw(){
   cout << "draw retangulo\n";
 }

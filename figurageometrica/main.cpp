@@ -8,7 +8,7 @@ using namespace std;
 
 int main(){
   FiguraGeometrica *f[4], *tmp;
-  FiguraGeometrica fig;
+//  FiguraGeometrica fig;
   Reta r;
   f[0] = new Reta();
   f[1] = new Circulo;
@@ -25,6 +25,7 @@ int main(){
   cout << "\n";
   for (int i=0; i<4; i++) {
     f[i]->draw();
+    delete f[i];
   }
 
   return 0;

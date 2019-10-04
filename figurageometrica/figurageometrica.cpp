@@ -4,6 +4,7 @@ FiguraGeometrica::FiguraGeometrica(){
 
 }
 
-void FiguraGeometrica::draw(){
+FiguraGeometrica::~FiguraGeometrica()
+{
 
 }
