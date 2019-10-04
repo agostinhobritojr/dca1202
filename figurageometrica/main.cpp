@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "figurageometrica.h"
 #include "circulo.h"
 #include "reta.h"
@@ -7,24 +8,19 @@
 using namespace std;
 
 int main(){
-  FiguraGeometrica *f[4], *tmp;
+  vector<FiguraGeometrica*> f;
 //  FiguraGeometrica fig;
-  Reta r;
-  f[0] = new Reta();
-  f[1] = new Circulo;
-  f[2] = new Retangulo;
-  f[3] = new Reta;
-  for (int i=0; i<4; i++) {
+
+  f.push_back(new Reta);
+  f.push_back(new Circulo);
+  f.push_back(new Retangulo);
+  f.push_back(new Reta);
+  for (int i=0; i<f.size(); i++) {
     f[i]->draw();
   }
-  // trocando o circulo com o retangulo
-  tmp = f[1];
-  f[1] = f[2];
-  f[2] = tmp;
 
   cout << "\n";
   for (int i=0; i<4; i++) {
-    f[i]->draw();
     delete f[i];
   }
 
