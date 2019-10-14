@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['circulo',['Circulo',['../class_circulo.html#a6933bf908b78a4167684081a3a8f257f',1,'Circulo']]]
+  ['alo',['alo',['../class_reta.html#a5b05b01be2cf4f21a5f823917bbd3046',1,'Reta']]]
 ];

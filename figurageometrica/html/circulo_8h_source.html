@@ -5,13 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: circulo.h Source File</title>
+<title>Figura Geometrica: circulo.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,8 +27,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Figura Geometrica
+   &#160;<span id="projectnumber">0.001</span>
    </div>
+   <div id="projectbrief">exemplo de classe abstrata</div>
   </td>
  </tr>
  </tbody>
@@ -63,8 +71,8 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="circulo_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CIRCULO_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define CIRCULO_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="figurageometrica_8h.html">figurageometrica.h</a>&quot;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="class_circulo.html">    5</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_circulo.html">Circulo</a> : <span class="keyword">public</span> <a class="code" href="class_figura_geometrica.html">FiguraGeometrica</a></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <a class="code" href="class_circulo.html#a6933bf908b78a4167684081a3a8f257f">Circulo</a>();</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_circulo.html#aa94899872fb6c586d1343df1d9ce0d86">draw</a>();</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;};</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#endif // CIRCULO_H</span></div><div class="ttc" id="class_circulo_html"><div class="ttname"><a href="class_circulo.html">Circulo</a></div><div class="ttdef"><b>Definition:</b> circulo.h:5</div></div>
-<div class="ttc" id="class_figura_geometrica_html"><div class="ttname"><a href="class_figura_geometrica.html">FiguraGeometrica</a></div><div class="ttdef"><b>Definition:</b> figurageometrica.h:5</div></div>
-<div class="ttc" id="class_circulo_html_aa94899872fb6c586d1343df1d9ce0d86"><div class="ttname"><a href="class_circulo.html#aa94899872fb6c586d1343df1d9ce0d86">Circulo::draw</a></div><div class="ttdeci">void draw()</div><div class="ttdef"><b>Definition:</b> circulo.cpp:10</div></div>
+<div class="ttc" id="class_figura_geometrica_html"><div class="ttname"><a href="class_figura_geometrica.html">FiguraGeometrica</a></div><div class="ttdoc">A classe FiguraGeometrica serve como classe abstrata para criacao de outras figuras. </div><div class="ttdef"><b>Definition:</b> figurageometrica.h:14</div></div>
+<div class="ttc" id="class_circulo_html_aa94899872fb6c586d1343df1d9ce0d86"><div class="ttname"><a href="class_circulo.html#aa94899872fb6c586d1343df1d9ce0d86">Circulo::draw</a></div><div class="ttdeci">void draw()</div><div class="ttdoc">draw eh um metodo virtual puro que deve ser reimplementado nas classes derivadas </div><div class="ttdef"><b>Definition:</b> circulo.cpp:10</div></div>
 <div class="ttc" id="class_circulo_html_a6933bf908b78a4167684081a3a8f257f"><div class="ttname"><a href="class_circulo.html#a6933bf908b78a4167684081a3a8f257f">Circulo::Circulo</a></div><div class="ttdeci">Circulo()</div><div class="ttdef"><b>Definition:</b> circulo.cpp:6</div></div>
 <div class="ttc" id="figurageometrica_8h_html"><div class="ttname"><a href="figurageometrica_8h.html">figurageometrica.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

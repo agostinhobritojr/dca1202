@@ -1,6 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_figura_geometrica.html" title="FiguraGeometrica" alt="" coords="5,56,131,83"/>
+<area shape="rect" id="node1" href="$class_figura_geometrica.html" title="A classe FiguraGeometrica serve como classe abstrata para criacao de outras figuras. " alt="" coords="5,56,131,83"/>
 <area shape="rect" id="node2" href="$class_circulo.html" title="Circulo" alt="" coords="188,5,251,32"/>
-<area shape="rect" id="node3" href="$class_reta.html" title="Reta" alt="" coords="194,56,245,83"/>
+<area shape="rect" id="node3" href="$class_reta.html" title="A classe reta implementa uma reta no plano cartesiano. " alt="" coords="194,56,245,83"/>
 <area shape="rect" id="node4" href="$class_retangulo.html" title="Retangulo" alt="" coords="179,107,260,133"/>
 </map>

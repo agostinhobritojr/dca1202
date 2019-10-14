@@ -1,5 +1,5 @@
 <map id="FiguraGeometrica" name="FiguraGeometrica">
 <area shape="rect" id="node2" href="$class_circulo.html" title="Circulo" alt="" coords="5,80,68,107"/>
-<area shape="rect" id="node3" href="$class_reta.html" title="Reta" alt="" coords="93,80,143,107"/>
+<area shape="rect" id="node3" href="$class_reta.html" title="A classe reta implementa uma reta no plano cartesiano. " alt="" coords="93,80,143,107"/>
 <area shape="rect" id="node4" href="$class_retangulo.html" title="Retangulo" alt="" coords="168,80,249,107"/>
 </map>

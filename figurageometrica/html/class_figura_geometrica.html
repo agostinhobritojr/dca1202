@@ -5,13 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: FiguraGeometrica Class Reference</title>
+<title>Figura Geometrica: FiguraGeometrica Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,8 +27,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Figura Geometrica
+   &#160;<span id="projectnumber">0.001</span>
    </div>
+   <div id="projectbrief">exemplo de classe abstrata</div>
   </td>
  </tr>
  </tbody>
@@ -62,9 +70,12 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_figura_geometrica-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">FiguraGeometrica Class Reference</div>  </div>
+<div class="title">FiguraGeometrica Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A classe <a class="el" href="class_figura_geometrica.html" title="A classe FiguraGeometrica serve como classe abstrata para criacao de outras figuras. ">FiguraGeometrica</a> serve como classe abstrata para criacao de outras figuras.  
+ <a href="class_figura_geometrica.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="figurageometrica_8h_source.html">figurageometrica.h</a>&gt;</code></p>
 <div class="dynheader">
@@ -73,7 +84,7 @@ Inheritance diagram for FiguraGeometrica:</div>
 <div class="center"><img src="class_figura_geometrica__inherit__graph.png" border="0" usemap="#_figura_geometrica_inherit__map" alt="Inheritance graph"/></div>
 <map name="_figura_geometrica_inherit__map" id="_figura_geometrica_inherit__map">
 <area shape="rect" id="node2" href="class_circulo.html" title="Circulo" alt="" coords="5,80,68,107"/>
-<area shape="rect" id="node3" href="class_reta.html" title="Reta" alt="" coords="93,80,143,107"/>
+<area shape="rect" id="node3" href="class_reta.html" title="A classe reta implementa uma reta no plano cartesiano. " alt="" coords="93,80,143,107"/>
 <area shape="rect" id="node4" href="class_retangulo.html" title="Retangulo" alt="" coords="168,80,249,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -81,11 +92,19 @@ Inheritance diagram for FiguraGeometrica:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a81d7c7efaea511e60a15f5a363138dd9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_figura_geometrica.html#a81d7c7efaea511e60a15f5a363138dd9">FiguraGeometrica</a> ()</td></tr>
+<tr class="memdesc:a81d7c7efaea511e60a15f5a363138dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_figura_geometrica.html" title="A classe FiguraGeometrica serve como classe abstrata para criacao de outras figuras. ">FiguraGeometrica</a> eh o construtor da classe.  <a href="#a81d7c7efaea511e60a15f5a363138dd9">More...</a><br /></td></tr>
 <tr class="separator:a81d7c7efaea511e60a15f5a363138dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a417090ea2019fc1d58cdb345167aebea"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_figura_geometrica.html#a417090ea2019fc1d58cdb345167aebea">draw</a> ()</td></tr>
-<tr class="separator:a417090ea2019fc1d58cdb345167aebea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a727cea2befcb22b2457c088127fe041d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_figura_geometrica.html#a727cea2befcb22b2457c088127fe041d">draw</a> ()=0</td></tr>
+<tr class="memdesc:a727cea2befcb22b2457c088127fe041d"><td class="mdescLeft">&#160;</td><td class="mdescRight">draw eh um metodo virtual puro que deve ser reimplementado nas classes derivadas  <a href="#a727cea2befcb22b2457c088127fe041d">More...</a><br /></td></tr>
+<tr class="separator:a727cea2befcb22b2457c088127fe041d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad13b9bccf1b14f6b9fbc662aad61ffd1"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_figura_geometrica.html#ad13b9bccf1b14f6b9fbc662aad61ffd1">~FiguraGeometrica</a> ()</td></tr>
+<tr class="memdesc:ad13b9bccf1b14f6b9fbc662aad61ffd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">~FiguraGeometrica eh o destrutor virtual. Deve ser implementado para que os destrutores sejam chamados para cada uma das classes derivadas  <a href="#ad13b9bccf1b14f6b9fbc662aad61ffd1">More...</a><br /></td></tr>
+<tr class="separator:ad13b9bccf1b14f6b9fbc662aad61ffd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A classe <a class="el" href="class_figura_geometrica.html" title="A classe FiguraGeometrica serve como classe abstrata para criacao de outras figuras. ">FiguraGeometrica</a> serve como classe abstrata para criacao de outras figuras. </p>
+<p><a class="el" href="class_figura_geometrica.html" title="A classe FiguraGeometrica serve como classe abstrata para criacao de outras figuras. ">FiguraGeometrica</a> implementa um conceito chamado de classe abstrata em C++. Permite que endereços de objetos de classes derivadas dela sejam armazenados em ponteiros dessa classe. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a81d7c7efaea511e60a15f5a363138dd9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a81d7c7efaea511e60a15f5a363138dd9">&#9670;&nbsp;</a></span>FiguraGeometrica()</h2>
 
@@ -101,11 +120,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="class_figura_geometrica.html" title="A classe FiguraGeometrica serve como classe abstrata para criacao de outras figuras. ">FiguraGeometrica</a> eh o construtor da classe. </p>
+
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a417090ea2019fc1d58cdb345167aebea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a417090ea2019fc1d58cdb345167aebea">&#9670;&nbsp;</a></span>draw()</h2>
+<a id="ad13b9bccf1b14f6b9fbc662aad61ffd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad13b9bccf1b14f6b9fbc662aad61ffd1">&#9670;&nbsp;</a></span>~FiguraGeometrica()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -114,7 +134,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void FiguraGeometrica::draw </td>
+          <td class="memname">FiguraGeometrica::~FiguraGeometrica </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -127,7 +147,37 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_circulo.html#aa94899872fb6c586d1343df1d9ce0d86">Circulo</a>, <a class="el" href="class_reta.html#a1c370279480f421bf617e5fbfbbb63a1">Reta</a>, and <a class="el" href="class_retangulo.html#a48cb75fe7cd048727879c25485976444">Retangulo</a>.</p>
+<p>~FiguraGeometrica eh o destrutor virtual. Deve ser implementado para que os destrutores sejam chamados para cada uma das classes derivadas </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a727cea2befcb22b2457c088127fe041d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a727cea2befcb22b2457c088127fe041d">&#9670;&nbsp;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void FiguraGeometrica::draw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>draw eh um metodo virtual puro que deve ser reimplementado nas classes derivadas </p>
+
+<p>Implemented in <a class="el" href="class_reta.html#a1c370279480f421bf617e5fbfbbb63a1">Reta</a>, <a class="el" href="class_circulo.html#aa94899872fb6c586d1343df1d9ce0d86">Circulo</a>, and <a class="el" href="class_retangulo.html#a48cb75fe7cd048727879c25485976444">Retangulo</a>.</p>
 
 </div>
 </div>

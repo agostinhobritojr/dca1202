@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]]
+  ['figurageometrica',['FiguraGeometrica',['../class_figura_geometrica.html#a81d7c7efaea511e60a15f5a363138dd9',1,'FiguraGeometrica']]]
 ];
