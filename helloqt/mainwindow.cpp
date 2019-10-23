@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QSlider>
+#include <QString>
 
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
@@ -11,10 +11,16 @@ MainWindow::MainWindow(QWidget *parent) :
           SIGNAL(valueChanged(int)),
           ui->lcdNumberTeste,
           SLOT(display(int)));
+
   connect(ui->pushButtonMorreu,
-          SIGNAL(clicked()),
+          &QPushButton::clicked,
           this,
-          SLOT(finaliza()));
+          &MainWindow::finaliza);
+
+  connect(ui->pushButtonCopia,
+          &QPushButton::clicked,
+          this,
+          &MainWindow::copiaTexto);
 }
 
 MainWindow::~MainWindow()
@@ -26,3 +32,18 @@ void MainWindow::finaliza()
 {
   close();
 }
+
+void MainWindow::copiaTexto()
+{
+  QString s;
+  s = ui->plainTextEdit->toPlainText();
+  s = "<b>"+s+"</b>";
+  ui->textEdit->setText(s);
+}
+
+
+
+
+
+
+
