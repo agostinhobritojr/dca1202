@@ -16,6 +16,9 @@ public:
       nullptr);
   ~MainWindow();
 
+public slots:
+  void finaliza();
+
 private:
   Ui::MainWindow *ui;
 };

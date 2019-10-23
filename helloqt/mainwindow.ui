@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>621</width>
+    <height>471</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,8 +30,8 @@
    <widget class="QSlider" name="horizontalSlider">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>130</y>
+      <x>260</x>
+      <y>20</y>
       <width>160</width>
       <height>16</height>
      </rect>
@@ -46,10 +46,10 @@
    <widget class="QLCDNumber" name="lcdNumber">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>90</y>
-      <width>141</width>
-      <height>91</height>
+      <x>450</x>
+      <y>10</y>
+      <width>121</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="frameShadow">
@@ -59,13 +59,69 @@
      <enum>QLCDNumber::Flat</enum>
     </property>
    </widget>
+   <widget class="QSlider" name="horizontalSliderTeste">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>100</y>
+      <width>160</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdNumberTeste">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>90</y>
+      <width>91</width>
+      <height>51</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>200</y>
+      <width>141</width>
+      <height>141</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>200</y>
+      <width>151</width>
+      <height>131</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>220</y>
+      <width>61</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&gt;&gt;&gt;</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>621</width>
      <height>22</height>
     </rect>
    </property>
@@ -84,34 +140,18 @@
  <resources/>
  <connections>
   <connection>
-   <sender>pushButtonMorreu</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>117</x>
-     <y>82</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>287</x>
-     <y>161</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>horizontalSlider</sender>
    <signal>valueChanged(int)</signal>
    <receiver>lcdNumber</receiver>
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>172</x>
-     <y>175</y>
+     <x>382</x>
+     <y>74</y>
     </hint>
     <hint type="destinationlabel">
-     <x>273</x>
-     <y>193</y>
+     <x>493</x>
+     <y>109</y>
     </hint>
    </hints>
   </connection>
