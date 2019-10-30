@@ -26,6 +26,11 @@ MainWindow::MainWindow(QWidget *parent) :
 //          &QAction::triggered,
 //          this,
 //          &MainWindow::finaliza);
+
+  connect(ui->horizontalSliderTeste,
+          &QAbstractSlider::valueChanged,
+          ui->widget,
+          &Plotter::mudaFrequencia);
 }
 
 MainWindow::~MainWindow()

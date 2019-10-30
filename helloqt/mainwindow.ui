@@ -31,7 +31,7 @@
           <item>
            <widget class="QSlider" name="horizontalSlider">
             <property name="maximum">
-             <number>200</number>
+             <number>100</number>
             </property>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
@@ -141,6 +141,9 @@
    <extends>QWidget</extends>
    <header>plotter.h</header>
    <container>1</container>
+   <slots>
+    <slot>mudaAmplitude(int)</slot>
+   </slots>
   </customwidget>
  </customwidgets>
  <resources>
@@ -154,12 +157,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>332</x>
-     <y>69</y>
+     <x>288</x>
+     <y>91</y>
     </hint>
     <hint type="destinationlabel">
-     <x>402</x>
-     <y>73</y>
+     <x>529</x>
+     <y>95</y>
     </hint>
    </hints>
   </connection>
@@ -176,6 +179,22 @@
     <hint type="destinationlabel">
      <x>207</x>
      <y>152</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>widget</receiver>
+   <slot>mudaAmplitude(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>332</x>
+     <y>86</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>390</x>
+     <y>228</y>
     </hint>
    </hints>
   </connection>
