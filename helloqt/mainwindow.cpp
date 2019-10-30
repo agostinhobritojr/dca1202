@@ -21,6 +21,11 @@ MainWindow::MainWindow(QWidget *parent) :
           &QPushButton::clicked,
           this,
           &MainWindow::copiaTexto);
+
+//  connect(ui->actionQuit,
+//          &QAction::triggered,
+//          this,
+//          &MainWindow::finaliza);
 }
 
 MainWindow::~MainWindow()

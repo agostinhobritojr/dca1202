@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>415</width>
-    <height>395</height>
+    <width>542</width>
+    <height>448</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
       <item>
        <widget class="QPushButton" name="pushButtonMorreu">
         <property name="text">
@@ -69,19 +69,26 @@
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="30,10,60">
+     <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="40,60">
       <item>
-       <widget class="QPlainTextEdit" name="plainTextEdit"/>
+       <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="30,10,60">
+        <item>
+         <widget class="QPlainTextEdit" name="plainTextEdit"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButtonCopia">
+          <property name="text">
+           <string>&gt;&gt;&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="textEdit"/>
+        </item>
+       </layout>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButtonCopia">
-        <property name="text">
-         <string>&gt;&gt;&gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QTextEdit" name="textEdit"/>
+       <widget class="Plotter" name="widget" native="true"/>
       </item>
      </layout>
     </item>
@@ -92,10 +99,17 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>415</width>
+     <width>542</width>
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionQuit"/>
+   </widget>
+   <addaction name="menuFile"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -104,11 +118,34 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionQuit"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionQuit">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/Morreu</normaloff>:/icons/Morreu</iconset>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <customwidgets>
+  <customwidget>
+   <class>Plotter</class>
+   <extends>QWidget</extends>
+   <header>plotter.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>horizontalSlider</sender>
@@ -117,14 +154,34 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>382</x>
-     <y>74</y>
+     <x>332</x>
+     <y>69</y>
     </hint>
     <hint type="destinationlabel">
-     <x>493</x>
-     <y>109</y>
+     <x>402</x>
+     <y>73</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionQuit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>finaliza()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>207</x>
+     <y>152</y>
     </hint>
    </hints>
   </connection>
  </connections>
+ <slots>
+  <slot>finaliza()</slot>
+  <slot>copiaTexto()</slot>
+ </slots>
 </ui>
