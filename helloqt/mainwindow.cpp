@@ -7,30 +7,30 @@ MainWindow::MainWindow(QWidget *parent) :
   ui(new Ui::MainWindow)
 {
   ui->setupUi(this);
-  connect(ui->horizontalSliderTeste,
-          SIGNAL(valueChanged(int)),
-          ui->lcdNumberTeste,
-          SLOT(display(int)));
-
-  connect(ui->pushButtonMorreu,
-          &QPushButton::clicked,
-          this,
-          &MainWindow::finaliza);
-
-  connect(ui->pushButtonCopia,
-          &QPushButton::clicked,
-          this,
-          &MainWindow::copiaTexto);
+//  connect(ui->horizontalSliderTeste,
+//          SIGNAL(valueChanged(int)),
+//          ui->lcdNumberTeste,
+//          SLOT(display(int)));
 
 //  connect(ui->actionQuit,
 //          &QAction::triggered,
 //          this,
 //          &MainWindow::finaliza);
 
-  connect(ui->horizontalSliderTeste,
+  connect(ui->horizontalSliderFreq,
           &QAbstractSlider::valueChanged,
           ui->widget,
           &Plotter::mudaFrequencia);
+
+  connect(ui->pushButtonTimer,
+          &QPushButton::clicked,
+          ui->widget,
+          &Plotter::mudaTemporizador);
+
+  connect(ui->horizontalSliderVeloc,
+          &QAbstractSlider::valueChanged,
+          ui->widget,
+          &Plotter::mudaVelocidade);
 }
 
 MainWindow::~MainWindow()
@@ -46,9 +46,9 @@ void MainWindow::finaliza()
 void MainWindow::copiaTexto()
 {
   QString s;
-  s = ui->plainTextEdit->toPlainText();
-  s = "<b>"+s+"</b>";
-  ui->textEdit->setText(s);
+ // s = ui->plainTextEdit->toPlainText();
+//  s = "<b>"+s+"</b>";
+//  ui->textEdit->setText(s);
 }
 
 

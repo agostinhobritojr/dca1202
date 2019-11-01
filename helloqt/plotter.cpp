@@ -3,6 +3,7 @@
 #include <QPen>
 #include <QBrush>
 #include <cmath>
+#include <QTimerEvent>
 
 using namespace std;
 
@@ -11,6 +12,9 @@ Plotter::Plotter(QWidget *parent) : QWidget(parent)
   amplitude = 0.5;
   frequencia = 2;
   teta = 1;
+  velocidade = 0;
+
+  timerid = startTimer(10);
 }
 
 void Plotter::paintEvent(QPaintEvent *event){
@@ -62,6 +66,14 @@ void Plotter::paintEvent(QPaintEvent *event){
 
 }
 
+void Plotter::timerEvent(QTimerEvent *event)
+{
+  int id;
+  id = event->timerId();
+  teta=teta+velocidade;
+  repaint();
+}
+
 void Plotter::mudaAmplitude(int valor){
   amplitude = valor/100.0;
   repaint();
@@ -71,6 +83,15 @@ void Plotter::mudaFrequencia(int valor)
 {
   frequencia = valor*50/100.0;
   repaint();
+}
+
+void Plotter::mudaVelocidade(int vel)
+{
+  velocidade = (float)vel/100;
+}
+
+void Plotter::mudaTemporizador(){
+  killTimer(timerid);
 }
 
 
