@@ -4,6 +4,7 @@
 #include <QBrush>
 #include <cmath>
 #include <QTimerEvent>
+#include <QMouseEvent>
 
 using namespace std;
 
@@ -72,6 +73,15 @@ void Plotter::timerEvent(QTimerEvent *event)
   id = event->timerId();
   teta=teta+velocidade;
   repaint();
+}
+
+void Plotter::mousePressEvent(QMouseEvent *event)
+{
+  int x, y;
+  x = event->x();
+  y = event->y();
+  emit mouseX(x);
+  emit mouseY(y);
 }
 
 void Plotter::mudaAmplitude(int valor){
