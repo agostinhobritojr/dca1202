@@ -1,6 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QString>
+#include <QDebug>
+#include "plotter.h"
+#include "dialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
@@ -31,6 +34,22 @@ MainWindow::MainWindow(QWidget *parent) :
           &QAbstractSlider::valueChanged,
           ui->widget,
           &Plotter::mudaVelocidade);
+
+  connect(ui->widget,
+          SIGNAL(mouseX(int)),
+          ui->lcdNumberX,
+          SLOT(display(int)));
+
+  connect(ui->widget,
+          SIGNAL(mouseY(int)),
+          ui->lcdNumberY,
+          SLOT(display(int)));
+
+  connect(ui->actionMudaCor,
+          SIGNAL(triggered()),
+          this,
+          SLOT(mudaCor()));
+
 }
 
 MainWindow::~MainWindow()
@@ -48,7 +67,14 @@ void MainWindow::copiaTexto()
   QString s;
  // s = ui->plainTextEdit->toPlainText();
 //  s = "<b>"+s+"</b>";
-//  ui->textEdit->setText(s);
+  //  ui->textEdit->setText(s);
+}
+
+void MainWindow::mudaCor()
+{
+  Dialog d;
+  d.exec();
+  qDebug() << d.getR();
 }
 
 

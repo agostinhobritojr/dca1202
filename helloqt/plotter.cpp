@@ -5,6 +5,7 @@
 #include <cmath>
 #include <QTimerEvent>
 #include <QMouseEvent>
+#include <QDebug>
 
 using namespace std;
 
@@ -16,6 +17,8 @@ Plotter::Plotter(QWidget *parent) : QWidget(parent)
   velocidade = 0;
 
   timerid = startTimer(10);
+  // habilitar o rastreio do mouse
+  setMouseTracking(true);
 }
 
 void Plotter::paintEvent(QPaintEvent *event){
@@ -80,8 +83,16 @@ void Plotter::mousePressEvent(QMouseEvent *event)
   int x, y;
   x = event->x();
   y = event->y();
+//  qDebug() << x << y;
+//  qDebug() << event->button();
   emit mouseX(x);
   emit mouseY(y);
+}
+
+void Plotter::mouseMoveEvent(QMouseEvent *event)
+{
+  emit mouseX(event->x());
+  emit mouseY(event->y());
 }
 
 void Plotter::mudaAmplitude(int valor){

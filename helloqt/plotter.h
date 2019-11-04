@@ -18,7 +18,7 @@ public:
   void paintEvent(QPaintEvent *event);
   void timerEvent(QTimerEvent *event);
   void mousePressEvent(QMouseEvent *event);
-
+  void mouseMoveEvent(QMouseEvent *event);
 signals:
   void mouseX(int);
   void mouseY(int);
