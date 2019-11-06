@@ -26,9 +26,11 @@ Plotter::Plotter(QWidget *parent) : QWidget(parent)
   // habilitar o rastreio do mouse
   setMouseTracking(true);
 
-  actionMessage.setText("mostra mensagem");
+  actionMessage = new QAction(this);
 
-  connect(&actionMessage,
+  actionMessage->setText("mostra mensagem");
+
+  connect(actionMessage,
           SIGNAL(triggered()),
           this,
           SLOT(mostraMensagem()));
@@ -111,7 +113,7 @@ void Plotter::mouseMoveEvent(QMouseEvent *event)
 void Plotter::contextMenuEvent(QContextMenuEvent *event)
 {
   QMenu menu;
-  menu.addAction(&actionMessage);
+  menu.addAction(actionMessage);
   menu.exec(event->globalPos());
 }
 

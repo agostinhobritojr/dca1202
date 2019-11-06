@@ -14,7 +14,7 @@ private:
   float velocidade;
   int timerid;
   int backR, backG, backB;
-  QAction actionMessage;
+  QAction *actionMessage;
 
 public:
   explicit Plotter(QWidget *parent = nullptr);
