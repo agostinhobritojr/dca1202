@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QString>
 #include <QDebug>
+#include <QColorDialog>
 #include "plotter.h"
 #include "dialog.h"
 
@@ -10,15 +11,15 @@ MainWindow::MainWindow(QWidget *parent) :
   ui(new Ui::MainWindow)
 {
   ui->setupUi(this);
-//  connect(ui->horizontalSliderTeste,
-//          SIGNAL(valueChanged(int)),
-//          ui->lcdNumberTeste,
-//          SLOT(display(int)));
+  //  connect(ui->horizontalSliderTeste,
+  //          SIGNAL(valueChanged(int)),
+  //          ui->lcdNumberTeste,
+  //          SLOT(display(int)));
 
-//  connect(ui->actionQuit,
-//          &QAction::triggered,
-//          this,
-//          &MainWindow::finaliza);
+  //  connect(ui->actionQuit,
+  //          &QAction::triggered,
+  //          this,
+  //          &MainWindow::finaliza);
 
   connect(ui->horizontalSliderFreq,
           &QAbstractSlider::valueChanged,
@@ -65,16 +66,26 @@ void MainWindow::finaliza()
 void MainWindow::copiaTexto()
 {
   QString s;
- // s = ui->plainTextEdit->toPlainText();
-//  s = "<b>"+s+"</b>";
+  // s = ui->plainTextEdit->toPlainText();
+  //  s = "<b>"+s+"</b>";
   //  ui->textEdit->setText(s);
 }
 
 void MainWindow::mudaCor()
 {
   Dialog d;
-  d.exec();
-  qDebug() << d.getR();
+  QColorDialog colorDialog;
+  int r, g, b;
+  if(d.exec() == QDialog::Accepted){
+    r = d.getR();
+    g = d.getG();
+    b = d.getB();
+    ui->widget->setBackgroundColor(r,g,b);
+  }
+
+ // if(colorDialog.exec() == QDialog::Accepted){
+
+ // }
 }
 
 

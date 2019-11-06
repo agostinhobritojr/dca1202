@@ -15,6 +15,8 @@ public:
   explicit Dialog(QWidget *parent = nullptr);
   ~Dialog();
   int getR();
+  int getG();
+  int getB();
 
 private:
   Ui::Dialog *ui;

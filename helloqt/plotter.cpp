@@ -6,6 +6,8 @@
 #include <QTimerEvent>
 #include <QMouseEvent>
 #include <QDebug>
+#include <QMenu>
+#include <QMessageBox>
 
 using namespace std;
 
@@ -16,9 +18,20 @@ Plotter::Plotter(QWidget *parent) : QWidget(parent)
   teta = 1;
   velocidade = 0;
 
+  backR = 255;
+  backG = 255;
+  backB = 0;
+
   timerid = startTimer(10);
   // habilitar o rastreio do mouse
   setMouseTracking(true);
+
+  actionMessage.setText("mostra mensagem");
+
+  connect(&actionMessage,
+          SIGNAL(triggered()),
+          this,
+          SLOT(mostraMensagem()));
 }
 
 void Plotter::paintEvent(QPaintEvent *event){
@@ -31,7 +44,7 @@ void Plotter::paintEvent(QPaintEvent *event){
   painter.setRenderHint(QPainter::Antialiasing);
 
   pen.setColor(QColor(255,0,0));
-  brush.setColor(QColor(255,255,0));
+  brush.setColor(QColor(backR,backG,backB));
   brush.setStyle(Qt::SolidPattern);
 
   painter.setPen(pen);
@@ -95,6 +108,19 @@ void Plotter::mouseMoveEvent(QMouseEvent *event)
   emit mouseY(event->y());
 }
 
+void Plotter::contextMenuEvent(QContextMenuEvent *event)
+{
+  QMenu menu;
+  menu.addAction(&actionMessage);
+  menu.exec(event->globalPos());
+}
+
+void Plotter::setBackgroundColor(int r, int g, int b)
+{
+  backR = r;  backG = g; backB = b;
+  repaint();
+}
+
 void Plotter::mudaAmplitude(int valor){
   amplitude = valor/100.0;
   repaint();
@@ -113,6 +139,13 @@ void Plotter::mudaVelocidade(int vel)
 
 void Plotter::mudaTemporizador(){
   killTimer(timerid);
+}
+
+void Plotter::mostraMensagem()
+{
+  QMessageBox box;
+  box.setText("Alo, menu!");
+  box.exec();
 }
 
 
