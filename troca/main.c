@@ -2,9 +2,11 @@
 
 void troca(int *a, int *b){
   int tmp;
-  printf("a = %d; b = %d\n", a, b);
-  tmp=a; a=b; b=tmp;
-  printf("a = %d; b = %d\n", a, b);
+  printf("a = %d; b = %d\n", *a, *b);
+  tmp=*a;
+  *a=*b;
+  *b=tmp;
+  printf("a = %d; b = %d\n", *a, *b);
 }
 
 int main()
