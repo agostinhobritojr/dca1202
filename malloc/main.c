@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h> // para malloc()/free()
+#include <string.h> // para memcpy()
 
 int main()
 {
@@ -10,13 +11,20 @@ int main()
   scanf("%d", &n);
 
   x = (int*) malloc(n*sizeof(int));
+  z = (int*) malloc(n*sizeof(int));
+
   x[0] = 1; x[2] = 4; x[3] = -8;
 
   for(i=0; i<n; i++){
     printf("%d, ", x[i]);
   }
   printf("\n");
-  z = x;
+ /* for(i=0; i<n; i++){
+ *   z[i] = x[i];
+  }
+*/
+  memcpy(z,x,n*sizeof (int));
+
   for(i=0; i<n; i++){
     printf("%d, ", z[i]);
   }
@@ -43,5 +51,6 @@ int main()
   printf("x = %p\n", x);
 
   free(x);
+  free(z);
   return 0;
 }
