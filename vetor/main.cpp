@@ -1,19 +1,7 @@
 #include <iostream>
+#include "vetor.h"
 
 using namespace std;
-
-class Vetor{
-private:
-  float x, y;
-public:
-  void setX(float mx){
-    x = mx;
-  }
-  float getX(void){
-    return x;
-  }
-};
-
 
 int main(){
   Vetor v1;
@@ -22,3 +10,6 @@ int main(){
 //  cout << "x = " << v1.x << "\n";
   return 0;
 }
+
+
+
