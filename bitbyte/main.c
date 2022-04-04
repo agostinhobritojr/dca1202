@@ -12,7 +12,6 @@ void printbyte(unsigned char c){
       printf("0");
     }
   }
-  printf("\n");
 }
 
 int main(){
@@ -24,16 +23,14 @@ int main(){
   printbyte(12);
 
 
-
-
-  x = 0;
+  x = 256;
   px = &x;
-  px[0] = 3;
-  px[1] = 1;
   printf("x = %d\n", x);
 
-  for(i=0; i<4; i++){
-    printf("px[%d] = %d\n", i, px[i]);
+  for(i=3; i>=0; i--){
+    printbyte(px[i]);
+    printf("|");
   }
+  printf("\n");
   return 0;
 }
