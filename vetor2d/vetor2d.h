@@ -3,11 +3,23 @@
 
 class Vetor2d{
 private:
-  float y;
-  float getX();
+  float x, y;
 public:
-  float x;
   void setX(float x_);
+  float getX();
+  void setY(float y_);
+  float getY();
+  void print();
+  float angulo();
+  Vetor2d produto(float a);
+  // sobrecarga de metodo
+  float produto(Vetor2d v2);
 };
 
 #endif // VETOR2D_H
+
+
+
+
+
+
