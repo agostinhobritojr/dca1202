@@ -3,6 +3,7 @@
 
 int main(void){
   Vetor2d v;
+  v.x = 3;
   v.setX(3); std::cout << v.getX() ;
 }
 

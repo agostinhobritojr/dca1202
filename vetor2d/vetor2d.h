@@ -3,10 +3,11 @@
 
 class Vetor2d{
 private:
-  float x, y;
-public:
-  void setX(float x_);
+  float y;
   float getX();
+public:
+  float x;
+  void setX(float x_);
 };
 
 #endif // VETOR2D_H
