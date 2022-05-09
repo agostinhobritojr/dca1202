@@ -5,6 +5,17 @@ class Vetor2d{
 private:
   float x, y;
 public:
+  // construtor padrao ou default
+ // Vetor2d();
+  // construtor com argumentos
+  Vetor2d(float x_=0, float y_=0);
+
+  // construtor de copia
+  Vetor2d(Vetor2d& v);
+
+  // Vetor2d(float xy_);
+  // destrutor UNICO
+  ~Vetor2d();
   void setX(float x_);
   float getX();
   void setY(float y_);
