@@ -3,11 +3,10 @@
 #include <cmath>
 #include <values.h>
 
-/*
 Vetor2d::Vetor2d(){
   std::cout << "construtor\n";
   x = y = 0;
-}*/
+}
 
 Vetor2d::Vetor2d(float x_, float y_){
   std::cout << "construtor com argumentos\n";

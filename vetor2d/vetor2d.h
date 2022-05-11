@@ -6,7 +6,7 @@ private:
   float x, y;
 public:
   // construtor padrao ou default
- // Vetor2d();
+  Vetor2d();
   // construtor com argumentos
   Vetor2d(float x_=0, float y_=0);
 
