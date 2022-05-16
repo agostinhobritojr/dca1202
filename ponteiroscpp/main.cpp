@@ -12,6 +12,10 @@ public:
     std::cout << "construtor com argumentos\n";
     x = x_; y = y_;
   }
+  ~Vetor2d(){
+    std::cout << "chamando o destrutor\n";
+  }
+
   void setX(int x_){
     x = x_;
   }
