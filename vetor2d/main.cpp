@@ -3,7 +3,16 @@
 
 int main(void){
   Vetor2d v(3,4), v2(5), v3;
+
+  //v3 = v+v2;
+
+  v3 = v.operator+(v2);
+
+  v3.print();
+  std::cout << std::endl;
+
   // v.x = 3; // proibido!
+/*
   v.print();
   v2.print();
   v3.print();
@@ -24,5 +33,6 @@ int main(void){
                v.produto(v3)
             << "\n";
   std::cout << "saiu de vetor por vetor\n\n";
+  */
 }
 
