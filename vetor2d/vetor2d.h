@@ -27,15 +27,14 @@ public:
   float produto(Vetor2d v2);
   // sobrecarga de operador +
   Vetor2d operator +(Vetor2d v);
-  /* Vetor2d v1(3,4), v2(5,6), v3;
-   * float a;
-   * v3 = v1 - v2;
-   * v3 = v1 * 4;
-   * a = v1 * v2;
-   * v3 = 4 * v1;
-   */
-
+  Vetor2d operator -(Vetor2d v);
+  Vetor2d operator *(float a);
+  float operator *(Vetor2d v);
+  // friendship (amiga)
+  // permite acesso as partes privadas
+  friend Vetor2d operator*(float a, Vetor2d v);
 };
+
 
 #endif // VETOR2D_H
 

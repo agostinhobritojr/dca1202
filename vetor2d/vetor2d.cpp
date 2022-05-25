@@ -10,7 +10,7 @@ Vetor2d::Vetor2d(){
 */
 
 Vetor2d::Vetor2d(float x_, float y_){
-  std::cout << "construtor com argumentos\n";
+//  std::cout << "construtor com argumentos\n";
   x=x_; y=y_;
 }
 
@@ -18,7 +18,7 @@ Vetor2d::Vetor2d(Vetor2d &v)
 {
   x = v.x;
   y = v.y;
-  std::cout << "construtor copia\n";
+ // std::cout << "construtor copia\n";
 }
 
 /*
@@ -28,7 +28,7 @@ Vetor2d::Vetor2d(float xy_)
 }*/
 
 Vetor2d::~Vetor2d(){
-  std::cout << "destrutor\n";
+  //std::cout << "destrutor\n";
 }
 
 void Vetor2d::setX(float x_){
@@ -80,8 +80,30 @@ Vetor2d Vetor2d::operator + (Vetor2d v){
   return ret;
 }
 
+Vetor2d Vetor2d::operator -(Vetor2d v){
+  Vetor2d ret;
+  ret.x = x-v.x;
+  ret.y = y-v.y;
+  return ret;
+}
 
+Vetor2d Vetor2d::operator *(float a){
+  Vetor2d ret;
+  ret.x = x*a;
+  ret.y = y*a;
+  return ret;
+}
 
+float Vetor2d::operator *(Vetor2d v){
+  return x*v.x + y*v.y;
+}
+
+Vetor2d operator*(float a, Vetor2d v){
+  Vetor2d ret;
+  ret.x = a * v.x;
+  ret.y = a * v.y;
+  return ret;
+}
 
 
 
