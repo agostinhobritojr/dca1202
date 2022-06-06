@@ -2,15 +2,17 @@
 #define FIGURAGEOMETRICA_H
 #include <iostream>
 
+// classe abstrata pois contem
+// PELO MENOS uma funcao virtual pura
 class FiguraGeometrica{
   float are;
   float xcenter, ycenter;
   float r,g,b,a;
 public:  
   FiguraGeometrica();
-  virtual void draw(){
-    std::cout << "draw figurageometrica\n";
-  }
+  // funcao virtual pura
+  virtual void draw()=0;
+
   void area(){
     std::cout << "area figurageometrica\n";
   }
