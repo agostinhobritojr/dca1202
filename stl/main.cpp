@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <ctime>
 
 int main(){
   std::vector<int> v;
@@ -9,9 +10,12 @@ int main(){
   v.push_back(6);
   v.push_back(7);
 
+  std::srand(std::time(0));
+
   for(it = v.begin(); it!=v.end(); it++){
     std::cout << *it << " ";
   }
+
   std::cout << std::endl;
 
 //  it = v.begin();
