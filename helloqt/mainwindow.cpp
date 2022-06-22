@@ -31,8 +31,24 @@ void MainWindow::morreDanado()
 
 void MainWindow::copiaTexto()
 {
-
+   QString texto;
+   texto = ui->textEditEsquerda->toPlainText();
+   texto = QString("<i>")+texto+"</i>";
+   ui->textEditDireita->setText(texto);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
