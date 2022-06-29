@@ -15,6 +15,9 @@ public:
   MainWindow(QWidget *parent = nullptr);
   ~MainWindow();
 
+public slots:
+  void recebePosicao(int x, int y);
+
 private:
   Ui::MainWindow *ui;
 };

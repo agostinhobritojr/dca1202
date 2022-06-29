@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include <QLCDNumber>
 MainWindow::MainWindow(QWidget *parent)
   : QMainWindow(parent)
   , ui(new Ui::MainWindow)
@@ -26,10 +26,28 @@ MainWindow::MainWindow(QWidget *parent)
           SIGNAL(valueChanged(int)),
           ui->widgetSeno,
           SLOT(mudaAmplitude(int)));
+
+  connect(ui->widgetSeno,
+          SIGNAL(mudaxy(int,int)),
+          this,
+          SLOT(recebePosicao(int, int)));
 }
 
 MainWindow::~MainWindow()
 {
   delete ui;
 }
+
+void MainWindow::recebePosicao(int x, int y)
+{
+  ui->lcdNumberX->display(x);
+  ui->lcdNumberY->display(y);
+}
+
+
+
+
+
+
+
 

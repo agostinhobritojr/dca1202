@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>469</width>
-    <height>438</height>
+    <width>483</width>
+    <height>467</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="70,30">
+   <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="100,0">
     <item>
      <widget class="Plotter" name="widgetSeno" native="true"/>
     </item>
@@ -197,6 +197,37 @@
         </property>
        </spacer>
       </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLCDNumber" name="lcdNumberX">
+          <property name="segmentStyle">
+           <enum>QLCDNumber::Flat</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLCDNumber" name="lcdNumberY">
+          <property name="segmentStyle">
+           <enum>QLCDNumber::Flat</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
      </layout>
     </item>
    </layout>
@@ -206,7 +237,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>469</width>
+     <width>483</width>
      <height>22</height>
     </rect>
    </property>

@@ -12,8 +12,9 @@ public:
   explicit Plotter(QWidget *parent = nullptr);
   void paintEvent(QPaintEvent *event);
   void timerEvent(QTimerEvent *event);
+  void mousePressEvent(QMouseEvent *event);
 signals:
-
+  void mudaxy(int, int);
 public slots:
   void mudaAmplitude(int a);
 };

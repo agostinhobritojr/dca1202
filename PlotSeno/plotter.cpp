@@ -3,6 +3,8 @@
 #include <QBrush>
 #include <QPen>
 #include <cmath>
+#include <QDebug>
+#include <QMouseEvent>
 
 Plotter::Plotter(QWidget *parent) :
   QWidget(parent)
@@ -58,6 +60,12 @@ void Plotter::timerEvent(QTimerEvent *event)
     teta = 0;
   }
   repaint();
+}
+
+void Plotter::mousePressEvent(QMouseEvent *event)
+{
+ // qDebug() << event->x() << event->y();
+  emit mudaxy(event->x(), event->y());
 }
 
 void Plotter::mudaAmplitude(int a)
