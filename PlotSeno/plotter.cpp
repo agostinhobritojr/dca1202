@@ -54,6 +54,9 @@ void Plotter::paintEvent(QPaintEvent *event)
 void Plotter::timerEvent(QTimerEvent *event)
 {
   teta = teta + 0.01;
+  if(teta > 2*3.14){
+    teta = 0;
+  }
   repaint();
 }
 

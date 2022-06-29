@@ -222,54 +222,5 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections>
-  <connection>
-   <sender>horizontalSliderAmp</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>labelAmp</receiver>
-   <slot>setNum(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>400</x>
-     <y>39</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>413</x>
-     <y>64</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>horizontalSliderVel</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>labelVel</receiver>
-   <slot>setNum(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>402</x>
-     <y>171</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>410</x>
-     <y>197</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>horizontalSliderPer</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>labelPer</receiver>
-   <slot>setNum(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>375</x>
-     <y>294</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>412</x>
-     <y>316</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
