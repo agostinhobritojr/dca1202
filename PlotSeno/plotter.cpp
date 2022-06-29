@@ -57,6 +57,13 @@ void Plotter::timerEvent(QTimerEvent *event)
   repaint();
 }
 
+void Plotter::mudaAmplitude(int a)
+{
+  A = a/100.0;
+  repaint();
+//  A = (float)a/100;
+}
+
 
 
 

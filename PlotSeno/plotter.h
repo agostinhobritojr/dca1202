@@ -14,6 +14,14 @@ public:
   void timerEvent(QTimerEvent *event);
 signals:
 
+public slots:
+  void mudaAmplitude(int a);
 };
 
 #endif // PLOTTER_H
+
+
+
+
+
+
