@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QLCDNumber>
+#include <cstdlib>
+
 MainWindow::MainWindow(QWidget *parent)
   : QMainWindow(parent)
   , ui(new Ui::MainWindow)
@@ -31,6 +33,12 @@ MainWindow::MainWindow(QWidget *parent)
           SIGNAL(mudaxy(int,int)),
           this,
           SLOT(recebePosicao(int, int)));
+
+  connect(ui->actionQuit,
+          SIGNAL(triggered()),
+          this,
+          SLOT(finaliza()));
+
 }
 
 MainWindow::~MainWindow()
@@ -42,6 +50,10 @@ void MainWindow::recebePosicao(int x, int y)
 {
   ui->lcdNumberX->display(x);
   ui->lcdNumberY->display(y);
+}
+
+void MainWindow::finaliza(){
+  exit(1);
 }
 
 

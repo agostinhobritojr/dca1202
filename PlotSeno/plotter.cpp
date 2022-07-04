@@ -12,7 +12,11 @@ Plotter::Plotter(QWidget *parent) :
   A = 1.0;
   freq = 1.0;
   teta = 0.0;
+  pressed = false;
   startTimer(10); // em ms
+  // para realizar o rastreio do mouse mesmo com o
+  // botao nao pressionado
+  setMouseTracking(true);
 }
 
 void Plotter::paintEvent(QPaintEvent *event)
@@ -46,7 +50,7 @@ void Plotter::paintEvent(QPaintEvent *event)
   y1 = height()/2 - A*std::sin(teta)*height()/2;
   for(x2=1; x2<width(); x2++){
     y2 = height()/2 - A * std::sin(2*3.14*freq*x2/width()
-                      + teta)*height()/2;
+                                   + teta)*height()/2;
     p.drawLine(x1,y1,x2,y2);
     x1 = x2;
     y1 = y2;
@@ -64,15 +68,30 @@ void Plotter::timerEvent(QTimerEvent *event)
 
 void Plotter::mousePressEvent(QMouseEvent *event)
 {
- // qDebug() << event->x() << event->y();
+  if(event->button() == Qt::LeftButton){
+    pressed = true;
+  }
+  // qDebug() << event->x() << event->y();
   emit mudaxy(event->x(), event->y());
+}
+
+void Plotter::mouseMoveEvent(QMouseEvent *event)
+{
+  if(pressed){
+    emit mudaxy(event->x(), event->y());
+  }
+}
+
+void Plotter::mouseReleaseEvent(QMouseEvent *event)
+{
+  pressed = false;
 }
 
 void Plotter::mudaAmplitude(int a)
 {
   A = a/100.0;
   repaint();
-//  A = (float)a/100;
+  //  A = (float)a/100;
 }
 
 

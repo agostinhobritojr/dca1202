@@ -17,6 +17,7 @@ public:
 
 public slots:
   void recebePosicao(int x, int y);
+  void finaliza();
 
 private:
   Ui::MainWindow *ui;
