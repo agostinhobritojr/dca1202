@@ -18,6 +18,8 @@ public:
 public slots:
   void recebePosicao(int x, int y);
   void finaliza();
+  void salvaArquivo();
+  void novoDesenho();
 
 private:
   Ui::MainWindow *ui;

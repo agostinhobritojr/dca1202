@@ -243,11 +243,19 @@
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>File</string>
+     <string>&amp;File</string>
     </property>
+    <addaction name="actionNovoDesenho"/>
+    <addaction name="actionSave"/>
     <addaction name="actionQuit"/>
    </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
@@ -272,6 +280,16 @@
    </property>
    <property name="text">
     <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionNovoDesenho">
+   <property name="text">
+    <string>&amp;NovoDesenho</string>
    </property>
   </action>
  </widget>
