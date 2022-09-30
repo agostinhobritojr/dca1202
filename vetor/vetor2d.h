@@ -13,7 +13,7 @@ public:
   // e valores iniciais default
   Vetor2d(float x_=0, float y_=0);
   // construtor de copia
-  Vetor2d(Vetor2d &v);
+  Vetor2d(const Vetor2d &v);
   // destrutor
   // SOH PODE HAVER UM!
   ~Vetor2d();
@@ -27,6 +27,7 @@ public:
   Vetor2d unitario(void);
   Vetor2d soma(Vetor2d v);
   Vetor2d operator+(Vetor2d v);
+  Vetor2d operator=(Vetor2d v);
   // produto escalar
   float multiplica(Vetor2d v);
   // produto POR escalar

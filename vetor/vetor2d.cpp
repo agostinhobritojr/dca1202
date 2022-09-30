@@ -14,7 +14,7 @@ Vetor2d::Vetor2d(float x_, float y_){
   x=x_; y=y_;
 }
 
-Vetor2d::Vetor2d(Vetor2d &v){
+Vetor2d::Vetor2d(const Vetor2d &v){
   //std::cout << "construtor de copia\n";
   x = v.x; y = v.y;
 }
@@ -73,6 +73,11 @@ Vetor2d Vetor2d::operator+(Vetor2d v){
   ret.x = x + v.x;
   ret.y = y + v.y;
   return ret;
+}
+
+Vetor2d Vetor2d::operator=(Vetor2d v){
+  x = v.x; y = v.y;
+  return v;
 }
 
 float Vetor2d::multiplica(Vetor2d v){

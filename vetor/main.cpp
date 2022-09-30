@@ -9,7 +9,7 @@ int main(void){
   v3 = v1.soma(v2);
   v3.print();
   std::cout << std::endl;
-  v3 = v1.operator+(v2);
+  v3 = v1+v2;
   v3.print();
   std::cout << std::endl;
   // prod = v2.multiplica(v3);
