@@ -12,6 +12,9 @@ int main(void){
   v3 = v1+v2;
   v3.print();
   std::cout << std::endl;
+  v3 = 4*v1;
+  v3.print();
+  std::cout << std::endl;
   // prod = v2.multiplica(v3);
 
 //  std::cout << "produto = ";

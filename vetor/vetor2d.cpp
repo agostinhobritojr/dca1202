@@ -75,6 +75,30 @@ Vetor2d Vetor2d::operator+(Vetor2d v){
   return ret;
 }
 
+Vetor2d Vetor2d::operator-(Vetor2d v){
+  Vetor2d ret;
+  ret.x = x - v.x;
+  ret.y = y - v.y;
+  return ret;
+}
+
+Vetor2d Vetor2d::operator*(float a){
+  Vetor2d ret;
+  ret.x = x*a;
+  ret.y = y*a;
+  return ret;
+}
+
+Vetor2d operator*(float a, Vetor2d v){
+  Vetor2d ret;
+  ret.x = a*v.x;
+  ret.y = a*v.y;
+//  ret.setX(a*v.getX());
+//  ret.setY(a*v.getY());
+  return ret;
+}
+
+
 Vetor2d Vetor2d::operator=(Vetor2d v){
   x = v.x; y = v.y;
   return v;

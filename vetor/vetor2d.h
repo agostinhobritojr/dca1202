@@ -26,14 +26,20 @@ public:
   float angulo(void);
   Vetor2d unitario(void);
   Vetor2d soma(Vetor2d v);
-  Vetor2d operator+(Vetor2d v);
-  Vetor2d operator=(Vetor2d v);
+  Vetor2d operator +(Vetor2d v);
+  Vetor2d operator -(Vetor2d v);
+  Vetor2d operator =(Vetor2d v);
+  Vetor2d operator *(float a);
   // produto escalar
   float multiplica(Vetor2d v);
   // produto POR escalar
   Vetor2d multiplica(float a);
+  // funcao friend possui DIREITO DE ACESSO
+  // as propriedades privadas da classe
+  friend Vetor2d operator*(float a, Vetor2d v);
 };
 
+Vetor2d operator*(float a, Vetor2d v);
 #endif // VETOR2D_H
 
 
