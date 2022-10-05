@@ -3,6 +3,13 @@
 
 int main(void){
   Vetor2d v1(1,2), v2(3,4), v3(5,6);
+  Vetor2d *pv;
+
+  pv = &v1;
+  pv->print();
+
+  std::cout << std::endl;
+
   float prod;
   v1.print(); std::cout << std::endl;
   v2.print(); std::cout << std::endl;
