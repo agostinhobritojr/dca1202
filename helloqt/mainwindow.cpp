@@ -12,6 +12,12 @@ MainWindow::MainWindow(QWidget *parent)
           SIGNAL(clicked()),
           this,
           SLOT(finaliza()));
+/*
+  connect(ui->actionExit,
+          SIGNAL(triggered()),
+          this,
+          SLOT(finaliza()));
+          */
 }
 
 MainWindow::~MainWindow()
