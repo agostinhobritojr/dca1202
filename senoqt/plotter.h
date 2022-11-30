@@ -8,7 +8,7 @@ class Plotter : public QWidget
   Q_OBJECT
 public:
   explicit Plotter(QWidget *parent = nullptr);
-
+  void paintEvent(QPaintEvent *event);
 signals:
 
 };
