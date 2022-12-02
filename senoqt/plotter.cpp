@@ -4,13 +4,16 @@
 #include <QPen>
 #include <cmath>
 #include <QDebug>
+#include <QMouseEvent>
 
 Plotter::Plotter(QWidget *parent) :
   QWidget(parent){
   A = 1.0;
   freq = 1;
   teta = 0;
+  veloc = 0;
   startTimer(10);
+  setMouseTracking(true);
 }
 
 void Plotter::paintEvent(QPaintEvent *event)
@@ -68,12 +71,39 @@ void Plotter::paintEvent(QPaintEvent *event)
 }
 
 void Plotter::timerEvent(QTimerEvent *event){
-  teta = teta + 0.01;
+  teta = teta + veloc;
   repaint();
 }
 
+void Plotter::mousePressEvent(QMouseEvent *event)
+{
+  //qDebug() << event->x() << event->y();
+  emit mudaX(event->x());
+  emit mudaY(event->y());
+}
+
+void Plotter::mouseMoveEvent(QMouseEvent *event)
+{
+  emit mudaX(event->x());
+  emit mudaY(event->y());
+}
+
+
+
 void Plotter::mudaAmplitude(int A){
   this->A = (float)A/100.0;
+  repaint();
+}
+
+void Plotter::mudaFrequencia(int freq)
+{
+  this->freq = freq;
+  repaint();
+}
+
+void Plotter::mudaVelocidade(int veloc)
+{
+  this->veloc = (float)veloc/1000.0;
   repaint();
 }
 

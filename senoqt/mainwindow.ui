@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>536</width>
+    <width>522</width>
     <height>481</height>
    </rect>
   </property>
@@ -85,6 +85,9 @@
         </item>
         <item row="5" column="0">
          <widget class="QSlider" name="horizontalSliderVel">
+          <property name="maximum">
+           <number>200</number>
+          </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -131,7 +134,7 @@
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QLCDNumber" name="lcdNumber_4">
+         <widget class="QLCDNumber" name="lcdNumberX">
           <property name="segmentStyle">
            <enum>QLCDNumber::Flat</enum>
           </property>
@@ -148,7 +151,7 @@
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QLCDNumber" name="lcdNumber_5">
+         <widget class="QLCDNumber" name="lcdNumberY">
           <property name="segmentStyle">
            <enum>QLCDNumber::Flat</enum>
           </property>
@@ -165,7 +168,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>536</width>
+     <width>522</width>
      <height>22</height>
     </rect>
    </property>
