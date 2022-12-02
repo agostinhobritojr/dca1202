@@ -6,9 +6,11 @@
 #include <QDebug>
 
 Plotter::Plotter(QWidget *parent) :
-  QWidget(parent)
-{
-
+  QWidget(parent){
+  A = 1.0;
+  freq = 1;
+  teta = 0;
+  startTimer(10);
 }
 
 void Plotter::paintEvent(QPaintEvent *event)
@@ -17,6 +19,8 @@ void Plotter::paintEvent(QPaintEvent *event)
   QBrush brush;
   QPen pen;
   int nhoriz=10, nvert=10;
+
+  painter.setRenderHint(QPainter::Antialiasing);
 
   brush.setColor(QColor(255,255,200));
   brush.setStyle(Qt::SolidPattern);
@@ -46,25 +50,31 @@ void Plotter::paintEvent(QPaintEvent *event)
                      height());
   }
 
-  float A, freq, teta;
   float t1, t2, y1, y2;
 
   pen.setColor(QColor(0,0,255));
   painter.setPen(pen);
 
-  A = height()/4;
-  freq = 1;
-  teta = 0;
   // qDebug() << y1 << y2;
 
   for(int i=0; i<width()-1; i++){
     t1 = (float)i/width();
     t2 = (float)(i+1)/width();
-    y1 = A*std::sin(2*3.14*freq*t1 + teta);
-    y2 = A*std::sin(2*3.14*freq*t2 + teta);
+    y1 = A*height()/2*std::sin(2*3.14*freq*t1 + teta);
+    y2 = A*height()/2*std::sin(2*3.14*freq*t2 + teta);
     painter.drawLine(t1*width(), height()/2-y1,
                      t2*width(), height()/2-y2);
   }
+}
+
+void Plotter::timerEvent(QTimerEvent *event){
+  teta = teta + 0.01;
+  repaint();
+}
+
+void Plotter::mudaAmplitude(int A){
+  this->A = (float)A/100.0;
+  repaint();
 }
 
 

@@ -6,9 +6,15 @@
 class Plotter : public QWidget
 {
   Q_OBJECT
+private:
+  float A, freq, teta;
+
 public:
   explicit Plotter(QWidget *parent = nullptr);
   void paintEvent(QPaintEvent *event);
+  void timerEvent(QTimerEvent *event);
+public slots:
+  void mudaAmplitude(int A);
 signals:
 
 };
