@@ -1,5 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "dialog.h"
+#include <QDebug>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
   : QMainWindow(parent)
@@ -30,10 +33,47 @@ MainWindow::MainWindow(QWidget *parent)
           SIGNAL(mudaY(int)),
           ui->lcdNumberY,
           SLOT(display(int)));
+
+  connect(ui->actionMudaCor,
+          SIGNAL(triggered()),
+          this,
+          SLOT(mudaCor()));
 }
 
 MainWindow::~MainWindow()
 {
   delete ui;
 }
+
+void MainWindow::mudaCor(){
+  Dialog d;
+  QMessageBox box;
+  QString s;
+  if (d.exec() == QDialog::Accepted){
+    qDebug() << d.getR() << d.getG() << d.getB();
+
+    s = QString("<b>R = </b>") +
+        QString().setNum(d.getR()) + QString("<br>")+
+        QString("<b>G = </b>") +
+        QString().setNum(d.getG()) + QString("<br>")+
+        QString("<b>B = </b>") +
+        QString().setNum(d.getB()) + QString("<br>");
+
+    box.setText(s);
+    box.exec();
+    ui->widget->setColor(d.getR(), d.getG(),
+                         d.getB());
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 

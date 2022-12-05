@@ -12,6 +12,7 @@ Plotter::Plotter(QWidget *parent) :
   freq = 1;
   teta = 0;
   veloc = 0;
+  r=g=255; b=200;
   startTimer(10);
   setMouseTracking(true);
 }
@@ -25,7 +26,7 @@ void Plotter::paintEvent(QPaintEvent *event)
 
   painter.setRenderHint(QPainter::Antialiasing);
 
-  brush.setColor(QColor(255,255,200));
+  brush.setColor(QColor(r,g,b));
   brush.setStyle(Qt::SolidPattern);
 
   pen.setColor(QColor(255,0,0));
@@ -88,7 +89,12 @@ void Plotter::mouseMoveEvent(QMouseEvent *event)
   emit mudaY(event->y());
 }
 
-
+void Plotter::setColor(int r, int g, int b)
+{
+  this->r = r; this->g = g;
+  this->b = b;
+  repaint();
+}
 
 void Plotter::mudaAmplitude(int A){
   this->A = (float)A/100.0;
