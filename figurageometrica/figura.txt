@@ -1,7 +1,0 @@
-reta 0 0 3 3 1 1 1
-circulo 3 2 5 1 0 1
-retangulo 3 4 3 2 1 0 0
-circulo 3 2 5 1 0 1
-circulo 3 2 5 1 0 1
-retangulo 3 4 3 2 1 0 0
-reta 0 0 3 3 1 1 1
