@@ -2,12 +2,12 @@
 #include <stdlib.h>
 
 int main(){
-  int **x;
+  char **x;
   int nl=3, nc=4, i, j;
   // aloca vetor auxiliar
-  x = (int**) malloc(nl * sizeof(int*));
+  x = (char**) malloc(nl * sizeof(char*));
   // aloca matriz e guarda seu endereco em x[0]
-  x[0] = (int*) malloc (nl * nc * sizeof(int));
+  x[0] = (char*) malloc (nl * nc * sizeof(char));
 
   // ajustes dos enderecos no vetor auxiliar
   for(i=1; i<nl; i++){
