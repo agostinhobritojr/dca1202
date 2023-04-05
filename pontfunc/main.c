@@ -25,7 +25,7 @@ int *myrealloc(int *x, int oldsize, int newsize){
   else{
     memcpy(ret, x, oldsize*sizeof(int));
   }
-//  free(x);
+  free(x); // libera a memoria antiga
   return ret;
 }
 
