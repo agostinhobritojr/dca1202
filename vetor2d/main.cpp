@@ -1,33 +1,10 @@
 #include <iostream>
-#include <cmath> // sqrt
-
-class Vetor2d{
-private:
-  float y;
-  float x;
-public:
-  void setX(float x_){
-    x = x_;
-  }
-  float getX(){
-    return x;
-  }
-  void setY(float y_){
-    y = y_;
-  }
-  float getY(){
-    return y;
-  }
-  void print(void){
-    std::cout << "(" << x << "," << y << ")";
-  }
-  float norma(void){
-    return std::sqrt(x*x + y*y);
-  }
-};
+#include "vetor2d.h"
 
 int main(void){
   Vetor2d v;
+  v.print();
+  std::cout << "\n";
 //  v.x = 4;
   v.setX(3); v.setY(4);
   v.print();
