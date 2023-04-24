@@ -3,6 +3,8 @@
 
 int main(void){
   Vetor2d v(3,4), v1(5,6), v2, v3(5);
+
+  // invoca o copy constructor
   Vetor2d v4(v3), v5=v4;
   v.print();  std::cout << "\n";
   v1.print();  std::cout << "\n";
