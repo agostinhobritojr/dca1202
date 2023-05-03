@@ -1,0 +1,58 @@
+// Copyright (C) 2021 The Qt Company Ltd.
+// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GFDL-1.3-no-invariants-only
+/*!
+
+\example camera
+\title Camera Example
+\ingroup multimedia_examples
+\ingroup video_examples
+\ingroup camera_examples
+\meta {tag} {widgets}
+\brief Shows how to capture a still image or record video.
+or video.
+
+The Camera Example demonstrates how you can use \l{Qt Multimedia} to implement
+some basic Camera functionality to take still images and record video clips
+with audio.
+
+\include examples-run.qdocinc
+
+The example implements a \c Camera class that acts as our camera interface. It
+has a user interface, control functions, setting values and a means of defining
+the location where the image or video clip is to be saved. It will also store
+the image and video settings.
+
+The Camera class uses:
+\list
+    \li An instance of \l {QCamera}, the API class interface to the hardware.
+    \li An instance of \l {QImageCapture} to take still images.
+    \li An instance of \l {QMediaRecorder} to record video. It also contains
+    the user interface object.
+\endlist
+
+The Camera constructor does some basic initialization:
+\list
+    \li The user interface is initialized.
+    \li UI signals are connected to slots that react to the triggering event.
+\endlist
+However, most of the work is done when the \e{setCamera()} function is called,
+passing in a \l QCameraDevice.
+
+\e{setCamera()} sets up various connections between the user interface and the
+functionality of the Camera class using signals and slots. It also instantiates
+and initializes the \l {QCamera}, \l {QImageCapture}, and \l {QMediaRecorder}
+objects mentioned above. The still and video recording visual tabs are enabled
+and finally the \l {QCamera::start}{start()} function of the \l{QCamera}
+object is called.
+
+Now that the camera is ready for user commands it waits for a suitable event.
+Such an event can be a key press of either the \l {Qt::Key_CameraFocus} or
+\l {Qt::Key_Camera} buttons on the application window. Camera focus will
+simply display the preview and lock the camera settings. \c Key_Camera will
+either call \e{takeImage()} if doing an image capture, or call
+\c record() or \c stop() (if already recording) on the QMediaRecorder instance
+when recording video.
+
+\image camera-example.png
+
+*/

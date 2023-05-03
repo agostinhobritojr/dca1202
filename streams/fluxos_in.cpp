@@ -1,14 +1,24 @@
+#include <iostream>
+#include <fstream>
 #include <cstdlib>
-#include <fstream> // std::ofstream
-#include <iostream> // para std::cout
 
-int main(void) {
-  std::ofstream fout; // fluxo de saida
-  fout.open("nome.txt");
-  if (!fout.is_open()) {
+int main(void){
+  std::ifstream fin;
+  int nl, nc, valor;
+
+  fin.open("matriz.txt");
+  if (!fin.is_open()) {
     exit(1);
   }
-  std::cout << "vai escrever no arquivo\n";
-  fout << "Agostinho Brito \n";
-  fout.close();
+  fin >> nl >> nc;
+  std::cout << "nl = " << nl << "\n";
+  std::cout << "nc = " << nc << "\n";
+  for(int i=0; i<nl; i++){
+    for(int j=0; j<nc; j++){
+      fin >> valor;
+      std::cout << valor << " ";
+    }
+    std::cout << "\n";
+  }
+  fin.close();
 }
