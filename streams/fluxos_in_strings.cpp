@@ -5,9 +5,11 @@
 
 int main(void){
   std::ifstream fin;
-  int nl, nc, valor;
-  std::string nome("josefina");
-  std::cout << nome << "\n";
-  nome.append(" da silva");
+  std::string nome;
+  fin.open("nome.txt");
+  if (!fin.is_open()) {
+    exit(1);
+  }
+  getline(fin, nome);
   std::cout << nome << "\n";
 }
