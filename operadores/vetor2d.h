@@ -4,7 +4,6 @@
 #include <ostream>
 
 class Vetor3d;
-
 // declaracao da classe
 class Vetor2d{
 private:
@@ -25,6 +24,12 @@ public:
 
   // metodo destrutor
   ~Vetor2d();
+
+  /**
+   * @brief setX
+   * @param x_
+   */
+
   void setX(float x_);
   float getX();
   void setY(float y_);
