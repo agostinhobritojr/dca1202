@@ -3,16 +3,42 @@
 #define VETOR2D_H
 #include <ostream>
 
-class Vetor3d;
-// declaracao da classe
+/**
+ * @brief A classe Vetor2d serve para manipular vetores bidimensionais
+ *
+ * @details A classe Vetor2d ajuda o programador a lidar com diversas operações
+ * envolvendo vetores, como armazenamento, soma, subtração e exibição de
+ * vetores no terminal
+ *
+ */
 class Vetor2d{
 private:
-  float x, y;
+    /**
+     * @brief x armazena a coordenada x do vetor
+     *
+     */
+    float x;
+    /**
+     * @brief y armazena a coordenada y do vetor
+     */
+    float y;
 public:
   // metodo construtor
  // Vetor2d(); // construtor padrao (default)
 
   // metodo construtor COM ARGUMENTOS
+    /**
+   * @brief Vetor2d é o construtor com argumentos
+   * @details Caso seja invocado na forma de construtor sem argumentos,
+   * x e y assumem valores iguais a ZERO
+   * @param _x recebe a coordenada x
+   * @param _y recebe a coordenada y
+   *
+   * \code{.cpp}
+ * Vetor2d v;
+ * Vetor2d v(3,4);
+ * \endcode
+   */
   Vetor2d(float _x=0, float _y=0);
  // Vetor2d(float _xy);
 
@@ -25,11 +51,6 @@ public:
   // metodo destrutor
   ~Vetor2d();
 
-  /**
-   * @brief setX
-   * @param x_
-   */
-
   void setX(float x_);
   float getX();
   void setY(float y_);
@@ -38,6 +59,21 @@ public:
   float norma(void);
 
   // sobrecargas dos metodos produto
+  /**
+   * @brief produto calcula o produto do vetor pelo escalar
+   * @param a é o escalar que será multiplicado ao vetor atual
+   * @return O resultado da multiplicação
+   * \f[
+   * \overline{Retorno} = \overline{V}  a
+   * \f]
+   *
+   * <ul>
+   * <li> Item número 1 </li>
+   * <li> Alo, maria! </li>
+   * </ul>
+   *
+   *
+   */
   Vetor2d produto(float a);
   float produto(Vetor2d v2);
 

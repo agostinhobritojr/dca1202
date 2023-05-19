@@ -1,0 +1,73 @@
+\begin{theindex}
+
+  \item {$\sim$Vetor2d}
+    \subitem {Vetor2d}, \hyperpage{6}
+
+  \indexspace
+
+  \item {getX}
+    \subitem {Vetor2d}, \hyperpage{6}
+  \item {getY}
+    \subitem {Vetor2d}, \hyperpage{6}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{9}
+  \item {main.cpp}, \hyperpage{9}
+    \subitem {main}, \hyperpage{9}
+
+  \indexspace
+
+  \item {norma}
+    \subitem {Vetor2d}, \hyperpage{6}
+
+  \indexspace
+
+  \item {operator$<$$<$}
+    \subitem {Vetor2d}, \hyperpage{8}
+    \subitem {vetor2d.cpp}, \hyperpage{10}
+  \item {operator$\ast$}
+    \subitem {Vetor2d}, \hyperpage{6}, \hyperpage{8}
+    \subitem {vetor2d.cpp}, \hyperpage{10}
+  \item {operator+}
+    \subitem {Vetor2d}, \hyperpage{7}
+
+  \indexspace
+
+  \item {print}
+    \subitem {Vetor2d}, \hyperpage{7}
+  \item {produto}
+    \subitem {Vetor2d}, \hyperpage{7}
+
+  \indexspace
+
+  \item {setX}
+    \subitem {Vetor2d}, \hyperpage{7}
+  \item {setY}
+    \subitem {Vetor2d}, \hyperpage{7}
+  \item {soma}
+    \subitem {Vetor2d}, \hyperpage{7}
+
+  \indexspace
+
+  \item {Vetor2d}, \hyperpage{5}
+    \subitem {$\sim$Vetor2d}, \hyperpage{6}
+    \subitem {getX}, \hyperpage{6}
+    \subitem {getY}, \hyperpage{6}
+    \subitem {norma}, \hyperpage{6}
+    \subitem {operator$<$$<$}, \hyperpage{8}
+    \subitem {operator$\ast$}, \hyperpage{6}, \hyperpage{8}
+    \subitem {operator+}, \hyperpage{7}
+    \subitem {print}, \hyperpage{7}
+    \subitem {produto}, \hyperpage{7}
+    \subitem {setX}, \hyperpage{7}
+    \subitem {setY}, \hyperpage{7}
+    \subitem {soma}, \hyperpage{7}
+    \subitem {Vetor2d}, \hyperpage{5, 6}
+  \item {vetor2d.cpp}, \hyperpage{10}
+    \subitem {operator$<$$<$}, \hyperpage{10}
+    \subitem {operator$\ast$}, \hyperpage{10}
+  \item {vetor2d.h}, \hyperpage{11}
+
+\end{theindex}
