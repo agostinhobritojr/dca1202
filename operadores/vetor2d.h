@@ -64,7 +64,7 @@ public:
    * @param a é o escalar que será multiplicado ao vetor atual
    * @return O resultado da multiplicação
    * \f[
-   * \overline{Retorno} = \overline{V}  a
+   * g(x,y) = \int_a^b f(x,y) \,dx
    * \f]
    *
    * <ul>
