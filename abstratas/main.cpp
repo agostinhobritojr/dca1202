@@ -47,6 +47,8 @@ int main(){
         fig->draw(fout);
     }
     fout.close();
+    s.writeOFF("saida.off");
+
     std::cout << "\n";
 
     for(auto fig:figs){
