@@ -6,6 +6,10 @@
 class Plotter : public QWidget
 {
     Q_OBJECT
+private:
+    float amplitude;
+    float teta;
+    float frequencia;
 public:
     explicit Plotter(QWidget *parent = nullptr);
     void paintEvent(QPaintEvent *event);
