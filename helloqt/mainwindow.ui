@@ -6,122 +6,145 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>648</width>
-    <height>438</height>
+    <width>652</width>
+    <height>421</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QSlider" name="horizontalSliderA">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>80</y>
-      <width>301</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-    <property name="tickPosition">
-     <enum>QSlider::NoTicks</enum>
-    </property>
-   </widget>
-   <widget class="QLCDNumber" name="lcdNumberA">
-    <property name="geometry">
-     <rect>
-      <x>420</x>
-      <y>60</y>
-      <width>141</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Box</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
-    </property>
-   </widget>
-   <widget class="QSlider" name="horizontalSliderB">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>140</y>
-      <width>301</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QLCDNumber" name="lcdNumberB">
-    <property name="geometry">
-     <rect>
-      <x>420</x>
-      <y>140</y>
-      <width>141</width>
-      <height>61</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButtonQuit">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>20</y>
-      <width>161</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Quit</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEditTexto">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>230</y>
-      <width>191</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButtonCopia">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>230</y>
-      <width>88</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&gt;&gt;&gt;</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="textEditTexto">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>220</y>
-      <width>181</width>
-      <height>141</height>
-     </rect>
-    </property>
-   </widget>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QSlider" name="horizontalSliderA">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::NoTicks</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLCDNumber" name="lcdNumberA">
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Plain</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QSlider" name="horizontalSliderB">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLCDNumber" name="lcdNumberB"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,100,0">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLineEdit" name="lineEditTexto"/>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButtonCopia">
+            <property name="text">
+             <string>vvv</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="textEditTexto"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButtonQuit">
+          <property name="text">
+           <string>Quit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>648</width>
+     <width>652</width>
      <height>22</height>
     </rect>
    </property>
