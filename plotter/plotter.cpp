@@ -2,10 +2,17 @@
 #include <QPainter>
 #include <QBrush>
 #include <QPen>
+#include <cmath>
+#include <QDebug> //qDebug()
+#include <QMouseEvent>
 
 Plotter::Plotter(QWidget *parent)
     : QWidget{parent}{
-
+    frequencia = 1;
+    amplitude = 1;
+    teta = 0;
+    velocidade = 0;
+    startTimer(5);
 }
 
 void Plotter::paintEvent(QPaintEvent *event){
@@ -13,6 +20,7 @@ void Plotter::paintEvent(QPaintEvent *event){
     QPen pen;
     QBrush brush;
 
+    painter.setRenderHint(QPainter::Antialiasing);
     // cor da caneta
     pen.setColor(QColor(0,0,255));
     // largura do traco
@@ -40,6 +48,52 @@ void Plotter::paintEvent(QPaintEvent *event){
     painter.drawLine(0, height()/2, width(), height()/2);
 
     // cria a funcao do seno
-    float f;
-    f = amplitude*sin(2*3.14*frequencia*x+teta);
+    int x1, x2, y1, y2;
+
+    pen.setColor(Qt::darkCyan);
+    pen.setWidth(2);
+    painter.setPen(pen);
+
+    x1 = 0; y1 = amplitude*sin(teta);
+    for(int x2=1; x2<width(); x2++){
+        y2 = height()/2-amplitude*sin(2*3.14*frequencia*x2/width()
+                             +teta)*height()/2;
+        painter.drawLine(x1,y1,x2,y2);
+        x1 = x2; y1 = y2;
+    }
+
 }
+
+void Plotter::mudaAmplitude(int amp){
+    amplitude = amp/99.0;
+    repaint();
+}
+
+void Plotter::mudaFrequencia(int freq){
+    frequencia = freq;
+    repaint();
+}
+
+void Plotter::timerEvent(QTimerEvent *event){
+    teta = teta + velocidade;
+    repaint();
+}
+
+void Plotter::mousePressEvent(QMouseEvent *event){
+   // qDebug() << event->x();
+   // qDebug() << event->y();
+    emit mudaX(event->x());
+    emit mudaY(event->y());
+}
+
+void Plotter::mudaVelocidade(int vel){
+    velocidade = 0.1*vel/99.0;
+    repaint();
+}
+
+
+
+
+
+
+
