@@ -12,7 +12,9 @@ Plotter::Plotter(QWidget *parent)
     amplitude = 1;
     teta = 0;
     velocidade = 0;
+    background = QColor(255,255,200);
     startTimer(5);
+    setMouseTracking(true); // para rastrear o mouse
 }
 
 void Plotter::paintEvent(QPaintEvent *event){
@@ -29,7 +31,7 @@ void Plotter::paintEvent(QPaintEvent *event){
     painter.setPen(pen);
 
     // cor do pincel
-    brush.setColor(QColor(255,255,200));
+    brush.setColor(background);
     // estilo de pintura (solido)
     brush.setStyle(Qt::SolidPattern);
     // entrega o pincel ao pintor
@@ -83,7 +85,31 @@ void Plotter::mousePressEvent(QMouseEvent *event){
    // qDebug() << event->x();
    // qDebug() << event->y();
     emit mudaX(event->x());
-    emit mudaY(event->y());
+    emit mudaY(event->y()-height()/2);
+}
+
+void Plotter::mouseMoveEvent(QMouseEvent *event){
+    emit mudaX(event->x());
+    emit mudaY(event->y()-height()/2);
+}
+
+void Plotter::setColor(int r, int g, int b){
+    background.setRed(r);
+    background.setGreen(g);
+    background.setBlue(b);
+    repaint();
+}
+
+int Plotter::getR(){
+    return background.red();
+}
+
+int Plotter::getG(){
+    return background.green();
+}
+
+int Plotter::getB(){
+    return background.blue();
 }
 
 void Plotter::mudaVelocidade(int vel){
