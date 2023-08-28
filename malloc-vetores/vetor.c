@@ -9,6 +9,9 @@ void funcao(void){
 int main() {
   int i, n=10;
   int *p;
+  printf("i : %p\n", &i);
+  printf("n : %p\n", &n);
+  printf("&p: %p\n\n", &p);
   p = (int *) malloc(n * sizeof(int));
   printf("%p: %p\n", &p, p);
   printf("tam = %d\n", sizeof(p));
@@ -18,6 +21,9 @@ int main() {
   for(i=0; i<10; i++){
     printf("%d, ",p[i]);
   }
+  printf("\n");
+  free(p);
+  p = NULL;
   free(p);
 //  funcao();
   return 0;
