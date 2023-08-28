@@ -4,9 +4,9 @@
 int main(void){
   int nl=4, nc=5, i, j;
   int **x, **y;
-  x = malloc(nl * sizeof(int*));
+  x = (int**) malloc(nl * sizeof(int*));
   for(i=0; i<nl; i++){
-    x[i] = malloc(nc * sizeof(int));
+    x[i] = (int*) malloc(nc * sizeof(int));
   }
   for(i=0; i<nl; i++){
     for(j=0; j<nc; j++){
