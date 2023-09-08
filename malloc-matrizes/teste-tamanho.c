@@ -4,7 +4,9 @@
 
 int main(void){
   int **x;
-  long int i, j, nl=100000, nc=100000;
+  int i, j, nl=100000, nc=100000;
+
+  printf("valor = %ld\n", nl*nc*sizeof(int)); 
 
 //  int x[10000][10000]
 
