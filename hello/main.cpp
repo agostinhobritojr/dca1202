@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 class Vetor2d {
 private:
@@ -8,13 +9,22 @@ private:
 public:
     // metodos
     void setX(float x_){
-        if(x_ >=0){
-            x = x_;
-        }
-        return;
+        x = x_;
     }
     float getX(void){
         return x;
+    }
+    void setY(float x_){
+        y = y_;
+    }
+    float getY(void){
+        return y;
+    }
+    float norma(){
+        return std::sqrt(x*x + y*y);
+    }
+    float angulo(){
+        return std::atan2f(y, x)*180/3.1415;
     }
 };
 
