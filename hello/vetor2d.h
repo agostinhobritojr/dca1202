@@ -18,7 +18,7 @@ public:
     // destrutor
     ~Vetor2d();
     // metodos
-    void setX(float x_);
+    void setX(float x);
     float getX(void);
     void setY(float x_);
     float getY(void);

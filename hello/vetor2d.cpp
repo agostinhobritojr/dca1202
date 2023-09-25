@@ -34,9 +34,12 @@ Vetor2d::~Vetor2d(){
   //  x = y = xy;
 //}
 
-void Vetor2d::setX(float x_){
-    x = x_;
+void Vetor2d::setX(float x){
+    // diferencia a variavel de classe
+    // "this->x" da variavel local "x"
+    this->x = x;
 }
+
 float Vetor2d::getX(void){
     return x;
 }
