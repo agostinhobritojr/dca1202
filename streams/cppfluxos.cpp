@@ -12,11 +12,12 @@ int main(void){
   std::string s;
 
   // abre o arquivo
-  fout.open("/home/ambj/saida.txt");
+//  fout.open("/home/ambj/saida.txt", std::ios_base::out | std::ios_base::app);
+  fout.open("/home/ambj/saida.txt", std::ios_base::out);
   // verifica se a abertura foi ok
   if(fout.is_open()){
     // grava no fluxo
-    fout << "Agostinho\n";
+    fout << "Agostinho Brito\n";
   }
   else{
     std::cout << "nao abriu arquivo\n";
@@ -27,7 +28,8 @@ int main(void){
   fin.open("/home/ambj/saida.txt");
   if(fin.is_open()){
     // le o dado
-    fin >> s;
+//    fin >> s;
+    std::getline(fin, s);
     std::cout << s << std::endl;
   }else{
     std::cout << "nao abriu arquivo";
