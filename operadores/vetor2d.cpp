@@ -103,5 +103,31 @@ Vetor2d Vetor2d::operator *(float a){
   return ret;
 }
 
+Vetor2d Vetor2d::operator - (Vetor2d v1){
+  Vetor2d ret;
+  ret.x = x-v1.x;
+  ret.y = y-v1.y;
+  return ret;
+}
 
+float Vetor2d::operator*(Vetor2d v1){
+    float ret;
+    ret = x*v1.x+y*v1.y;
+    return ret;
+}
+
+Vetor2d operator*(float a, Vetor2d v1){
+  Vetor2d ret;
+  ret.x = a * v1.x;
+  ret.y = a * v1.y;
+// ret.setX(v1.getX() * a);
+// ret.setY(v1.getY() * a);
+  return ret;
+}
+
+std::ostream& operator<<(std::ostream& os, 
+Vetor2d v){
+  os << "(" << v.x << "," << v.y << ")";
+  return os;
+}
 

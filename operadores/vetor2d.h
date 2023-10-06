@@ -1,6 +1,8 @@
 #ifndef VETOR2D_H
 #define VETOR2D_H
 
+#include <iostream>
+
 class Vetor2d {
 private:
     // propriedades
@@ -30,12 +32,22 @@ public:
     Vetor2d soma(Vetor2d v1);
     Vetor2d operator + (Vetor2d v1);
     Vetor2d operator*(float a);
+    Vetor2d operator - (Vetor2d v1);
+    float operator*(Vetor2d v1);
     // sobrecargas do metodo produto
     // produto POR escalar
     Vetor2d produto(float a);
     // produto escalar
     float produto(Vetor2d v1);
+    friend Vetor2d operator*(float a, Vetor2d v1);
+    friend std::ostream& operator<<(std::ostream& os, 
+    Vetor2d v);
+
 };
+
+Vetor2d operator*(float a, Vetor2d v1);
+
+
 
 #endif // VETOR2D_H
 
