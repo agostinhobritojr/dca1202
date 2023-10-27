@@ -3,9 +3,11 @@
 
 
 class FiguraGeometrica{
+protected:
+    float r, g, b, a;
 public:
     FiguraGeometrica();
-    virtual ~FiguraGeometrica(){};
+    virtual ~FiguraGeometrica(){}
     // funcao virtual pura
     virtual void draw() = 0;
 };
