@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
+#include <QLabel>
+#include <QLineEdit>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -22,6 +24,10 @@ MainWindow::MainWindow(QWidget *parent)
             SIGNAL(clicked()),
             this,
             SLOT(mostraMensagem()));
+
+    connect(ui->pushButtonAlo,
+            SIGNAL(clicked()),
+            SLOT(copiaTexto()));
 }
 
 MainWindow::~MainWindow()
@@ -33,6 +39,11 @@ void MainWindow::mostraMensagem(){
     QMessageBox box;
     box.setText(QString("Alo, Maria!"));
     box.exec();
+}
+
+void MainWindow::copiaTexto(){
+    ui->labelAlo->setText(
+    ui->lineEditAlo->text());
 }
 
 

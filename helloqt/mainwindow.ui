@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>601</width>
-    <height>323</height>
+    <width>755</width>
+    <height>525</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="pushButtonQuit">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>210</y>
+      <x>500</x>
+      <y>370</y>
       <width>88</width>
       <height>25</height>
      </rect>
@@ -30,8 +30,8 @@
    <widget class="QPushButton" name="pushButtonOk">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>210</y>
+      <x>630</x>
+      <y>370</y>
       <width>88</width>
       <height>25</height>
      </rect>
@@ -63,13 +63,49 @@
      </rect>
     </property>
    </widget>
+   <widget class="QLineEdit" name="lineEditAlo">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>180</y>
+      <width>231</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelAlo">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>170</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonAlo">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>180</y>
+      <width>88</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&gt;&gt;&gt;&gt;</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>601</width>
+     <width>755</width>
      <height>22</height>
     </rect>
    </property>

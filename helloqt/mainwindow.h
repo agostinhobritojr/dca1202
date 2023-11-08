@@ -20,6 +20,7 @@ private:
 
 public slots:
     void mostraMensagem(void);
+    void copiaTexto(void);
 };
 #endif // MAINWINDOW_H
 
