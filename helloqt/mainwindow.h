@@ -17,5 +17,12 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+public slots:
+    void mostraMensagem(void);
 };
 #endif // MAINWINDOW_H
+
+
+
+

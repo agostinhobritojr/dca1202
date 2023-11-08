@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -7,10 +8,34 @@ MainWindow::MainWindow(QWidget *parent)
 {
 //    ui = new Ui::MainWindow;
     ui->setupUi(this);
+    connect(ui->pushButtonQuit,
+            SIGNAL(clicked()),
+            this,
+            SLOT(close()));
+
+    connect(ui->horizontalSliderValor,
+            SIGNAL(valueChanged(int)),
+            ui->lcdNumberValor,
+            SLOT(display(int)));
+
+    connect(ui->pushButtonOk,
+            SIGNAL(clicked()),
+            this,
+            SLOT(mostraMensagem()));
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::mostraMensagem(){
+    QMessageBox box;
+    box.setText(QString("Alo, Maria!"));
+    box.exec();
+}
+
+
+
+
 
