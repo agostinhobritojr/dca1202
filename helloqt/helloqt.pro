@@ -10,10 +10,12 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    plotter.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    plotter.h
 
 FORMS += \
     mainwindow.ui
