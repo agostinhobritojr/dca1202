@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>720</width>
-    <height>420</height>
+    <width>883</width>
+    <height>461</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="100,0">
     <item>
-     <widget class="Plotter" name="widget" native="true"/>
+     <widget class="Plotter" name="widgetPlotter" native="true"/>
     </item>
     <item>
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -24,13 +24,26 @@
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
          <widget class="QSlider" name="horizontalSliderValor">
+          <property name="maximum">
+           <number>100</number>
+          </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLCDNumber" name="lcdNumberValor"/>
+         <widget class="QLCDNumber" name="lcdNumberValor">
+          <property name="frameShape">
+           <enum>QFrame::Panel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Plain</enum>
+          </property>
+          <property name="segmentStyle">
+           <enum>QLCDNumber::Flat</enum>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -121,7 +134,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>720</width>
+     <width>883</width>
      <height>22</height>
     </rect>
    </property>

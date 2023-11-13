@@ -28,6 +28,12 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButtonAlo,
             SIGNAL(clicked()),
             SLOT(copiaTexto()));
+
+    connect(ui->horizontalSliderValor,
+            SIGNAL(valueChanged(int)),
+            ui->widgetPlotter,
+            SLOT(mudaAmplitude(int)));
+
 }
 
 MainWindow::~MainWindow()
