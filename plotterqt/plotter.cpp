@@ -11,6 +11,7 @@ Plotter::Plotter(QWidget *parent)
     freq = 1;
     veloc = 0;
     teta = 0;
+    rPlot = 0; gPlot = 155; bPlot = 0;
     // inicia o temporizador ciclico
     startTimer(10);
 }
@@ -42,7 +43,7 @@ void Plotter::paintEvent(QPaintEvent *event){
    // teta = veloc*0.05;
     t1 = 0; y1 = 0;
     // muda a cor do tracado para verde
-    pen.setColor(QColor(0,155,0));
+    pen.setColor(QColor(rPlot,gPlot,bPlot));
     pen.setWidth(2);
     painter.setPen(pen);
     // desenha a senoide
@@ -87,6 +88,11 @@ void Plotter::mudaFrequencia(int freq){
 void Plotter::mudaVelocidade(int veloc)
 {
     this->veloc = veloc;
+    repaint();
+}
+
+void Plotter::mudaCorPlot(int r, int g, int b){
+    rPlot = r; gPlot = g; bPlot = b;
     repaint();
 }
 

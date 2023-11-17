@@ -34,6 +34,11 @@ MainWindow::MainWindow(QWidget *parent)
             ui->widgetPlotter,
             SLOT(mudaAmplitude(int)));
 
+    connect(ui->actionMostra,
+            SIGNAL(triggered()),
+            this,
+            SLOT(mostraMensagem()));
+
 }
 
 MainWindow::~MainWindow()

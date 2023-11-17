@@ -11,6 +11,7 @@ private:
     float freq;
     float veloc;
     float teta;
+    int rPlot, gPlot, bPlot;
 public:
     explicit Plotter(QWidget *parent = nullptr);
 
@@ -23,7 +24,8 @@ public slots:
     void mudaFrequencia(int freq);
     void mudaVelocidade(int veloc);
 
-
+public:
+    void mudaCorPlot(int r, int g, int b);
 signals:
     void mudaXY(int, int);
 };

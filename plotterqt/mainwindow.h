@@ -20,6 +20,7 @@ private:
 
 public slots:
     void atualizaXY(int, int);
+    void mudaCorPlot();
 };
 #endif // MAINWINDOW_H
 

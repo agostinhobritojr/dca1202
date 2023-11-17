@@ -3,6 +3,8 @@
 #include <QMessageBox>
 #include <QLabel>
 #include <QLineEdit>
+#include "dialogcor.h"
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -30,6 +32,11 @@ MainWindow::MainWindow(QWidget *parent)
             SIGNAL(mudaXY(int,int)),
             this,
             SLOT(atualizaXY(int,int)));
+
+    connect(ui->actionMudaCor,
+            SIGNAL(triggered()),
+            this,
+            SLOT(mudaCorPlot()));
 }
 
 MainWindow::~MainWindow(){
@@ -39,6 +46,17 @@ MainWindow::~MainWindow(){
 void MainWindow::atualizaXY(int x, int y){
     ui->lcdNumberX->display(x);
     ui->lcdNumberY->display(y);
+}
+
+void MainWindow::mudaCorPlot(){
+    DialogCor dialog;
+    if(dialog.exec() == QDialog::Accepted){
+        qDebug() << dialog.getR() << dialog.getG() <<
+            dialog.getB();
+        ui->widgetPlotter->mudaCorPlot(dialog.getR(),
+                                       dialog.getG(),
+                                       dialog.getB());
+    }
 }
 
 
