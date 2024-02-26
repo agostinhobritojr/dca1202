@@ -1,5 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file alias="mudacor">resources/mudacor.svg</file>
-    </qresource>
-</RCC>

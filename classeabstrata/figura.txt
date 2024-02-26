@@ -1,6 +1,0 @@
-reta 10 10 15 20
-retangulo 5 8 3 4
-circulo 3 8 12
-reta 5 5 8 9
-circulo 3 6 200
-retangulo 45 60 3 2
