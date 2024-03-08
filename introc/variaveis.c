@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void){
-  unsigned char x;
-  x = 258;
+  float x;
+  x = 5/2;
   printf("O valor de x é: %d\n", x);
 }
