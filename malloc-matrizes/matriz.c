@@ -10,12 +10,22 @@ int main(void){
     // aloca as linhas da matriz
     x[i] = malloc(nc * sizeof(int));
   }
+  // aloca array auxiliar
+  y = malloc(nl * sizeof(int*));
+  for(i=0; i<nl; i++){
+    // aloca as linhas da matriz
+    y[i] = malloc(nc * sizeof(int));
+  }
   for(i=0; i<nl; i++){
     for(j=0; j<nc; j++){
       x[i][j] = i+j;
     }
   }
-  y = x; // ATALHO para o MESMO endereco armazenado em x
+  for(i=0; i<nl; i++){
+    for(j=0; j<nc; j++){
+      y[i][j] = x[i][j];
+    }
+  }
   // NAO EH UMA COHPIA
   for(i=0; i<nl; i++){
     for(j=0; j<nc; j++){
@@ -31,4 +41,10 @@ int main(void){
   }
   // libera array auxiliar
   free (x);
+  for(i=0; i<nl; i++){
+    // libera linhas da matriz
+    free (y[i]);
+  }
+  // libera array auxiliar
+  free (y);
 }
