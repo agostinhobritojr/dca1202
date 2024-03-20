@@ -5,16 +5,16 @@ int main(void){
   int nl=4, nc=5, i, j;
   int **x, **y;
   // aloca array auxiliar
-  x = malloc(nl * sizeof(int*));
+  x = (int**) malloc(nl * sizeof(int*));
   for(i=0; i<nl; i++){
     // aloca as linhas da matriz
-    x[i] = malloc(nc * sizeof(int));
+    x[i] = (int*)  malloc(nc * sizeof(int));
   }
   // aloca array auxiliar
-  y = malloc(nl * sizeof(int*));
+  y = (int**) malloc(nl * sizeof(int*));
   for(i=0; i<nl; i++){
     // aloca as linhas da matriz
-    y[i] = malloc(nc * sizeof(int));
+    y[i] = (int*) malloc(nc * sizeof(int));
   }
   for(i=0; i<nl; i++){
     for(j=0; j<nc; j++){
