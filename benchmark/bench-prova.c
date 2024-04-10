@@ -1,7 +1,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <string.h> // para memcpy()
 #include <time.h>
 
 void copyA(int *dst, int *src, int size) {
