@@ -6,6 +6,24 @@ private:
     float y;
     float x;
 public:
+    // 1. construtores nao retornam valores
+    // 2. construtores nao sao invocados pelo usuario
+    // 2.1. a invocacao eh automatica
+    // CONSTRUTOR PADRAO
+    // Vetor2d v1, v2, v3;
+   // Vetor2d();
+
+    // Construtor com argumentos
+    // (e com valores iniciais)
+    Vetor2d(float x_=4, float y_=8);
+
+  //  Vetor2d(int a, int b);
+  //  Vetor2d(float x_);
+
+    // Funcao destrutor
+    ~Vetor2d();
+
+    Vetor2d soma(Vetor2d v1);
     void setX(float x_);
     float getX();
     void setY(float y_);

@@ -3,6 +3,37 @@
 #include <cmath>
 
 // metodo setX() no ESCOPO da classe Veto2d
+/*Vetor2d::Vetor2d(){
+    std::cout << "construtor\n";
+    x = y = 0;
+}*/
+
+Vetor2d::Vetor2d(float x_, float y_){
+    std::cout << "construtor com argumentos\n";
+    x = x_; y = y_;
+}
+
+Vetor2d::~Vetor2d(){
+    std::cout << "destrutor\n";
+}
+
+Vetor2d Vetor2d::soma(Vetor2d v1){
+    Vetor2d ret;
+    ret.x = x + v1.x;
+    ret.y = y + v1.y;
+    return ret;
+}
+
+/*
+Vetor2d::Vetor2d(int a, int b)
+{
+    std::cout << "a= " << a << "; b = " << b << "\n";
+}
+
+Vetor2d::Vetor2d(float x_){
+    x = y = x_;
+}*/
+
 void Vetor2d::setX(float x_){
     x = x_;
 }
