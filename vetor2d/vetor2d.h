@@ -16,9 +16,12 @@ public:
     // Construtor com argumentos
     // (e com valores iniciais)
     Vetor2d(float x_=4, float y_=8);
-
   //  Vetor2d(int a, int b);
   //  Vetor2d(float x_);
+
+    // construtor de copia
+    // (argumento por REFERENCIA)
+    Vetor2d(const Vetor2d &copia);
 
     // Funcao destrutor
     ~Vetor2d();
