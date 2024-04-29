@@ -1,6 +1,21 @@
 #include <iostream>
+#include "vetor2d.h"
 
 int main(){
+    Vetor2d *v;
+
+    // com new eh possivel escolher o construtor
+    v = new Vetor2d(3,4);
+    v->print();
+    delete v;
+
+    // com new[]
+    v = new Vetor2d[5];
+    //  v = new Vetor2d(3,4)[5];
+    v[0].print();
+    delete [] v;
+
+    /*
     int *x, n=5;
     // aloca um elemento
     x = new int;
@@ -20,5 +35,6 @@ int main(){
         std::cout << "x[" << i << "] = " << x[i] << std::endl;
     }
     delete [] x;
+*/
     return 0;
 }
