@@ -4,9 +4,22 @@
 
 int main(void){
     Vetor2d v(1,3), v1(2,3), v2(5,6), v3;//, v3[10];
-//    v3 = v1.soma(v2);
-    v3 = v1 + v2;
+ //   v3 = v1 + v2;
+    v3.operator +(v2);
     v3.print();
+
+//    std::cout << "agostinho\n";
+//    std::cout.operator << ("agostinho\n");
+//   std::cout << 38;
+//   std::cout.operator << (38);
+//    std::cout << "\n";
+    // subtracao de vetores
+//    v3 = v1 - v2;
+//    float x;
+//    x = v1*v2;
+//    v3 = v1 * 4;
+//    v3 = 4 * v1;
+
 /*
     v.print();
     v1.print();
