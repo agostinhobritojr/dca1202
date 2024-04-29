@@ -35,6 +35,30 @@ Vetor2d Vetor2d::operator +(Vetor2d v1){
     ret.y = y + v1.y;
     return ret;
 }
+Vetor2d Vetor2d::operator -(Vetor2d v1){
+    Vetor2d ret;
+    ret.x = x - v1.x;
+    ret.y = y - v1.y;
+    return ret;
+}
+float Vetor2d::operator *(Vetor2d v1){
+    float ret;
+    ret = x*v1.x+ y*v1.y;
+    return ret;
+}
+
+// operador de atribuicao
+Vetor2d Vetor2d::operator =(const Vetor2d &v1){
+    Vetor2d ret;
+    ret.x = v1.x; ret.y = v1.y;
+    return ret;
+}
+Vetor2d Vetor2d::operator *(float a){
+    Vetor2d ret;
+    ret.x = x*a;
+    ret.y = y*a;
+    return ret;
+}
 
 /*
 Vetor2d::Vetor2d(int a, int b)

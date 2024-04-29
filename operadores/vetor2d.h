@@ -12,7 +12,10 @@ public:
     ~Vetor2d();
     Vetor2d soma(Vetor2d v1);
     Vetor2d operator + (Vetor2d v1);
-
+    Vetor2d operator - (Vetor2d v1);
+    float operator * (Vetor2d v1);
+    Vetor2d operator * (float a);
+    Vetor2d operator = (const Vetor2d &v1);
     void setX(float x_);
     float getX();
     void setY(float y_);
