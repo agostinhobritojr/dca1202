@@ -14,10 +14,10 @@ int main(void){
 //   std::cout.operator << (38);
 //    std::cout << "\n";
     // subtracao de vetores
-//    v3 = v1 - v2;
-//    float x;
-//    x = v1*v2;
-//    v3 = v1 * 4;
+    v3 = v1 - v2;
+    float x;
+    x = v1*v2;
+    v3 = v1 * 4;
 //    v3 = 4 * v1;
 
 /*
