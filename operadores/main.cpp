@@ -3,10 +3,15 @@
 
 
 int main(void){
-    Vetor2d v(1,3), v1(2,3), v2(5,6), v3;//, v3[10];
+    Vetor2d v(1,1), v1(2,3), v2(5,6), v3;//, v3[10];
  //   v3 = v1 + v2;
-    v3.operator +(v2);
+  //  v3 = v3.operator +(v2);
+ //   v3.print();
+    v3 = 2*v1;
     v3.print();
+
+
+
 
 //    std::cout << "agostinho\n";
 //    std::cout.operator << ("agostinho\n");

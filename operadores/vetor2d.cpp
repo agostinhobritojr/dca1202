@@ -9,7 +9,7 @@
 }*/
 
 Vetor2d::Vetor2d(float x_, float y_){
-    std::cout << "construtor com argumentos\n";
+  // std::cout << "construtor com argumentos\n";
     x = x_; y = y_;
 }
 
@@ -19,7 +19,7 @@ Vetor2d::Vetor2d(const Vetor2d &copia){
 }
 
 Vetor2d::~Vetor2d(){
-    std::cout << "destrutor\n";
+   // std::cout << "destrutor\n";
 }
 
 Vetor2d Vetor2d::soma(Vetor2d v1){
@@ -48,15 +48,26 @@ float Vetor2d::operator *(Vetor2d v1){
 }
 
 // operador de atribuicao
-Vetor2d Vetor2d::operator =(const Vetor2d &v1){
+Vetor2d Vetor2d::operator = (const Vetor2d &v1){
     Vetor2d ret;
     ret.x = v1.x; ret.y = v1.y;
+    x = v1.x; y = v1.y;
     return ret;
 }
 Vetor2d Vetor2d::operator *(float a){
     Vetor2d ret;
     ret.x = x*a;
     ret.y = y*a;
+    return ret;
+}
+
+
+Vetor2d operator*(float a, Vetor2d v1){
+    Vetor2d ret;
+    ret.x = a*v1.x;
+    ret.y = a*v1.y;
+//    ret.setX(a*v1.getX());
+//    ret.setY(a*v1.getY());
     return ret;
 }
 

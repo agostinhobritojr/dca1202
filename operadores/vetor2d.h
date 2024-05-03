@@ -23,6 +23,16 @@ public:
     float norma();
     float angulo();
     void print();
+    // QUALIFICADOR friend
+    friend Vetor2d operator*(float a, Vetor2d v1);
 };
 
+Vetor2d operator*(float a, Vetor2d v1);
+
 #endif // VETOR2D_H
+
+
+
+
+
+
