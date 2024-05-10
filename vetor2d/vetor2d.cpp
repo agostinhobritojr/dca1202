@@ -9,12 +9,16 @@
 }*/
 
 Vetor2d::Vetor2d(float x_, float y_){
-    std::cout << "construtor com argumentos\n";
+ //   std::cout << "construtor com argumentos\n";
     x = x_; y = y_;
 }
 
+Vetor2d::Vetor2d(const Vetor2d &copia){
+    x = copia.x; y = copia.y;
+}
+
 Vetor2d::~Vetor2d(){
-    std::cout << "destrutor\n";
+   // std::cout << "destrutor\n";
 }
 
 Vetor2d Vetor2d::soma(Vetor2d v1){
@@ -62,5 +66,11 @@ void Vetor2d::print(){
     std::cout << "(" << x <<
         ", " << y << ")\n";
 }
+
+std::ostream& operator << (std::ostream & os, Vetor2d &v){
+    os << "(" << v.x << "," << v.y << ")";
+    return os;
+}
+
 
 

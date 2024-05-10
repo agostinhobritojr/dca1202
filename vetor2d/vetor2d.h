@@ -1,6 +1,8 @@
 #ifndef VETOR2D_H
 #define VETOR2D_H
 
+#include <ostream>
+
 class Vetor2d{
 private:
     float y;
@@ -11,7 +13,7 @@ public:
     // 2.1. a invocacao eh automatica
     // CONSTRUTOR PADRAO
     // Vetor2d v1, v2, v3;
-   // Vetor2d();
+    //Vetor2d();
 
     // Construtor com argumentos
     // (e com valores iniciais)
@@ -34,6 +36,9 @@ public:
     float norma();
     float angulo();
     void print();
+
+    friend std::ostream& operator << (std::ostream &os, Vetor2d &v);
+
 };
 
 #endif // VETOR2D_H

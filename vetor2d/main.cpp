@@ -5,7 +5,14 @@
 int main(void){
     Vetor2d v(1,3), v1(2,3), v2(5,6), v3;//, v3[10];
     v3 = v1.soma(v2);
-    v3.print();
+  //  v3.print();
+
+    std::cout << v << "\n";
+
+    std::cout << "v =" << v << ", v1 = "
+              << v1 << std::endl;
+
+    std::cout << std::endl;
 /*
     v.print();
     v1.print();
