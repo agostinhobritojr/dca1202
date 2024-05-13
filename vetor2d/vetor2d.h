@@ -3,31 +3,49 @@
 
 #include <ostream>
 
+/**
+ * @brief A classe Vetor2d representa vetores em duas dimensoes
+ * @details A classe Vetor2d serve para realizar
+ * operações entre vetores no plano, suportando
+ * diversos algoritmos de algebra linear
+ *
+ */
+
 class Vetor2d{
 private:
+    /**
+     * @brief y representa o eixo vertical
+     */
     float y;
+    /**
+     * @brief x representa o eixo horizontal
+     */
     float x;
 public:
-    // 1. construtores nao retornam valores
-    // 2. construtores nao sao invocados pelo usuario
-    // 2.1. a invocacao eh automatica
-    // CONSTRUTOR PADRAO
-    // Vetor2d v1, v2, v3;
-    //Vetor2d();
-
-    // Construtor com argumentos
-    // (e com valores iniciais)
+    /**
+     * @brief Vetor2d é o construtor da classe
+     * @param x_ é o valor inicial de x
+     * @param y_ é o valor inicial de y
+     */
     Vetor2d(float x_=4, float y_=8);
-  //  Vetor2d(int a, int b);
-  //  Vetor2d(float x_);
-
-    // construtor de copia
-    // (argumento por REFERENCIA)
+    /**
+     * @brief Vetor2d
+     * @param copia
+     */
     Vetor2d(const Vetor2d &copia);
 
-    // Funcao destrutor
     ~Vetor2d();
-
+    /**
+     * @brief soma calcula a soma de dois vetores
+     * usando a equacao \f$ v3 = v1 + v2 \f$
+     * @param v1 é o vetor a ser somado
+     * @return um vetor com a soma dos dois vetores
+     *
+     * <ul>
+     * <li> item 1 </li>
+     * <li> item 2 </li>
+     * </ul>
+     */
     Vetor2d soma(Vetor2d v1);
     void setX(float x_);
     float getX();
