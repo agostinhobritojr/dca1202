@@ -4,11 +4,7 @@
 #include <ostream>
 
 /**
- * @brief A classe Vetor2d representa vetores em duas dimensoes
- * @details A classe Vetor2d serve para realizar
- * operações entre vetores no plano, suportando
- * diversos algoritmos de algebra linear
- *
+ * @brief The Vetor2d class serve para pipoipasfasdf
  */
 
 class Vetor2d{
