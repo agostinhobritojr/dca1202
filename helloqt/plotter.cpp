@@ -12,8 +12,11 @@ Plotter::Plotter(QWidget *parent)
     amplitude = 1;
     frequencia = 1;
     velocidade = 0;
+    fundoR = 255;
+    fundoG = 255;
+    fundoB = 200;
     startTimer(10);
- //   setMouseTracking(true);
+    setMouseTracking(true);
 }
 
 void Plotter::paintEvent(QPaintEvent *event){
@@ -21,7 +24,7 @@ void Plotter::paintEvent(QPaintEvent *event){
     QBrush brush;
     QPen pen;
     painter.setRenderHint(QPainter::Antialiasing);
-    brush.setColor(QColor(255,255,200));
+    brush.setColor(QColor(fundoR, fundoG, fundoB));
     brush.setStyle(Qt::SolidPattern);
     pen.setColor(Qt::red);
     pen.setWidth(2);
@@ -70,9 +73,10 @@ void Plotter::mouseReleaseEvent(QMouseEvent *event){
     qDebug() << "release: " << event->x() << event->y();
 }
 
-void Plotter::mouseMoveEvent(QMouseEvent *event)
-{
-    qDebug() << "move: " << event->x() << event->y();
+void Plotter::mouseMoveEvent(QMouseEvent *event){
+    emit mudaX(event->x());
+    emit mudaY(event->y());
+//    qDebug() << "move: " << event->x() << event->y();
 }
 
 void Plotter::mudaAmplitude(int amp)
@@ -90,6 +94,13 @@ void Plotter::mudaFrequencia(int freq)
 void Plotter::mudaVelocidade(int vel)
 {
     velocidade = (float)vel/100;
+    repaint();
+}
+
+void Plotter::mudaFundo(int r, int g, int b){
+    fundoR = r;
+    fundoG = g;
+    fundoB = b;
     repaint();
 }
 

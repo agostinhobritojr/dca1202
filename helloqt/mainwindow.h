@@ -22,5 +22,7 @@ private:
 
 public slots:
     void finaliza();
+    void sobreOPrograma();
+    void abrePreferencias();
 };
 #endif // MAINWINDOW_H
